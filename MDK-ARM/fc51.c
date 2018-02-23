@@ -87,9 +87,9 @@ void fc51_all(){
 	// fc51 obj2 Start************************
 	
 	
-	fc51(tRMS.IRESa,fc51_obj2_in,&fc51_obj2_out_a,EN.bits.fc51_obj2);
-	fc51(tRMS.IRESb,fc51_obj2_in,&fc51_obj2_out_b,EN.bits.fc51_obj2);
-	fc51(tRMS.IRESc,fc51_obj2_in,&fc51_obj2_out_c,EN.bits.fc51_obj2);	
+	fc51(tRMS.Vb_synch,fc51_obj2_in,&fc51_obj2_out_a,EN.bits.fc51_obj2);
+	fc51(tRMS.Vc_synch,fc51_obj2_in,&fc51_obj2_out_b,EN.bits.fc51_obj2);
+	fc51(tRMS.ITCR_ab,fc51_obj2_in,&fc51_obj2_out_c,EN.bits.fc51_obj2);	
 	
 	
 	// fc51 obj2 End**************************

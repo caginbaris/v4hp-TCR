@@ -8,8 +8,8 @@ void main_flow(){
 
   //measurement
 	
-	
-	#if 0		
+	#if 0	
+		
 	spectral_analysis(); //cau comm problem when invoked
 	cs_handles();
 	trueRMS();
@@ -18,7 +18,7 @@ void main_flow(){
 	// protection
 	
 	
-		
+	
 	
 	
 	fc50_all();
@@ -37,7 +37,7 @@ void main_flow(){
 	fcBF_all();
 	fcUNB_all();
 	fcPVP_all();
-
+	
 	
 	
 	

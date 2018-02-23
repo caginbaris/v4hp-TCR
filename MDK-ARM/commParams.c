@@ -165,21 +165,21 @@ void pushDataToMaster(void){
 	/*154*/comParams.pushDataBufferF[61]=fRMS.BC_synth;//RMS Vbc
 	/*156*/comParams.pushDataBufferF[62]=fRMS.CA_synth;//RMS Vca
 	
-	/*158*/comParams.pushDataBufferF[63]=tRMS.IRESa; // true RMS IresA
-	/*160*/comParams.pushDataBufferF[64]=tRMS.IRESb; // true RMS IresB
-	/*162*/comParams.pushDataBufferF[65]=tRMS.IRESc; // true RMS IresC
+	/*158*/comParams.pushDataBufferF[63]=tRMS.Vb_synch; // true RMS IresA
+	/*160*/comParams.pushDataBufferF[64]=tRMS.Vc_synch; // true RMS IresB
+	/*162*/comParams.pushDataBufferF[65]=tRMS.ITCR_ab; // true RMS IresC
 	
-	/*164*/comParams.pushDataBufferF[66]=tRMS.IRESa*tRMS.IRESa*Sys.Rvalue; // PresA 
-	/*166*/comParams.pushDataBufferF[67]=tRMS.IRESb*tRMS.IRESb*Sys.Rvalue; // PresB 
-	/*168*/comParams.pushDataBufferF[68]=tRMS.IRESc*tRMS.IRESc*Sys.Rvalue; // PresC 
+	/*164*/comParams.pushDataBufferF[66]=tRMS.Vb_synch*tRMS.Vb_synch*Sys.Rvalue; // PresA 
+	/*166*/comParams.pushDataBufferF[67]=tRMS.Vc_synch*tRMS.Vc_synch*Sys.Rvalue; // PresB 
+	/*168*/comParams.pushDataBufferF[68]=tRMS.ITCR_ab*tRMS.ITCR_ab*Sys.Rvalue; // PresC 
 	
 	/*170*/comParams.pushDataBufferF[69]=comParams.pushDataBufferF[63]+comParams.pushDataBufferF[64]+comParams.pushDataBufferF[65]; // P Res Total
 	
-	/*172*/comParams.pushDataBufferF[70]=fRMS.IUNBa; // UNBa fund RMS
-	/*174*/comParams.pushDataBufferF[71]=tRMS.IUNBa; // UNBa true RMS
+	/*172*/comParams.pushDataBufferF[70]=fRMS.ITCR_bc; // UNBa fund RMS
+	/*174*/comParams.pushDataBufferF[71]=tRMS.ITCR_bc; // UNBa true RMS
 	
-	/*176*/comParams.pushDataBufferF[72]=fRMS.IUNBb; // UNBa fund RMS
-	/*178*/comParams.pushDataBufferF[73]=tRMS.IUNBb; // UNBa true RMS
+	/*176*/comParams.pushDataBufferF[72]=fRMS.ITCR_ca; // UNBa fund RMS
+	/*178*/comParams.pushDataBufferF[73]=tRMS.ITCR_ca; // UNBa true RMS
 	
 	/*180*/comParams.pushDataBufferF[74]=0.0f ; //Spare
 	/*182*/comParams.pushDataBufferF[75]=0.0f ; //Spare

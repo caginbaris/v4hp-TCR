@@ -98,7 +98,7 @@
         <tRtrace>1</tRtrace>
         <sRSysVw>1</sRSysVw>
         <tRSysVw>1</tRSysVw>
-        <sRunDeb>1</sRunDeb>
+        <sRunDeb>0</sRunDeb>
         <sLrtime>0</sLrtime>
         <nTsel>5</nTsel>
         <sDll></sDll>
@@ -780,7 +780,7 @@
 
   <Group>
     <GroupName>pfunctions</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -788,7 +788,7 @@
       <GroupNumber>6</GroupNumber>
       <FileNumber>38</FileNumber>
       <FileType>1</FileType>
-      <tvExp>0</tvExp>
+      <tvExp>1</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>.\init_protection.c</PathWithFileName>
@@ -964,7 +964,7 @@
       <GroupNumber>7</GroupNumber>
       <FileNumber>52</FileNumber>
       <FileType>1</FileType>
-      <tvExp>0</tvExp>
+      <tvExp>1</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>.\cs_handles.c</PathWithFileName>

@@ -12,24 +12,29 @@ struct AdcData{
 	
 	float Van; 	//AN-1
 	float Ia;		//AN-2
-	float IUNBa;//AN-11
+	float ITCR_bc;//AN-11
 	
 	float Vbn;	//AN-3
 	float Ib;		//AN-4
-	float IUNBb;//AN-12
+	float ITCR_ca;//AN-12
 	
 	float Vcn;	//AN-5
 	float Ic;		//AN-6
 	float AB_synth;
 	
 	
-	float IRESa;//AN-8
+	float Vb_synch;//AN-8
 	float In;		//AN-7
 	float BC_synth;
 	
-	float IRESb;//AN-9
-	float IRESc;//AN-10
+	float Vc_synch;//AN-9
+	float ITCR_ab;//AN-10
 	float CA_synth;
+	
+	float ITCR_a;
+	float ITCR_b;
+	float ITCR_c;
+	
 
 
 }; 
@@ -54,22 +59,22 @@ enum AdcChannel{
 
 	Van=0,
 	Ia=1,
-	IUNBa=2,
+	ITCR_bc=2,
 	
 	Vbn=3,
 	Ib=4,
-	IUNBb=5,
+	ITCR_ca=5,
 	
 	Vcn=6,
 	Ic=7,
 	Vab=8,
 	
-	IRESa=9,
+	Vb_synch=9,
 	In=10,
 	Vbc=11,
 	
-	IRESb=12,
-	IRESc=13,
+	Vc_synch=12,
+	ITCR_ab=13,
 	
 	Vca=14
 

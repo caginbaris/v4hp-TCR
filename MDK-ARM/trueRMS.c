@@ -24,12 +24,12 @@ void trueRMS(void){
 	backRMS.sAdc.Ic=true_rms(fAdc.sAdc.Ic,&bufferRMS[Ic][0],counter,bufferLength);
 	backRMS.sAdc.In=true_rms(fAdc.sAdc.In,&bufferRMS[In][0],counter,bufferLength);
 	
-	backRMS.sAdc.IRESa=true_rms(fAdc.sAdc.IRESa,&bufferRMS[IRESa][0],counter,bufferLength);
-	backRMS.sAdc.IRESb=true_rms(fAdc.sAdc.IRESb,&bufferRMS[IRESb][0],counter,bufferLength);
-	backRMS.sAdc.IRESc=true_rms(fAdc.sAdc.IRESc,&bufferRMS[IRESc][0],counter,bufferLength);
+	backRMS.sAdc.Vb_synch=true_rms(fAdc.sAdc.Vb_synch,&bufferRMS[Vb_synch][0],counter,bufferLength);
+	backRMS.sAdc.Vc_synch=true_rms(fAdc.sAdc.Vc_synch,&bufferRMS[Vc_synch][0],counter,bufferLength);
+	backRMS.sAdc.ITCR_ab=true_rms(fAdc.sAdc.ITCR_ab,&bufferRMS[ITCR_ab][0],counter,bufferLength);
 	
-	backRMS.sAdc.IUNBa =true_rms(fAdc.sAdc.IUNBa,&bufferRMS[IUNBa][0],counter,bufferLength);
-	backRMS.sAdc.IUNBb =true_rms(fAdc.sAdc.IUNBb,&bufferRMS[IUNBb][0],counter,bufferLength);
+	backRMS.sAdc.ITCR_bc =true_rms(fAdc.sAdc.ITCR_bc,&bufferRMS[ITCR_bc][0],counter,bufferLength);
+	backRMS.sAdc.ITCR_ca =true_rms(fAdc.sAdc.ITCR_ca,&bufferRMS[ITCR_ca][0],counter,bufferLength);
 	
 	
 	if(++counter==bufferLength){counter=0;}

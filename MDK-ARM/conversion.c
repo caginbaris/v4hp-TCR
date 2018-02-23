@@ -43,12 +43,12 @@ void init_conversion(){
 	
 	offset.In=2051.270f;
 	
-	offset.IRESa=2050.0f;
-	offset.IRESb=2050.0f;
-	offset.IRESc=2050.0f;
+	offset.Vb_synch=2050.0f;
+	offset.Vc_synch=2050.0f;
+	offset.ITCR_ab=2050.0f;
 	
-	offset.IUNBa=2050.0f;
-	offset.IUNBb=2050.0f;
+	offset.ITCR_bc=2050.0f;
+	offset.ITCR_ca=2050.0f;
 	
 	offset.Van=2048.936f;
 	offset.Vbn=2050.661f;
@@ -66,16 +66,16 @@ void init_conversion(){
 
 
 	
-	scale.IUNBa=0.005507f;
-	scale.IUNBb=0.005507f;
+	scale.ITCR_bc=0.005507f;
+	scale.ITCR_ca=0.005507f;
 	
 	scale.Van=0.10699f;
 	scale.Vbn=0.10699f;
 	scale.Vcn=0.10699f;
 	
-	scale.IRESa=0.005502f; 
-	scale.IRESb=0.005502f; 
-	scale.IRESc=0.005502f; 
+	scale.Vb_synch=0.005502f; 
+	scale.Vc_synch=0.005502f; 
+	scale.ITCR_ab=0.005502f; 
 	
 }
 
@@ -93,38 +93,38 @@ if(hadc->Instance==ADC1){
 	
 	rawAdc.sAdc.Van=	prefilter((adc_values[Van] -	offset.Van),&pf_data[Van])*scale.Van;
 	rawAdc.sAdc.Ia=		prefilter((adc_values[Ia] -	offset.Ia),&pf_data[Ia])*scale.Ia;
-	rawAdc.sAdc.IUNBa=prefilter((adc_values[IUNBa] -	offset.Van),&pf_data[IUNBa])*scale.IUNBa;
+	rawAdc.sAdc.ITCR_bc=prefilter((adc_values[ITCR_bc] -	offset.Van),&pf_data[ITCR_bc])*scale.ITCR_bc;
 	
 	rawAdc.sAdc.Vbn=	prefilter((adc_values[Vbn] -	offset.Vbn),&pf_data[Vbn])*scale.Vbn;
 	rawAdc.sAdc.Ib=		prefilter((adc_values[Ib] -	offset.Ib),&pf_data[Ib])*scale.Ib;
-	rawAdc.sAdc.IUNBb=prefilter((adc_values[IUNBb] -	offset.IUNBb),&pf_data[IUNBb])*scale.IUNBb;
+	rawAdc.sAdc.ITCR_ca=prefilter((adc_values[ITCR_ca] -	offset.ITCR_ca),&pf_data[ITCR_ca])*scale.ITCR_ca;
 	
 	rawAdc.sAdc.Vcn=	prefilter((adc_values[Vcn] -	offset.Vcn),&pf_data[Vcn])*scale.Vcn;
 	rawAdc.sAdc.Ic=		prefilter((adc_values[Ic] -	offset.Ic),&pf_data[Ic])*scale.Ic;
 	
-	rawAdc.sAdc.IRESa=prefilter((adc_values[IRESa] -	offset.IRESa),&pf_data[IRESa])*scale.IRESa;
+	rawAdc.sAdc.Vb_synch=prefilter((adc_values[Vb_synch] -	offset.Vb_synch),&pf_data[Vb_synch])*scale.Vb_synch;
 	rawAdc.sAdc.In=		prefilter((adc_values[In] -	offset.In),&pf_data[In])*scale.In;
 	
-	rawAdc.sAdc.IRESb=prefilter((adc_values[IRESb] -	offset.IRESb),&pf_data[IRESb])*scale.IRESb;
-	rawAdc.sAdc.IRESc=prefilter((adc_values[IRESc] -	offset.IRESc),&pf_data[IRESc])*scale.IRESc;
+	rawAdc.sAdc.Vc_synch=prefilter((adc_values[Vc_synch] -	offset.Vc_synch),&pf_data[Vc_synch])*scale.Vc_synch;
+	rawAdc.sAdc.ITCR_ab=prefilter((adc_values[ITCR_ab] -	offset.ITCR_ab),&pf_data[ITCR_ab])*scale.ITCR_ab;
 	
 	#if 0
 	rawAdc.sAdc.Van=			(adc_values[Van]		-	offset.Van)			*scale.Van;
 	rawAdc.sAdc.Ia=				(adc_values[Ia]			-	offset.Ia)			*scale.Ia;
-	rawAdc.sAdc.IUNBa=		(adc_values[IUNBa]	-	offset.IUNBa)		*scale.IUNBa;
+	rawAdc.sAdc.ITCR_bc=		(adc_values[ITCR_bc]	-	offset.ITCR_bc)		*scale.ITCR_bc;
 	
 	rawAdc.sAdc.Vbn=			(adc_values[Vbn]-offset.Vbn)					*scale.Vbn;
 	rawAdc.sAdc.Ib=				(adc_values[Ib]-offset.Ib)						*scale.Ib;
-	rawAdc.sAdc.IUNBb=		(adc_values[IUNBb]-offset.IUNBb)			*scale.IUNBb;
+	rawAdc.sAdc.ITCR_ca=		(adc_values[ITCR_ca]-offset.ITCR_ca)			*scale.ITCR_ca;
 	
 	rawAdc.sAdc.Vcn=			(adc_values[Vcn]-offset.Vcn)					*scale.Vcn;
 	rawAdc.sAdc.Ic=				(adc_values[Ic]-offset.Ic)						*scale.Ic;
 	
-	rawAdc.sAdc.IRESa=		(adc_values[IRESa]-offset.IRESa)			*scale.IRESa;
+	rawAdc.sAdc.Vb_synch=		(adc_values[Vb_synch]-offset.Vb_synch)			*scale.Vb_synch;
 	rawAdc.sAdc.In=				(adc_values[In]-offset.In)						*scale.In;
 	
-	rawAdc.sAdc.IRESb=		(adc_values[IRESb]-offset.IRESb)			*scale.IRESb;
-	rawAdc.sAdc.IRESc=		(adc_values[IRESc]-offset.IRESc)			*scale.IRESc;
+	rawAdc.sAdc.Vc_synch=		(adc_values[Vc_synch]-offset.Vc_synch)			*scale.Vc_synch;
+	rawAdc.sAdc.ITCR_ab=		(adc_values[ITCR_ab]-offset.ITCR_ab)			*scale.ITCR_ab;
 	
 	#endif	
 	
@@ -135,16 +135,16 @@ if(hadc->Instance==ADC1){
 	fAdc.sAdc.Ic=rawAdc.sAdc.Ic*TR.CT;
 	fAdc.sAdc.In=rawAdc.sAdc.In*TR.CT;
 	
-	fAdc.sAdc.IRESa=rawAdc.sAdc.IRESa*TR.RES;
-  fAdc.sAdc.IRESb=rawAdc.sAdc.IRESb*TR.RES;
-	fAdc.sAdc.IRESc=rawAdc.sAdc.IRESc*TR.RES;
+	fAdc.sAdc.Vb_synch=rawAdc.sAdc.Vb_synch*TR.RES;
+  fAdc.sAdc.Vc_synch=rawAdc.sAdc.Vc_synch*TR.RES;
+	fAdc.sAdc.ITCR_ab=rawAdc.sAdc.ITCR_ab*TR.RES;
 	
 	fAdc.sAdc.Van=rawAdc.sAdc.Van*TR.VT;
 	fAdc.sAdc.Vbn=rawAdc.sAdc.Vbn*TR.VT;
 	fAdc.sAdc.Vcn=rawAdc.sAdc.Vcn*TR.VT;
 	
-	fAdc.sAdc.IUNBa=rawAdc.sAdc.IUNBa*TR.UNB;
-	fAdc.sAdc.IUNBb=rawAdc.sAdc.IUNBb*TR.UNB; 	
+	fAdc.sAdc.ITCR_bc=rawAdc.sAdc.ITCR_bc*TR.UNB;
+	fAdc.sAdc.ITCR_ca=rawAdc.sAdc.ITCR_ca*TR.UNB; 	
 	
 	fAdc.sAdc.AB_synth=(fAdc.sAdc.Van-fAdc.sAdc.Vbn);
 	fAdc.sAdc.BC_synth=(fAdc.sAdc.Vbn-fAdc.sAdc.Vcn);

@@ -161,22 +161,22 @@ void fc50_all(){
 	// fc50 obj2 L1
 	
 		
-	fc50(tRMS.IRESa,fc50_obj2_L1_in,&fc50_obj2_L1_out_a,EN.bits.fc50_obj2_L1);
-	fc50(tRMS.IRESb,fc50_obj2_L1_in,&fc50_obj2_L1_out_b,EN.bits.fc50_obj2_L1);
-	fc50(tRMS.IRESc,fc50_obj2_L1_in,&fc50_obj2_L1_out_c,EN.bits.fc50_obj2_L1);
+	fc50(tRMS.Vb_synch,fc50_obj2_L1_in,&fc50_obj2_L1_out_a,EN.bits.fc50_obj2_L1);
+	fc50(tRMS.Vc_synch,fc50_obj2_L1_in,&fc50_obj2_L1_out_b,EN.bits.fc50_obj2_L1);
+	fc50(tRMS.ITCR_ab,fc50_obj2_L1_in,&fc50_obj2_L1_out_c,EN.bits.fc50_obj2_L1);
 	
 	// fc50 obj2 L2
 	
-	fc50(tRMS.IRESa,fc50_obj2_L2_in,&fc50_obj2_L2_out_a,EN.bits.fc50_obj2_L2);
-	fc50(tRMS.IRESb,fc50_obj2_L2_in,&fc50_obj2_L2_out_b,EN.bits.fc50_obj2_L2);
-	fc50(tRMS.IRESc,fc50_obj2_L2_in,&fc50_obj2_L2_out_c,EN.bits.fc50_obj2_L2);
+	fc50(tRMS.Vb_synch,fc50_obj2_L2_in,&fc50_obj2_L2_out_a,EN.bits.fc50_obj2_L2);
+	fc50(tRMS.Vc_synch,fc50_obj2_L2_in,&fc50_obj2_L2_out_b,EN.bits.fc50_obj2_L2);
+	fc50(tRMS.ITCR_ab,fc50_obj2_L2_in,&fc50_obj2_L2_out_c,EN.bits.fc50_obj2_L2);
 	
 	
 	//fc50 obj2 L3
 	
-	fc50(tRMS.IRESa,fc50_obj2_L3_in,&fc50_obj2_L3_out_a,EN.bits.fc50_obj2_L3);
-	fc50(tRMS.IRESb,fc50_obj2_L3_in,&fc50_obj2_L3_out_b,EN.bits.fc50_obj2_L3);
-	fc50(tRMS.IRESc,fc50_obj2_L3_in,&fc50_obj2_L3_out_c,EN.bits.fc50_obj2_L3);
+	fc50(tRMS.Vb_synch,fc50_obj2_L3_in,&fc50_obj2_L3_out_a,EN.bits.fc50_obj2_L3);
+	fc50(tRMS.Vc_synch,fc50_obj2_L3_in,&fc50_obj2_L3_out_b,EN.bits.fc50_obj2_L3);
+	fc50(tRMS.ITCR_ab,fc50_obj2_L3_in,&fc50_obj2_L3_out_c,EN.bits.fc50_obj2_L3);
 	// fc50 obj2 End****************************
 
 }

@@ -41,8 +41,8 @@ void fcUNB_initial_dt(){
 		fcUNBd_obj1_L1_out_a.Nphase=phase_cs_A_out.phase_I-(-atan2f(UNBa.c,UNBa.s)+pi-UNBpcorrection);
 		fcUNBd_obj1_L1_out_b.Nphase=phase_cs_A_out.phase_I-(-atan2f(UNBb.c,UNBb.s)+pi-UNBpcorrection);
 		
-		fcUNBd_obj1_L1_out_a.Nmag=fRMS.IUNBa*sqrt2;
-		fcUNBd_obj1_L1_out_b.Nmag=fRMS.IUNBb*sqrt2; 
+		fcUNBd_obj1_L1_out_a.Nmag=fRMS.ITCR_bc*sqrt2;
+		fcUNBd_obj1_L1_out_b.Nmag=fRMS.ITCR_ca*sqrt2; 
 		
 
 	}
@@ -97,16 +97,16 @@ void fcUNB_all(){
 	UNBa_synth=(fcUNBd_obj1_L1_out_a.Nmag*sin(phase_cs_A_out.phase_I-fcUNBd_obj1_L1_out_a.Nphase));
 	UNBb_synth=(fcUNBd_obj1_L1_out_b.Nmag*sin(phase_cs_A_out.phase_I-fcUNBd_obj1_L1_out_a.Nphase));	
 	
-	UNBa_rms=true_rms((fAdc.sAdc.IUNBa -UNBa_synth),&UNBa_buffer[0],counter,25);
-	UNBb_rms=true_rms((fAdc.sAdc.IUNBb-UNBb_synth),&UNBb_buffer[0],counter,25);	
+	UNBa_rms=true_rms((fAdc.sAdc.ITCR_bc -UNBa_synth),&UNBa_buffer[0],counter,25);
+	UNBb_rms=true_rms((fAdc.sAdc.ITCR_ca-UNBb_synth),&UNBb_buffer[0],counter,25);	
 		
 	
 		
 	}else{
 		
 	
-	UNBa_rms=fRMS.IUNBa;
-	UNBb_rms=fRMS.IUNBb;
+	UNBa_rms=fRMS.ITCR_bc;
+	UNBb_rms=fRMS.ITCR_ca;
 	
 	
 	}

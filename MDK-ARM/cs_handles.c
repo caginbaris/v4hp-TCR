@@ -178,18 +178,18 @@ void cs_handles(){
 	
 	// -UNB and In
 	
-	UNBa.c=cs_generation(fAdc.sAdc.IUNBa,cos_coeffs,N,&c_buffer[6][0])*cs_scale;
-	UNBa.s=cs_generation(fAdc.sAdc.IUNBa,sin_coeffs,N,&s_buffer[6][0])*cs_scale;
+	UNBa.c=cs_generation(fAdc.sAdc.ITCR_bc,cos_coeffs,N,&c_buffer[6][0])*cs_scale;
+	UNBa.s=cs_generation(fAdc.sAdc.ITCR_bc,sin_coeffs,N,&s_buffer[6][0])*cs_scale;
 
-	UNBb.c=cs_generation(fAdc.sAdc.IUNBb,cos_coeffs,N,&c_buffer[7][0])*cs_scale;
-	UNBb.s=cs_generation(fAdc.sAdc.IUNBb,sin_coeffs,N,&s_buffer[7][0])*cs_scale;
+	UNBb.c=cs_generation(fAdc.sAdc.ITCR_ca,cos_coeffs,N,&c_buffer[7][0])*cs_scale;
+	UNBb.s=cs_generation(fAdc.sAdc.ITCR_ca,sin_coeffs,N,&s_buffer[7][0])*cs_scale;
 
 	n.c=cs_generation(fAdc.sAdc.In,cos_coeffs,N,&c_buffer[8][0])*cs_scale;
 	n.s=cs_generation(fAdc.sAdc.In,sin_coeffs,N,&s_buffer[8][0])*cs_scale;
 	
 	
-	fRMS.IUNBa=sqrtf(UNBa.c*UNBa.c	+	UNBa.s*UNBa.s)*cs_rms_scale;
-	fRMS.IUNBb=sqrtf(UNBb.c*UNBb.c	+	UNBb.s*UNBb.s)*cs_rms_scale;
+	fRMS.ITCR_bc=sqrtf(UNBa.c*UNBa.c	+	UNBa.s*UNBa.s)*cs_rms_scale;
+	fRMS.ITCR_ca=sqrtf(UNBb.c*UNBb.c	+	UNBb.s*UNBb.s)*cs_rms_scale;
 	fRMS.In=	 sqrtf(n.c*n.c				+	n.s*n.s)*cs_rms_scale;
 
 	// PQ comb

@@ -82,9 +82,9 @@ void fc49_all(){
 	therm_b_obj1=thermal_status(tRMS.Ib,fc49_obj1_therm,therm_b_obj1);
 	therm_c_obj1=thermal_status(tRMS.Ic,fc49_obj1_therm,therm_c_obj1);
 	
-	therm_a_obj2=thermal_status(tRMS.IRESa,fc49_obj2_therm,therm_a_obj2);
-	therm_b_obj2=thermal_status(tRMS.IRESb,fc49_obj2_therm,therm_b_obj2);
-	therm_c_obj2=thermal_status(tRMS.IRESc,fc49_obj2_therm,therm_c_obj2);
+	therm_a_obj2=thermal_status(tRMS.Vb_synch,fc49_obj2_therm,therm_a_obj2);
+	therm_b_obj2=thermal_status(tRMS.Vc_synch,fc49_obj2_therm,therm_b_obj2);
+	therm_c_obj2=thermal_status(tRMS.ITCR_ab,fc49_obj2_therm,therm_c_obj2);
 	
 	
 	//obj1
