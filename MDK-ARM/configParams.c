@@ -235,26 +235,27 @@ void pullDataFromMaster(){
 	Sys.Rvalue=comParams_uart.recDataBufferF[107];
 	
 	
-	TR.VT_Primary  =comParams_uart.recDataBufferF[108];
-	TR.VT_Secondary=comParams_uart.recDataBufferF[109];
+	TR.VT_MV_Primary  =comParams_uart.recDataBufferF[108];
+	TR.VT_MV_Secondary=comParams_uart.recDataBufferF[109];
 	
 	TR.CT_Primary  =comParams_uart.recDataBufferF[110];
 	TR.CT_Secondary=comParams_uart.recDataBufferF[111];
 	
-	TR.UNB_Primary  =comParams_uart.recDataBufferF[112];
-	TR.UNB_Secondary=comParams_uart.recDataBufferF[113];
+	TR.TCR_Primary  =comParams_uart.recDataBufferF[112];
+	TR.TCR_Secondary=comParams_uart.recDataBufferF[113];
 	
-	TR.RES_Primary  =comParams_uart.recDataBufferF[114];
-	TR.RES_Secondary=comParams_uart.recDataBufferF[115];
+
 	
 	
 	//cau final TR value must considered
 	
 	
-	TR.VT=	(TR.VT_Secondary>eps) 	? 	(TR.VT_Primary/TR.VT_Secondary) : 0.0f;
+	TR.VT_MV=	(TR.VT_MV_Secondary>eps) 	? 	(TR.VT_MV_Primary/TR.VT_MV_Secondary) : 0.0f;
+	TR.VT_HV=	(TR.VT_HV_Secondary>eps) 	? 	(TR.VT_HV_Primary/TR.VT_HV_Secondary) : 0.0f;
+	
 	TR.CT=	(TR.CT_Secondary>eps) 	? 	(TR.CT_Primary/TR.CT_Secondary) : 0.0f;
-	TR.RES=	(TR.RES_Secondary>eps) 	? 	(TR.RES_Primary/TR.RES_Secondary) : 0.0f;
-	TR.UNB=	(TR.UNB_Secondary>eps) 	? 	(TR.UNB_Primary/TR.RES_Secondary) : 0.0f;
+	TR.TCR=	(TR.TCR_Secondary >eps) 	? 	(TR.TCR_Primary/TR.TCR_Secondary) : 0.0f;
+
 								 
 												 
 	

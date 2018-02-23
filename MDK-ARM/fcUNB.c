@@ -38,8 +38,8 @@ void fcUNB_initial_dt(){
 		
 		passed=off_delay(1,passed,12500,&time_out_counter);
 
-		fcUNBd_obj1_L1_out_a.Nphase=phase_cs_A_out.phase_I-(-atan2f(UNBa.c,UNBa.s)+pi-UNBpcorrection);
-		fcUNBd_obj1_L1_out_b.Nphase=phase_cs_A_out.phase_I-(-atan2f(UNBb.c,UNBb.s)+pi-UNBpcorrection);
+	//	fcUNBd_obj1_L1_out_a.Nphase=phase_cs_A_out.phase_I-(-atan2f(UNBa.c,UNBa.s)+pi-UNBpcorrection);
+	//	fcUNBd_obj1_L1_out_b.Nphase=phase_cs_A_out.phase_I-(-atan2f(UNBb.c,UNBb.s)+pi-UNBpcorrection);
 		
 		fcUNBd_obj1_L1_out_a.Nmag=fRMS.ITCR_bc*sqrt2;
 		fcUNBd_obj1_L1_out_b.Nmag=fRMS.ITCR_ca*sqrt2; 

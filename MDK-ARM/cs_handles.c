@@ -16,23 +16,26 @@ struct phase_cs_in phase_cs_A={0};
 struct phase_cs_in phase_cs_B={0};
 struct phase_cs_in phase_cs_C={0};
 
-struct phase_cs_single resA={0};
-struct phase_cs_single resB={0};
-struct phase_cs_single resC={0};
-
-struct phase_cs_single n={0};
-struct phase_cs_single UNBa={0};
-struct phase_cs_single UNBb={0};
-
+struct phase_cs_in phase_cs_TCR_A={0};
+struct phase_cs_in phase_cs_TCR_B={0};
+struct phase_cs_in phase_cs_TCR_C={0};
 
 struct phase_cs_out phase_cs_A_out={0};
 struct phase_cs_out phase_cs_B_out={0};
 struct phase_cs_out phase_cs_C_out={0};
 
+struct phase_cs_out phase_cs_TCR_A_out={0};
+struct phase_cs_out phase_cs_TCR_B_out={0};
+struct phase_cs_out phase_cs_TCR_C_out={0};
+
 
 struct sym_out sym={0};
 struct sym_out sym_hist={0};
 struct sym_out mag_sym={0};
+
+struct sym_out sym_tcr={0};
+struct sym_out sym_hist_tcr={0};
+struct sym_out mag_sym_tcr={0};
 
 
 float c_buffer[channelNo][N]={0};
@@ -169,28 +172,57 @@ void cs_handles(){
 	fRMS.Vcn=phase_cs_C_out.rms_V;
 	fRMS.Ic=phase_cs_C_out.rms_I;
 	
+	
+	
+	//-P-TCR-A
+	
+	phase_cs_TCR_A.Vc=phase_cs_A.Vc;
+	phase_cs_TCR_A.Vs=phase_cs_A.Vs;
+	
+	phase_cs_TCR_A.Ic= 	cs_generation(fAdc.sAdc.ITCR_a,cos_coeffs,N,&c_buffer[6][0])*cs_scale;
+	phase_cs_TCR_A.Is= 	cs_generation(fAdc.sAdc.ITCR_a,sin_coeffs,N,&s_buffer[6][0])*cs_scale;
+	
+
+	cs_computations(phase_cs_TCR_A,&phase_cs_TCR_A_out);
+	fRMS.ITCR_a=phase_cs_TCR_A_out.rms_I;
+	
+
+	//-P-TCR-B
+	
+	phase_cs_TCR_B.Vc=phase_cs_B.Vc;
+	phase_cs_TCR_B.Vs=phase_cs_B.Vs;
+	
+	phase_cs_TCR_B.Ic= 	cs_generation(fAdc.sAdc.ITCR_b,cos_coeffs,N,&c_buffer[7][0])*cs_scale;
+	phase_cs_TCR_B.Is= 	cs_generation(fAdc.sAdc.ITCR_b,sin_coeffs,N,&s_buffer[7][0])*cs_scale;
+	
+
+	cs_computations(phase_cs_TCR_B,&phase_cs_TCR_B_out);
+	fRMS.ITCR_b=phase_cs_TCR_B_out.rms_I;
+	
+	
+	//-P-TCR-C
+	
+	phase_cs_TCR_C.Vc=phase_cs_C.Vc;
+	phase_cs_TCR_C.Vs=phase_cs_C.Vs;
+	
+	phase_cs_TCR_C.Ic= 	cs_generation(fAdc.sAdc.ITCR_c,cos_coeffs,N,&c_buffer[7][0])*cs_scale;
+	phase_cs_TCR_C.Is= 	cs_generation(fAdc.sAdc.ITCR_c,sin_coeffs,N,&s_buffer[7][0])*cs_scale;
+	
+
+	cs_computations(phase_cs_TCR_C,&phase_cs_TCR_C_out);
+	fRMS.ITCR_c=phase_cs_TCR_C_out.rms_I;
+	
+	
 	//-Seq Comp
 	
 	sym_comp(phase_cs_A,phase_cs_B,phase_cs_C, &sym);
 	sym_mag(sym,&sym_hist,&mag_sym);
 	
+	sym_comp(phase_cs_TCR_A,phase_cs_TCR_B,phase_cs_TCR_C, &sym);
+	sym_mag(sym_tcr,&sym_hist_tcr,&mag_sym_tcr);
 	
 	
-	// -UNB and In
 	
-	UNBa.c=cs_generation(fAdc.sAdc.ITCR_bc,cos_coeffs,N,&c_buffer[6][0])*cs_scale;
-	UNBa.s=cs_generation(fAdc.sAdc.ITCR_bc,sin_coeffs,N,&s_buffer[6][0])*cs_scale;
-
-	UNBb.c=cs_generation(fAdc.sAdc.ITCR_ca,cos_coeffs,N,&c_buffer[7][0])*cs_scale;
-	UNBb.s=cs_generation(fAdc.sAdc.ITCR_ca,sin_coeffs,N,&s_buffer[7][0])*cs_scale;
-
-	n.c=cs_generation(fAdc.sAdc.In,cos_coeffs,N,&c_buffer[8][0])*cs_scale;
-	n.s=cs_generation(fAdc.sAdc.In,sin_coeffs,N,&s_buffer[8][0])*cs_scale;
-	
-	
-	fRMS.ITCR_bc=sqrtf(UNBa.c*UNBa.c	+	UNBa.s*UNBa.s)*cs_rms_scale;
-	fRMS.ITCR_ca=sqrtf(UNBb.c*UNBb.c	+	UNBb.s*UNBb.s)*cs_rms_scale;
-	fRMS.In=	 sqrtf(n.c*n.c				+	n.s*n.s)*cs_rms_scale;
 
 	// PQ comb
 

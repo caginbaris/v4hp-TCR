@@ -22,7 +22,7 @@ void trueRMS(void){
 	backRMS.sAdc.Ia=true_rms(fAdc.sAdc.Ia,&bufferRMS[Ia][0],counter,bufferLength);
 	backRMS.sAdc.Ib=true_rms(fAdc.sAdc.Ib,&bufferRMS[Ib][0],counter,bufferLength);
 	backRMS.sAdc.Ic=true_rms(fAdc.sAdc.Ic,&bufferRMS[Ic][0],counter,bufferLength);
-	backRMS.sAdc.In=true_rms(fAdc.sAdc.In,&bufferRMS[In][0],counter,bufferLength);
+	backRMS.sAdc.Va_synch=true_rms(fAdc.sAdc.Va_synch,&bufferRMS[Va_synch][0],counter,bufferLength);
 	
 	backRMS.sAdc.Vb_synch=true_rms(fAdc.sAdc.Vb_synch,&bufferRMS[Vb_synch][0],counter,bufferLength);
 	backRMS.sAdc.Vc_synch=true_rms(fAdc.sAdc.Vc_synch,&bufferRMS[Vc_synch][0],counter,bufferLength);

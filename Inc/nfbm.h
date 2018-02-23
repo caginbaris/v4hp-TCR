@@ -24,7 +24,7 @@ struct AdcData{
 	
 	
 	float Vb_synch;//AN-8
-	float In;		//AN-7
+	float Va_synch;		//AN-7
 	float BC_synth;
 	
 	float Vc_synch;//AN-9
@@ -70,7 +70,7 @@ enum AdcChannel{
 	Vab=8,
 	
 	Vb_synch=9,
-	In=10,
+	Va_synch=10,
 	Vbc=11,
 	
 	Vc_synch=12,
@@ -203,22 +203,25 @@ extern struct powerParameters Q;
 
 struct TurnRatios{
 
-	float VT_Primary;
-	float VT_Secondary;
+	float VT_MV_Primary;
+	float VT_MV_Secondary;
+	
+	float VT_HV_Primary;
+	float VT_HV_Secondary;
 	
 	float CT_Primary;
 	float CT_Secondary;
 	
-	float UNB_Primary;
-	float UNB_Secondary;
+	float TCR_Primary;
+	float TCR_Secondary;
 	
-	float RES_Primary;
-	float RES_Secondary;
+
 	
-	float VT;
+	float VT_MV;
+	float VT_HV;
 	float CT;
-	float UNB;
-	float RES;
+	float TCR;
+	
 	
 };
 

@@ -374,14 +374,14 @@ void pushDataToMaster(void){
 	/*478*/comParams.pushDataBufferF[216]=Sys.I_BreakerClosed_MIN;
 	/*480*/comParams.pushDataBufferF[217]=Sys.Rvalue;
 	
-	/*474*/comParams.pushDataBufferF[218]=TR.VT_Primary;
-	/*476*/comParams.pushDataBufferF[219]=TR.VT_Secondary;
+	/*474*/comParams.pushDataBufferF[218]=TR.VT_MV_Primary;
+	/*476*/comParams.pushDataBufferF[219]=TR.VT_MV_Secondary;
 	/*478*/comParams.pushDataBufferF[220]=TR.CT_Primary;
 	/*480*/comParams.pushDataBufferF[221]=TR.CT_Secondary  ;
-	/*478*/comParams.pushDataBufferF[222]=TR.UNB_Primary;
-	/*480*/comParams.pushDataBufferF[223]=TR.UNB_Secondary;
-	/*478*/comParams.pushDataBufferF[224]=TR.RES_Primary;
-	/*480*/comParams.pushDataBufferF[225]=TR.RES_Secondary;
+	/*478*/comParams.pushDataBufferF[222]=TR.TCR_Primary;
+	/*480*/comParams.pushDataBufferF[223]=TR.TCR_Secondary;
+	/*478*/comParams.pushDataBufferF[224]=0;
+	/*480*/comParams.pushDataBufferF[225]=0;
 	
 	//discard
 	//discard
