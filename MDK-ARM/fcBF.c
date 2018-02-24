@@ -36,9 +36,9 @@ fcBF_in=fcBF_initStruct;
 
 void fcBF_all(){
 	
-	fcBF_in.rmsA=fRMS.Ia;
-	fcBF_in.rmsB=fRMS.Ib;
-	fcBF_in.rmsC=fRMS.Ic;
+	fcBF_in.rmsA=fRMS.ITCR_ab;
+	fcBF_in.rmsB=fRMS.ITCR_bc;
+	fcBF_in.rmsC=fRMS.ITCR_ca;
 	
 	fcBF_in.threshold=Sys.I_BreakerClosed_MIN;
 	fcBF_in.CB_pos_check=Sys.fcBF_CBSupervision; 

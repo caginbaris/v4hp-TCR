@@ -70,19 +70,17 @@ void fc37_all(){
 	if(current_checked){inhibit_enabled =1;}
 	if(DO.bits.inhibit){inhibit_enabled =0;}
 	
-	DO.bits.inhibit=off_delay((inhibit_enabled==1 && current_checked==0),DO.bits.inhibit,fs*30,&inhibit_counter); 
+	//DO.bits.inhibit=off_delay((inhibit_enabled==1 && current_checked==0),DO.bits.inhibit,fs*30,&inhibit_counter); 
 	
 	/*************inhibit part-end**********/
 		
 																	
 
-	fc37(fRMS.Ia,cb_pos,fc37_obj1_L1_in,&fc37_obj1_L1_out_a,EN.bits.fc37_obj1);
-	fc37(fRMS.Ib,cb_pos,fc37_obj1_L1_in,&fc37_obj1_L1_out_b,EN.bits.fc37_obj1);
-	fc37(fRMS.Ic,cb_pos,fc37_obj1_L1_in,&fc37_obj1_L1_out_c,EN.bits.fc37_obj1);
+	fc37(fRMS.ITCR_ab,cb_pos,fc37_obj1_L1_in,&fc37_obj1_L1_out_a,EN.bits.fc37_obj1);
+	fc37(fRMS.ITCR_bc,cb_pos,fc37_obj1_L1_in,&fc37_obj1_L1_out_b,EN.bits.fc37_obj1);
+	fc37(fRMS.ITCR_ca,cb_pos,fc37_obj1_L1_in,&fc37_obj1_L1_out_c,EN.bits.fc37_obj1);
 	
-	fc37(tRMS.Vb_synch,cb_pos,fc37_obj2_L1_in,&fc37_obj2_L1_out_a,EN.bits.fc37_obj2);
-	fc37(tRMS.Vc_synch,cb_pos,fc37_obj2_L1_in,&fc37_obj2_L1_out_b,EN.bits.fc37_obj2);
-	fc37(tRMS.ITCR_ab,cb_pos,fc37_obj2_L1_in,&fc37_obj2_L1_out_c,EN.bits.fc37_obj2);
+
 	
 
 	

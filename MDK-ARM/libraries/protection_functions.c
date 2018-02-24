@@ -3,7 +3,7 @@
 #include "plib_definitions.h"
 #include "pvp_curve.h"
 
-#define fs 2500.0f
+
 #define uber 1000000
 
 //function-1,2,3

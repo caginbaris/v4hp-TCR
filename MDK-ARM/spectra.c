@@ -61,7 +61,7 @@ void spectral_analysis(){
 	
 	static unsigned int count=0; 
 	
-	signal_spectra(fAdc.sAdc.Ia,
+	signal_spectra(fAdc.sAdc.ITCR_a,
 								&spect_Ia,
 								spectraLength,
 								coeffs_real,
@@ -69,14 +69,14 @@ void spectral_analysis(){
 								count);
 	
 	
-	signal_spectra(fAdc.sAdc.Ib,
+	signal_spectra(fAdc.sAdc.ITCR_b,
 								&spect_Ib,
 								spectraLength,
 								coeffs_real,
 								coeffs_imag,
 								count);
 	
-	signal_spectra(fAdc.sAdc.Ic,
+	signal_spectra(fAdc.sAdc.ITCR_c,
 								&spect_Ic,
 								spectraLength,
 								coeffs_real,
@@ -86,13 +86,13 @@ void spectral_analysis(){
 	//cau thd problem
 	
 	
-	/*switch(count){
+	switch(count){
 	
 		case 10:thd.a=signal_thd(spect_Ia);break;
 		case 20:thd.b=signal_thd(spect_Ib);break;
 		case 30:thd.c=signal_thd(spect_Ic);	break;
 	
-	}*/
+	}
 
 	if(++count==spectraLength){count=0;}
 

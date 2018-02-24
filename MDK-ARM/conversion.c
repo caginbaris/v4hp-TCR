@@ -91,22 +91,22 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
 if(hadc->Instance==ADC1){ 
 	
 	
-	rawAdc.sAdc.Van=	prefilter((adc_values[Van] -	offset.Van),&pf_data[Van])*scale.Van;
-	rawAdc.sAdc.Ia=		prefilter((adc_values[Ia] -	offset.Ia),&pf_data[Ia])*scale.Ia;
-	rawAdc.sAdc.ITCR_bc=prefilter((adc_values[ITCR_bc] -	offset.Van),&pf_data[ITCR_bc])*scale.ITCR_bc;
+	rawAdc.sAdc.Van=			prefilter((adc_values[Van] -	offset.Van),&pf_data[Van])*scale.Van;
+	rawAdc.sAdc.Ia=				prefilter((adc_values[Ia] -	offset.Ia),&pf_data[Ia])*scale.Ia;
+	rawAdc.sAdc.ITCR_bc=	prefilter((adc_values[ITCR_bc] -	offset.Van),&pf_data[ITCR_bc])*scale.ITCR_bc;
 	
-	rawAdc.sAdc.Vbn=	prefilter((adc_values[Vbn] -	offset.Vbn),&pf_data[Vbn])*scale.Vbn;
-	rawAdc.sAdc.Ib=		prefilter((adc_values[Ib] -	offset.Ib),&pf_data[Ib])*scale.Ib;
-	rawAdc.sAdc.ITCR_ca=prefilter((adc_values[ITCR_ca] -	offset.ITCR_ca),&pf_data[ITCR_ca])*scale.ITCR_ca;
+	rawAdc.sAdc.Vbn=			prefilter((adc_values[Vbn] -	offset.Vbn),&pf_data[Vbn])*scale.Vbn;
+	rawAdc.sAdc.Ib=				prefilter((adc_values[Ib] -	offset.Ib),&pf_data[Ib])*scale.Ib;
+	rawAdc.sAdc.ITCR_ca=	prefilter((adc_values[ITCR_ca] -	offset.ITCR_ca),&pf_data[ITCR_ca])*scale.ITCR_ca;
 	
-	rawAdc.sAdc.Vcn=	prefilter((adc_values[Vcn] -	offset.Vcn),&pf_data[Vcn])*scale.Vcn;
-	rawAdc.sAdc.Ic=		prefilter((adc_values[Ic] -	offset.Ic),&pf_data[Ic])*scale.Ic;
+	rawAdc.sAdc.Vcn=			prefilter((adc_values[Vcn] -	offset.Vcn),&pf_data[Vcn])*scale.Vcn;
+	rawAdc.sAdc.Ic=				prefilter((adc_values[Ic] -	offset.Ic),&pf_data[Ic])*scale.Ic;
 	
-	rawAdc.sAdc.Vb_synch=prefilter((adc_values[Vb_synch] -	offset.Vb_synch),&pf_data[Vb_synch])*scale.Vb_synch;
-	rawAdc.sAdc.Va_synch=		prefilter((adc_values[Va_synch] -	offset.Va_synch),&pf_data[Va_synch])*scale.Va_synch;
+	rawAdc.sAdc.Vb_synch=	prefilter((adc_values[Vb_synch] -	offset.Vb_synch),&pf_data[Vb_synch])*scale.Vb_synch;
+	rawAdc.sAdc.Va_synch=	prefilter((adc_values[Va_synch] -	offset.Va_synch),&pf_data[Va_synch])*scale.Va_synch;
 	
-	rawAdc.sAdc.Vc_synch=prefilter((adc_values[Vc_synch] -	offset.Vc_synch),&pf_data[Vc_synch])*scale.Vc_synch;
-	rawAdc.sAdc.ITCR_ab=prefilter((adc_values[ITCR_ab] -	offset.ITCR_ab),&pf_data[ITCR_ab])*scale.ITCR_ab;
+	rawAdc.sAdc.Vc_synch=	prefilter((adc_values[Vc_synch] -	offset.Vc_synch),&pf_data[Vc_synch])*scale.Vc_synch;
+	rawAdc.sAdc.ITCR_ab=	prefilter((adc_values[ITCR_ab] -	offset.ITCR_ab),&pf_data[ITCR_ab])*scale.ITCR_ab;
 	
 	#if 0
 	rawAdc.sAdc.Van=			(adc_values[Van]		-	offset.Van)			*scale.Van;
@@ -155,6 +155,8 @@ if(hadc->Instance==ADC1){
 	fAdc.sAdc.ITCR_a=(fAdc.sAdc.ITCR_ab-fAdc.sAdc.ITCR_ca);
 	fAdc.sAdc.ITCR_b=(fAdc.sAdc.ITCR_bc-fAdc.sAdc.ITCR_ab);
 	fAdc.sAdc.ITCR_c=(fAdc.sAdc.ITCR_ca-fAdc.sAdc.ITCR_bc);
+	
+	fAdc.sAdc.ITCR_N=(fAdc.sAdc.ITCR_a+fAdc.sAdc.ITCR_b+fAdc.sAdc.ITCR_c);
 	
 
 	

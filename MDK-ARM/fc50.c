@@ -89,15 +89,15 @@ void fc50_all(){
 	
 	if(mSelect.bit.obj1_fc50_L1){
 		
-		fc50_rms_a=fRMS.Ia;
-		fc50_rms_b=fRMS.Ib;
-		fc50_rms_c=fRMS.Ic;
+		fc50_rms_a=fRMS.ITCR_ab;
+		fc50_rms_b=fRMS.ITCR_bc;
+		fc50_rms_c=fRMS.ITCR_ca;
 		
 	}else{
 		
-		fc50_rms_a=tRMS.Ia;
-		fc50_rms_b=tRMS.Ib;
-		fc50_rms_c=tRMS.Ic;
+		fc50_rms_a=tRMS.ITCR_ab;
+		fc50_rms_b=tRMS.ITCR_bc;
+		fc50_rms_c=tRMS.ITCR_ca;
 		
 	}
 	
@@ -111,9 +111,9 @@ void fc50_all(){
 	
 	if(mSelect.bit.obj1_fc50_L2){
 		
-		fc50_rms_a=fRMS.Ia;
-		fc50_rms_b=fRMS.Ib;
-		fc50_rms_c=fRMS.Ic;
+		fc50_rms_a=fRMS.ITCR_ab;
+		fc50_rms_b=fRMS.ITCR_bc;
+		fc50_rms_c=fRMS.ITCR_ca;
 		
 	}else{
 		
@@ -133,9 +133,9 @@ void fc50_all(){
 	
 	if(mSelect.bit.obj1_fc50_L3){
 		
-		fc50_rms_a=fRMS.Ia;
-		fc50_rms_b=fRMS.Ib;
-		fc50_rms_c=fRMS.Ic;
+		fc50_rms_a=fRMS.ITCR_ab;
+		fc50_rms_b=fRMS.ITCR_bc;
+		fc50_rms_c=fRMS.ITCR_ca;
 		
 	}else{
 		
@@ -151,33 +151,6 @@ void fc50_all(){
 
 	// fc50 obj1 End****************************
 	
-	
-
-	
-	// fc50 obj2 Start**************************
-	
-	
-	
-	// fc50 obj2 L1
-	
-		
-	fc50(tRMS.Vb_synch,fc50_obj2_L1_in,&fc50_obj2_L1_out_a,EN.bits.fc50_obj2_L1);
-	fc50(tRMS.Vc_synch,fc50_obj2_L1_in,&fc50_obj2_L1_out_b,EN.bits.fc50_obj2_L1);
-	fc50(tRMS.ITCR_ab,fc50_obj2_L1_in,&fc50_obj2_L1_out_c,EN.bits.fc50_obj2_L1);
-	
-	// fc50 obj2 L2
-	
-	fc50(tRMS.Vb_synch,fc50_obj2_L2_in,&fc50_obj2_L2_out_a,EN.bits.fc50_obj2_L2);
-	fc50(tRMS.Vc_synch,fc50_obj2_L2_in,&fc50_obj2_L2_out_b,EN.bits.fc50_obj2_L2);
-	fc50(tRMS.ITCR_ab,fc50_obj2_L2_in,&fc50_obj2_L2_out_c,EN.bits.fc50_obj2_L2);
-	
-	
-	//fc50 obj2 L3
-	
-	fc50(tRMS.Vb_synch,fc50_obj2_L3_in,&fc50_obj2_L3_out_a,EN.bits.fc50_obj2_L3);
-	fc50(tRMS.Vc_synch,fc50_obj2_L3_in,&fc50_obj2_L3_out_b,EN.bits.fc50_obj2_L3);
-	fc50(tRMS.ITCR_ab,fc50_obj2_L3_in,&fc50_obj2_L3_out_c,EN.bits.fc50_obj2_L3);
-	// fc50 obj2 End****************************
 
 }
 

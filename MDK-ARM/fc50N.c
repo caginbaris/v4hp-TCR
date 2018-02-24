@@ -41,11 +41,11 @@ void fc50N_all(){
 	
 		if(mSelect.bit.obj1_fc50N_L1){
 		
-		fc50N_rms=fRMS.Va_synch;
+		fc50N_rms=fRMS.ITCR_N;
 
 		}else{
 		
-		fc50N_rms=tRMS.Va_synch;
+		fc50N_rms=tRMS.ITCR_N;
 			
 		}
 		
@@ -57,11 +57,11 @@ void fc50N_all(){
 		
 		if(mSelect.bit.obj1_fc50N_L2){
 		
-		fc50N_rms=fRMS.Va_synch;
+		fc50N_rms=fRMS.ITCR_N;
 
 		}else{
 		
-		fc50N_rms=tRMS.Va_synch;
+		fc50N_rms=tRMS.ITCR_N;
 			
 		}
 		
@@ -74,11 +74,11 @@ void fc50N_all(){
 		
 		if(mSelect.bit.obj1_fc50N_L3){
 		
-		fc50N_rms=fRMS.Va_synch;
+		fc50N_rms=fRMS.ITCR_N;
 
 		}else{
 		
-		fc50N_rms=tRMS.Va_synch;
+		fc50N_rms=tRMS.ITCR_N;
 			
 		}
 		

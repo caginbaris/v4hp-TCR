@@ -60,17 +60,17 @@ void fc51_all(){
 	if(mSelect.bit.obj1_fc51){ 
 		
 		// cau mselec problem fc51
-		// cau 12 A ustunde waveform bozuluyor CRB tarafinda
+		// cau 12 A byond wawefor distorted
 		
-		fc51_rms_a=fRMS.Ia;
-		fc51_rms_b=fRMS.Ib;
-		fc51_rms_c=fRMS.Ic;
+		fc51_rms_a=fRMS.ITCR_ab;
+		fc51_rms_b=fRMS.ITCR_bc;
+		fc51_rms_c=fRMS.ITCR_bc;
 		
 	}else{
 		
-		fc51_rms_a=tRMS.Ia;
-		fc51_rms_b=tRMS.Ib;
-		fc51_rms_c=tRMS.Ic;
+		fc51_rms_a=tRMS.ITCR_ab;
+		fc51_rms_b=tRMS.ITCR_bc;
+		fc51_rms_c=tRMS.ITCR_ca;
 		
 	}
 	
@@ -84,15 +84,7 @@ void fc51_all(){
 	// fc51 obj1 End**************************
 	
 	
-	// fc51 obj2 Start************************
-	
-	
-	fc51(tRMS.Vb_synch,fc51_obj2_in,&fc51_obj2_out_a,EN.bits.fc51_obj2);
-	fc51(tRMS.Vc_synch,fc51_obj2_in,&fc51_obj2_out_b,EN.bits.fc51_obj2);
-	fc51(tRMS.ITCR_ab,fc51_obj2_in,&fc51_obj2_out_c,EN.bits.fc51_obj2);	
-	
-	
-	// fc51 obj2 End**************************
+
 	
 
 

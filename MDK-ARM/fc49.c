@@ -78,13 +78,9 @@ void fc49_all(){
 
 	
 	
-	therm_a_obj1=thermal_status(tRMS.Ia,fc49_obj1_therm,therm_a_obj1);
-	therm_b_obj1=thermal_status(tRMS.Ib,fc49_obj1_therm,therm_b_obj1);
-	therm_c_obj1=thermal_status(tRMS.Ic,fc49_obj1_therm,therm_c_obj1);
-	
-	therm_a_obj2=thermal_status(tRMS.Vb_synch,fc49_obj2_therm,therm_a_obj2);
-	therm_b_obj2=thermal_status(tRMS.Vc_synch,fc49_obj2_therm,therm_b_obj2);
-	therm_c_obj2=thermal_status(tRMS.ITCR_ab,fc49_obj2_therm,therm_c_obj2);
+	therm_a_obj1=thermal_status(tRMS.ITCR_ab,fc49_obj1_therm,therm_a_obj1);
+	therm_b_obj1=thermal_status(tRMS.ITCR_bc,fc49_obj1_therm,therm_b_obj1);
+	therm_c_obj1=thermal_status(tRMS.ITCR_ca,fc49_obj1_therm,therm_c_obj1);
 	
 	
 	//obj1
@@ -93,20 +89,7 @@ void fc49_all(){
 	fc49(therm_b_obj1,fc49_obj1_L1_in,&fc49_obj1_L1_out_b,EN.bits.fc49_obj1_L1);
 	fc49(therm_c_obj1,fc49_obj1_L1_in,&fc49_obj1_L1_out_c,EN.bits.fc49_obj1_L1);
 	
-	//fc49(therm_a_obj1,fc49_obj1_L2_in,&fc49_obj1_L2_out_a,EN.bits.fc49_obj1_L2);
-	//fc49(therm_b_obj1,fc49_obj1_L2_in,&fc49_obj1_L2_out_a,EN.bits.fc49_obj1_L2);
-	//fc49(therm_c_obj1,fc49_obj1_L2_in,&fc49_obj1_L2_out_a,EN.bits.fc49_obj1_L2);
-	
-	
-	//obj2
-	
-	fc49(therm_a_obj2,fc49_obj2_L1_in,&fc49_obj2_L1_out_a,EN.bits.fc49_obj2_L1);
-	fc49(therm_b_obj2,fc49_obj2_L1_in,&fc49_obj2_L1_out_b,EN.bits.fc49_obj2_L1);
-	fc49(therm_c_obj2,fc49_obj2_L1_in,&fc49_obj2_L1_out_c,EN.bits.fc49_obj2_L1);
-	
-	//fc49(therm_a_obj2,fc49_obj2_L2_in,&fc49_obj2_L2_out_a,EN.bits.fc49_obj2_L2);
-	//fc49(therm_b_obj2,fc49_obj2_L2_in,&fc49_obj2_L2_out_a,EN.bits.fc49_obj2_L2);
-	//fc49(therm_c_obj2,fc49_obj2_L2_in,&fc49_obj2_L2_out_a,EN.bits.fc49_obj2_L2);
+
 
 
 }

@@ -187,6 +187,19 @@ void init_protection(void){
 		EN.bits.fcPVPi_obj1= pEN.bit.obj1_PVP &
 												 (fcPVPi_obj1_L1_in.level>eps) &
 												 (fcPVPi_obj1_L1_in.time_multiplier>eps);
+												 
+		
+		// for TCR disable
+		
+		EN.bits.fc46_obj1_L1=0;
+		EN.bits.fc46_obj1_L2=0;	
+		
+		EN.bits.fcUNBd_obj1=0;
+		EN.bits.fcUNBi_obj1=0;
+		
+		EN.bits.fcPVPd_obj1=0;
+		EN.bits.fcPVPi_obj1=0;
+		
 		
 		
 	/*Enable Handling End*/		

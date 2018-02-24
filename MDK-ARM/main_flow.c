@@ -8,11 +8,12 @@ void main_flow(){
 
   //measurement
 	
-	#if 0	
+	
 		
 	spectral_analysis(); //cau comm problem when invoked
 	cs_handles();
 	trueRMS();
+	
   
 
 	// protection
@@ -29,20 +30,20 @@ void main_flow(){
 
 	fc27_all();
 	fc59_all();
-	fc46_all();
+	
 	fc49_all();	
 	
 	
 	fc37_all();
 	fcBF_all();
+	
+	#if 0	
 	fcUNB_all();
 	fcPVP_all();
-	
-	
-	
-	
-	
+	fc46_all();
 	#endif 
+	
+	
 	pick_trip_reset_handles();
 	boardIO();
 	

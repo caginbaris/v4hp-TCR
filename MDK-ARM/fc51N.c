@@ -37,11 +37,11 @@ void fc51N_all(){
 
 	if(mSelect.bit.obj1_fc51N){
 		
-		fc51N_rms=fRMS.Va_synch;
+		fc51N_rms=fRMS.ITCR_N;
 
 	}else{
 		
-		fc51N_rms=tRMS.Va_synch;
+		fc51N_rms=tRMS.ITCR_N;
 
 	}
 	

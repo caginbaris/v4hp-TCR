@@ -35,6 +35,8 @@ struct AdcData{
 	float ITCR_b;
 	float ITCR_c;
 	
+	float ITCR_N;
+	
 
 
 }; 
@@ -76,7 +78,13 @@ enum AdcChannel{
 	Vc_synch=12,
 	ITCR_ab=13,
 	
-	Vca=14
+	Vca=14,
+	
+	ITCR_a=15,
+	ITCR_b=16,
+	ITCR_c=17,
+	
+	ITCR_N=18
 
 
 };
