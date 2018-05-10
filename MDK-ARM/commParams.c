@@ -9,6 +9,7 @@
 #include "externalData.h"
 #include "pDataConfigs.h"
 #include "powerSysData.h"
+#include "bit_expansion.h"
 
 #include "test_commParams.h"
 
@@ -63,7 +64,7 @@ void pushDataToMaster(void){
 	/*10*/comParams.pushDataBufferDW[4]=trip_words.w_arr[1];
 	/*12*/comParams.pushDataBufferDW[5]=trip_words.w_arr[2];
 	
-	/*14*/comParams.pushDataBufferDW[6]=0; 				//tripping hist enerterd 1 or more seq
+	/*14*/comParams.pushDataBufferDW[6]=fault_code;//tripping hist enerterd 1 or more seq
 	
 	/*16*/comParams.pushDataBufferDW[7]=0; 				// Board Status
 	

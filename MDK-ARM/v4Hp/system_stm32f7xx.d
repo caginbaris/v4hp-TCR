@@ -1,4 +1,4 @@
-v4hp\system_stm32f7xx.o: ../Src/system_stm32f7xx.c
+v4hp\system_stm32f7xx.o: ..//Src/system_stm32f7xx.c
 v4hp\system_stm32f7xx.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h
 v4hp\system_stm32f7xx.o: ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f767xx.h
 v4hp\system_stm32f7xx.o: ../Drivers/CMSIS/Include/core_cm7.h

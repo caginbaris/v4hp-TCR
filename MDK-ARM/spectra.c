@@ -61,7 +61,7 @@ void spectral_analysis(){
 	
 	static unsigned int count=0; 
 	
-	signal_spectra(fAdc.sAdc.ITCR_a,
+	signal_spectra(fAdc.sAdc.Ia,
 								&spect_Ia,
 								spectraLength,
 								coeffs_real,
@@ -69,14 +69,14 @@ void spectral_analysis(){
 								count);
 	
 	
-	signal_spectra(fAdc.sAdc.ITCR_b,
+	signal_spectra(fAdc.sAdc.Ib,
 								&spect_Ib,
 								spectraLength,
 								coeffs_real,
 								coeffs_imag,
 								count);
 	
-	signal_spectra(fAdc.sAdc.ITCR_c,
+	signal_spectra(fAdc.sAdc.Ic,
 								&spect_Ic,
 								spectraLength,
 								coeffs_real,

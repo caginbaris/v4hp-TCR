@@ -52,7 +52,7 @@
 #include "UART_MasterSlave.h"
 #include "SPI_MasterSlave.h"
 #include "CommConfig.h"
-
+#include "plib_definitions.h"
 
 /* USER CODE END Includes */
 
@@ -64,6 +64,8 @@ extern uint8_t conversion_completed;
 extern uint32_t cycle_count_2;
 uint32_t adc_values[15]={0};
 uint8_t incoming_data_flag=0;
+long incoming_data_flag_counter=0;
+uint8_t write_enable=0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -167,7 +169,8 @@ int main(void)
 		//HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_SET);
 		
 		//main_flow();
-		
+		incoming_data_flag=off_delay(0,incoming_data_flag,2500,&incoming_data_flag_counter);
+	
 		cycle_count_2++;
 		
 		//HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_RESET);		
@@ -177,10 +180,16 @@ int main(void)
 	}else{
 		
 
+
+}
+	
+
 	if(incoming_data_flag){
 
 		pullDataFromMaster();
-		incoming_data_flag=0;	
+		
+		
+		//incoming_data_flag=0;	
 	  
 		
 	}else{
@@ -188,9 +197,6 @@ int main(void)
 		pushDataToMaster();
 	
 	}
-	
-
-}
 	
 
 
@@ -279,10 +285,10 @@ void SystemClock_Config(void)
 static void MX_NVIC_Init(void)
 {
   /* DMA2_Stream0_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA2_Stream0_IRQn, 0, 0);
+  HAL_NVIC_SetPriority(DMA2_Stream0_IRQn, 1, 0);
   HAL_NVIC_EnableIRQ(DMA2_Stream0_IRQn);
   /* DMA2_Stream2_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA2_Stream2_IRQn, 0, 0);
+  HAL_NVIC_SetPriority(DMA2_Stream2_IRQn, 1, 0);
   HAL_NVIC_EnableIRQ(DMA2_Stream2_IRQn);
 }
 

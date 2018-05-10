@@ -66,16 +66,7 @@ void fc27_all(){
 	}
 	
 	
-	if(Sys.phaseRotation){
-	
-	rms=mag_sym.V2;
-	
-	}else{
-	
-	rms=mag_sym.V1;
-	
-	}
-	
+		rms=minSelector_3p(tRMS.AB_synth,tRMS.BC_synth,tRMS.CA_synth);
 	
 		//L1
 		fc27(rms,fc27_obj1_L1_in,&fc27_obj1_L1_out,EN.bits.fc27_obj1_L1);

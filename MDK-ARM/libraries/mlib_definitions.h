@@ -82,12 +82,15 @@ struct thermal_parameters{
 };
 
 
-struct  prefilt{
-	
-	float x;
-	float y;
+struct prefilter_oc_parameters{
 
+	float xz;
+	float yz;
+	float y;
+	
 };
+
+float prefilter_oc(float rtInput, struct prefilter_oc_parameters *buf);
 
 
 

@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Project>
-<ProjectName>C:\Users\BARIS\Documents\v4hp\\v4Hp</ProjectName>
+<ProjectName>C:\Users\baris.cengiz\Documents\v4hp-TCR\\v4Hp</ProjectName>
+<ProjectNature>C</ProjectNature> 
 <CMSIS>..\Drivers\CMSIS</CMSIS>
-<HAL_Driver>C:\Users\BARIS\STM32Cube\Repository\STM32Cube_FW_F7_V1.8.0\Drivers\CMSIS</HAL_Driver>
-
+<HAL_Driver>C:\Users\SVC\STM32Cube\Repository\STM32Cube_FW_F7_V1.11.0\Drivers\CMSIS</HAL_Driver>
 <Toolchain>MDK-ARM</Toolchain>
 	<Toolversion>5</Toolversion>
 <Version>0</Version>
 
 <filestoremove>
-	<file>
-	   		<name>..\Drivers\CMSIS\Device\ST\STM32F7xx\Source\Templates\arm\startup_stm32f767xx.s</name>
-	</file>
+    <file>
+    <name>..\Drivers\CMSIS\Device\ST\STM32F7xx\Source\Templates\arm\startup_stm32f767xx.s</name>
+    <name>..\Src\system_stm32f7xx.c</name>
+    </file>
 </filestoremove>
 
 <inctoremove>
@@ -34,7 +35,7 @@
 			
     <usedDebug>true</usedDebug>
     	<debugprobe>jtag</debugprobe>
-    <optimization></optimization>
+    <optimization>2</optimization>
     <icfloc>1</icfloc>
     <Adefines>
         <define></define>
@@ -55,8 +56,6 @@
         <Cdefines>
             <define>USE_FULL_LL_DRIVER</define>
             <define>MBEDTLS_CONFIG_FILE=&lt;mbedtls_config.h&gt;</define>
-            <define>_TIMEVAL_DEFINED</define>
-            <define>_SYS_TIME_H_</define>
         </Cdefines>         
     </definestoremove>
     
@@ -147,7 +146,7 @@
 		    <group>
 		    	<name>CMSIS</name>
 							<file>
-								<name>../Src/system_stm32f7xx.c</name>
+								<name>../\Src/system_stm32f7xx.c</name>
 							</file>
 		    	</group>
 	  </group>   

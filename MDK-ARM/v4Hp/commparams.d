@@ -52,4 +52,5 @@ v4hp\commparams.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h
 v4hp\commparams.o: ../Inc/externalData.h
 v4hp\commparams.o: ../Inc/pDataConfigs.h
 v4hp\commparams.o: ../Inc/powerSysData.h
+v4hp\commparams.o: ../Inc/bit_expansion.h
 v4hp\commparams.o: ../Inc/test_commParams.h

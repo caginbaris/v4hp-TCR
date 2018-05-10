@@ -59,8 +59,7 @@ void fc51_all(){
 
 	if(mSelect.bit.obj1_fc51){ 
 		
-		// cau mselec problem fc51
-		// cau 12 A byond wawefor distorted
+
 		
 		fc51_rms_a=fRMS.ITCR_ab;
 		fc51_rms_b=fRMS.ITCR_bc;

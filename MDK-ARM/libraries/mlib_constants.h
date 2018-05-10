@@ -16,7 +16,7 @@
 #define sym_rms_scale  		7.9577471545947667884441881686257f
 #define pn_rms_scale 		0.353553390593274f
 
-#define b_pf 0.999685939389360f
-#define a_pf 0.999371878778719f
+#define b_oc 0.999685939389360f
+#define a_oc 0.999371878778719f
 
 #endif

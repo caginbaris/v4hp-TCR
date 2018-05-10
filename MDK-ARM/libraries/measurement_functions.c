@@ -351,17 +351,17 @@ float thermal_status(float rms,struct thermal_parameters therm, float mem)
 
 
 
-float prefilter(float x,struct prefilt *back){
+float prefilter_oc(float rtInput, struct prefilter_oc_parameters *buf)
+{
 	
-		float y;
+	buf->y=b_oc*(rtInput-(buf->xz))+a_oc*(buf->yz);
+		
+	buf->yz=buf->y;
+	buf->xz=rtInput;
 	
-		y = (x-back->x)*b_pf +back->y*a_pf;
-		back->y=y;
-		back->x=x;
+	return buf->y;
 	
-		return y;
-	
-}
+};
 
 
 

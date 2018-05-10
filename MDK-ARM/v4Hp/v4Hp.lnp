@@ -35,7 +35,6 @@
 "v4hp\stm32f7xx_hal_i2c_ex.o"
 "v4hp\stm32f7xx_hal_uart.o"
 "v4hp\stm32f7xx_hal_spi.o"
-"v4hp\system_stm32f7xx.o"
 "v4hp\init_protection.o"
 "v4hp\fc50.o"
 "v4hp\fc50n.o"
@@ -66,6 +65,7 @@
 "v4hp\commparams.o"
 "v4hp\configparams.o"
 "v4hp\main_flow.o"
+"v4hp\system_stm32f7xx.o"
 --library_type=microlib --strict --scatter "v4Hp\v4Hp.sct"
 --diag_suppress=L6329 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

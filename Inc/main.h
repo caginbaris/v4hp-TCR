@@ -1,7 +1,8 @@
 /**
   ******************************************************************************
-  * File Name          : main.hpp
-  * Description        : This file contains the common defines of the application
+  * @file           : main.h
+  * @brief          : Header for main.c file.
+  *                   This file contains the common defines of the application.
   ******************************************************************************
   ** This notice applies to any and all portions of this file
   * that are not between comment pairs USER CODE BEGIN and
@@ -35,13 +36,14 @@
   *
   ******************************************************************************
   */
+
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __MAIN_H
-#define __MAIN_H
-  /* Includes ------------------------------------------------------------------*/
-#include "stm32f7xx_hal.h"
+#ifndef __MAIN_H__
+#define __MAIN_H__
 
 /* Includes ------------------------------------------------------------------*/
+#include "stm32f7xx_hal.h"
+
 /* USER CODE BEGIN Includes */
 
 /* USER CODE END Includes */
@@ -70,12 +72,10 @@
 #define SVC_TRIP_DI_10_GPIO_Port GPIOF
 #define DI_11_Pin GPIO_PIN_5
 #define DI_11_GPIO_Port GPIOF
-#define AN_MCU_11_IUNB_A_Pin GPIO_PIN_0
-#define AN_MCU_11_IUNB_A_GPIO_Port GPIOC
-#define AN_MCU_12_IUNB_B_Pin GPIO_PIN_1
-#define AN_MCU_12_IUNB_B_GPIO_Port GPIOC
-#define AN_MCU_13_IUNB_C_Pin GPIO_PIN_2
-#define AN_MCU_13_IUNB_C_GPIO_Port GPIOC
+#define AN_MCU_11_ITCR_BC_Pin GPIO_PIN_0
+#define AN_MCU_11_ITCR_BC_GPIO_Port GPIOC
+#define AN_MCU_12_ITCR_CA_Pin GPIO_PIN_1
+#define AN_MCU_12_ITCR_CA_GPIO_Port GPIOC
 #define AN_MCU_1_VAN_Pin GPIO_PIN_0
 #define AN_MCU_1_VAN_GPIO_Port GPIOA
 #define AN_MCU_2_IA_Pin GPIO_PIN_1
@@ -88,14 +88,14 @@
 #define AN_MCU_5_VCN_GPIO_Port GPIOA
 #define AN_MCU_6_IC_Pin GPIO_PIN_5
 #define AN_MCU_6_IC_GPIO_Port GPIOA
-#define AN_MCU_7_In_Pin GPIO_PIN_6
-#define AN_MCU_7_In_GPIO_Port GPIOA
-#define AN_MCU_8_IRESA_Pin GPIO_PIN_7
-#define AN_MCU_8_IRESA_GPIO_Port GPIOA
-#define AN_MCU_9_IRESB_Pin GPIO_PIN_0
-#define AN_MCU_9_IRESB_GPIO_Port GPIOB
-#define AN_MCU_10_IRESC_Pin GPIO_PIN_1
-#define AN_MCU_10_IRESC_GPIO_Port GPIOB
+#define AN_MCU_7_VA_sync_Pin GPIO_PIN_6
+#define AN_MCU_7_VA_sync_GPIO_Port GPIOA
+#define AN_MCU_8_VB_sync_Pin GPIO_PIN_7
+#define AN_MCU_8_VB_sync_GPIO_Port GPIOA
+#define AN_MCU_9_VC_sync_Pin GPIO_PIN_0
+#define AN_MCU_9_VC_sync_GPIO_Port GPIOB
+#define AN_MCU_10_ITCR_AB_Pin GPIO_PIN_1
+#define AN_MCU_10_ITCR_AB_GPIO_Port GPIOB
 #define DO_TEST_1_Pin GPIO_PIN_11
 #define DO_TEST_1_GPIO_Port GPIOF
 #define DO_TEST_2_Pin GPIO_PIN_12
@@ -217,13 +217,6 @@ void _Error_Handler(char *, int);
 }
 #endif
 
-/**
-  * @}
-  */ 
+#endif /* __MAIN_H__ */
 
-/**
-  * @}
-*/ 
-
-#endif /* __MAIN_H */
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
