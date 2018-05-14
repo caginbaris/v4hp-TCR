@@ -3,7 +3,7 @@
 <title>Static Call Graph - [v4Hp\v4Hp.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image v4Hp\v4Hp.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060300: Last Updated: Thu May 10 11:19:35 2018
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060300: Last Updated: Mon May 14 15:58:16 2018
 <BR><P>
 <H3>Maximum Stack Usage =        456 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1402,7 +1402,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
 </UL>
-<BR>[Called By]<UL><LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sym_mag
+<BR>[Called By]<UL><LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pushDataToMaster
+<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sym_mag
 <LI><a href="#[13c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;signal_thd
 <LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;signal_spectra
 <LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cs_handles
@@ -1849,7 +1850,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_ConvCpltCallback
 </UL>
 
-<P><STRONG><a name="[132]"></a>pullDataFromMaster</STRONG> (Thumb, 1174 bytes, Stack size 8 bytes, configparams.o(i.pullDataFromMaster))
+<P><STRONG><a name="[132]"></a>pullDataFromMaster</STRONG> (Thumb, 698 bytes, Stack size 8 bytes, configparams.o(i.pullDataFromMaster))
 <BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = pullDataFromMaster &rArr; init_protection
 </UL>
 <BR>[Calls]<UL><LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_protection
@@ -1857,8 +1858,10 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[133]"></a>pushDataToMaster</STRONG> (Thumb, 1788 bytes, Stack size 12 bytes, commparams.o(i.pushDataToMaster))
-<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = pushDataToMaster
+<P><STRONG><a name="[133]"></a>pushDataToMaster</STRONG> (Thumb, 1864 bytes, Stack size 40 bytes, commparams.o(i.pushDataToMaster))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = pushDataToMaster &rArr; __hardfp_sqrtf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sqrtf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1931,8 +1934,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fc49_all
 </UL>
 
-<P><STRONG><a name="[139]"></a>trip_handles</STRONG> (Thumb, 702 bytes, Stack size 16 bytes, pickup_handles.o(i.trip_handles))
-<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = trip_handles
+<P><STRONG><a name="[139]"></a>trip_handles</STRONG> (Thumb, 714 bytes, Stack size 12 bytes, pickup_handles.o(i.trip_handles))
+<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = trip_handles
 </UL>
 <BR>[Called By]<UL><LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pick_trip_reset_handles
 </UL>

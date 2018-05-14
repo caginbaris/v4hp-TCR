@@ -10,8 +10,8 @@
 #include "pDataConfigs.h"
 #include "powerSysData.h"
 #include "bit_expansion.h"
-
 #include "test_commParams.h"
+#include <math.h>
 
 //****test Parameters For Register Read****//
 
@@ -86,12 +86,12 @@ void pushDataToMaster(void){
 	/*38*/comParams.pushDataBufferF[4]=fRMS.Ib; 	// Ib fund RMS
 	/*40*/comParams.pushDataBufferF[5]=fRMS.Ic; 	// Ic fund RMS
 	
-	/*42*/comParams.pushDataBufferF[6]=P.total; 	// Ptotal
+	/*42*/comParams.pushDataBufferF[6]=P_TCR.total; 	// Ptotal
 	
-	/*44*/comParams.pushDataBufferF[7]=Q.ab; 			// Qab
-	/*46*/comParams.pushDataBufferF[8]=Q.bc; 			// Qbc
-	/*48*/comParams.pushDataBufferF[9]=Q.ca; 			// Qca
-	/*50*/comParams.pushDataBufferF[10]=Q.total;	// Qca
+	/*44*/comParams.pushDataBufferF[7]=Q_TCR.ab; 			// Qab
+	/*46*/comParams.pushDataBufferF[8]=Q_TCR.bc; 			// Qbc
+	/*48*/comParams.pushDataBufferF[9]=Q_TCR.ca; 			// Qca
+	/*50*/comParams.pushDataBufferF[10]=Q_TCR.total;	// Qca
 	
 	/*52*/comParams.pushDataBufferF[11]=spect_Ia.foutMag[2]; 	// H2-A
 	/*54*/comParams.pushDataBufferF[12]=spect_Ib.foutMag[2]; 	// H2-B
@@ -162,45 +162,69 @@ void pushDataToMaster(void){
 	/*148*/comParams.pushDataBufferF[58]=fRMS.Vbn;		//RMS Vbn
 	/*150*/comParams.pushDataBufferF[59]=fRMS.Vcn;		//RMS Vcn
 	
-	/*152*/comParams.pushDataBufferF[60]=fRMS.AB_synth;//RMS Vab
-	/*154*/comParams.pushDataBufferF[61]=fRMS.BC_synth;//RMS Vbc
-	/*156*/comParams.pushDataBufferF[62]=fRMS.CA_synth;//RMS Vca
+	/*152*/comParams.pushDataBufferF[60]=tRMS.AB_synth;//RMS Vab
+	/*154*/comParams.pushDataBufferF[61]=tRMS.BC_synth;//RMS Vbc
+	/*156*/comParams.pushDataBufferF[62]=tRMS.CA_synth;//RMS Vca
 	
-	/*158*/comParams.pushDataBufferF[63]=tRMS.Vb_synch; // true RMS IresA
-	/*160*/comParams.pushDataBufferF[64]=tRMS.Vc_synch; // true RMS IresB
-	/*162*/comParams.pushDataBufferF[65]=tRMS.ITCR_ab; // true RMS IresC
+	/*158*/comParams.pushDataBufferF[63]=tRMS.Ia; // true RMS IA
+	/*160*/comParams.pushDataBufferF[64]=tRMS.Ib; // true RMS IB
+	/*162*/comParams.pushDataBufferF[65]=tRMS.Ic; // true RMS IC
 	
-	/*164*/comParams.pushDataBufferF[66]=tRMS.Vb_synch*tRMS.Vb_synch*Sys.Rvalue; // PresA 
-	/*166*/comParams.pushDataBufferF[67]=tRMS.Vc_synch*tRMS.Vc_synch*Sys.Rvalue; // PresB 
-	/*168*/comParams.pushDataBufferF[68]=tRMS.ITCR_ab*tRMS.ITCR_ab*Sys.Rvalue; // PresC 
+	/*164*/comParams.pushDataBufferF[66]=fRMS.Ia; // fund RMS IA
+	/*166*/comParams.pushDataBufferF[67]=fRMS.Ib; // fund RMS IA
+	/*168*/comParams.pushDataBufferF[68]=fRMS.Ic; // fund RMS IA
 	
-	/*170*/comParams.pushDataBufferF[69]=comParams.pushDataBufferF[63]+comParams.pushDataBufferF[64]+comParams.pushDataBufferF[65]; // P Res Total
+	/*170*/comParams.pushDataBufferF[69]=P.a; // PA
+	/*172*/comParams.pushDataBufferF[70]=P.b; // PB
+	/*174*/comParams.pushDataBufferF[71]=P.c; // PC
+	/*176*/comParams.pushDataBufferF[72]=P.total; // Ptotal
 	
-	/*172*/comParams.pushDataBufferF[70]=fRMS.ITCR_bc; // UNBa fund RMS
-	/*174*/comParams.pushDataBufferF[71]=tRMS.ITCR_bc; // UNBa true RMS
+	/*178*/comParams.pushDataBufferF[73]=Q.a; 			// Qa
+	/*180*/comParams.pushDataBufferF[74]=Q.b ; 			// Qb
+	/*182*/comParams.pushDataBufferF[75]=Q.c ; 			// Qc
+	/*184*/comParams.pushDataBufferF[76]=Q.total ; 	// Qtotal
 	
-	/*176*/comParams.pushDataBufferF[72]=fRMS.ITCR_ca; // UNBa fund RMS
-	/*178*/comParams.pushDataBufferF[73]=tRMS.ITCR_ca; // UNBa true RMS
+	/*186*/comParams.pushDataBufferF[77]=(P.a>1.0f 			|| Q.a>1.0f) 			? (P.a		/sqrtf(P.a*P.a +Q.a*Q.a)):0.0f ; //PFA
+	/*188*/comParams.pushDataBufferF[78]=(P.b>1.0f 			|| Q.b>1.0f) 			? (P.b		/sqrtf(P.b*P.b +Q.b*Q.b)):0.0f ; //PFB
+	/*188*/comParams.pushDataBufferF[79]=(P.b>1.0f 			|| Q.b>1.0f) 			? (P.b		/sqrtf(P.c*P.c +Q.c*Q.c)):0.0f ; //PFC
+	/*190*/comParams.pushDataBufferF[80]=(P.total>1.0f 	|| Q.total>1.0f) 	? (P.total/sqrtf(P.total*P.total +Q.total*Q.total)):0.0f ; //PFtotal
 	
-	/*180*/comParams.pushDataBufferF[74]=0.0f ; //Spare
-	/*182*/comParams.pushDataBufferF[75]=0.0f ; //Spare
-
-	/*184*/comParams.pushDataBufferF[76]=phase_cs_A_out.X ; // imp. A
-	/*186*/comParams.pushDataBufferF[77]=phase_cs_B_out.X ;	// imp. B
-	/*188*/comParams.pushDataBufferF[78]=phase_cs_C_out.X ;	// imp. C
+	/*192*/comParams.pushDataBufferF[81]=phase_cs_TCR_A_out.X; //ohm;
+	/*196*/comParams.pushDataBufferF[82]=phase_cs_TCR_B_out.X; //ohm;
+	/*198*/comParams.pushDataBufferF[83]=phase_cs_TCR_C_out.X; //ohm;
+	/*200*/comParams.pushDataBufferF[84]=(Sys.Q_TCR>1.0f) ? (Q_TCR.ab/(Sys.Q_TCR)):0.0f ; //pu;
+	/*202*/comParams.pushDataBufferF[85]=(Sys.Q_TCR>1.0f) ? (Q_TCR.bc/(Sys.Q_TCR)):0.0f ; //pu;
+	/*204*/comParams.pushDataBufferF[86]=(Sys.Q_TCR>1.0f) ? (Q_TCR.ca/(Sys.Q_TCR)):0.0f ; //pu;
 	
-	/*190*/comParams.pushDataBufferF[79]=phase_cs_A_out.phase_disp ;  // phase. disp.A
-	/*192*/comParams.pushDataBufferF[80]=phase_cs_B_out.phase_disp ;	// phase. disp.B
-	/*194*/comParams.pushDataBufferF[81]=phase_cs_C_out.phase_disp ;	// phase. disp.C
+	/*206*/comParams.pushDataBufferF[87]=therm_a_obj1;
+	/*208*/comParams.pushDataBufferF[88]=therm_b_obj1;
+	/*210*/comParams.pushDataBufferF[89]=therm_c_obj1;
 	
-	/*196*/comParams.pushDataBufferF[82]=0.0f ; //Spare
-	/*198*/comParams.pushDataBufferF[83]=0.0f ; //Spare
-	/*200*/comParams.pushDataBufferF[84]=0.0f ; //Spare
-	/*202*/comParams.pushDataBufferF[85]=0.0f ; //Spare
-	/*204*/comParams.pushDataBufferF[86]=0.0f ; //Spare
+	/*212*/comParams.pushDataBufferF[90]=therm_a_obj1;
+	/*214*/comParams.pushDataBufferF[91]=therm_b_obj1;
+	/*216*/comParams.pushDataBufferF[92]=therm_c_obj1;
 	
-	/*Spare->206-248*/
+	/*218*/comParams.pushDataBufferF[93]=tRMS.Ia;
+	/*220*/comParams.pushDataBufferF[94]=tRMS.Ib;
+	/*222*/comParams.pushDataBufferF[95]=tRMS.Ic;
 	
+	/*224*/comParams.pushDataBufferF[96]=fRMS.Ia;
+	/*226*/comParams.pushDataBufferF[97]=fRMS.Ib;
+	/*228*/comParams.pushDataBufferF[98]=fRMS.Ic;
+	
+	/*230*/comParams.pushDataBufferF[99] =fRMS.ITCR_N;
+	/*232*/comParams.pushDataBufferF[100]=tRMS.ITCR_N;
+	
+	/*234*/comParams.pushDataBufferF[101]= mag_sym_tcr.I1;
+	/*236*/comParams.pushDataBufferF[102]= mag_sym_tcr.I2;
+	/*238*/comParams.pushDataBufferF[103]=(mag_sym_tcr.I1>1.0f) ? (100*mag_sym_tcr.I2/(mag_sym_tcr.I1)):0.0f ; //pu;
+	
+	/*240*/comParams.pushDataBufferF[104]=tRMS.Va_synch;
+	/*242*/comParams.pushDataBufferF[105]=tRMS.Vb_synch;
+	/*244*/comParams.pushDataBufferF[106]=tRMS.Vc_synch;
+	
+	//spare
+	//spare
 	
 	/*Mem Area-3*/
 	
@@ -269,26 +293,22 @@ void pushDataToMaster(void){
 	/*330*/comParams.pushDataBufferF[143]=fc27_obj1_L2_in.level;
 	/*332*/comParams.pushDataBufferF[144]=fc27_obj1_L2_in.delay;
 	
-	/*334*/comParams.pushDataBufferF[145]=fc46d_obj1_L1_in.dropout_ratio;
-	/*336*/comParams.pushDataBufferF[146]=fc46d_obj1_L1_in.dropout_time;
-	
-	/*338*/comParams.pushDataBufferF[147]=fc46d_obj1_L1_in.level;
-	/*340*/comParams.pushDataBufferF[148]=fc46d_obj1_L1_in.delay;
-	
-	/*342*/comParams.pushDataBufferF[149]=fc46i_obj1_L1_in.level;
-	/*344*/comParams.pushDataBufferF[150]=fc46i_obj1_L1_in.time_multiplier;
+
 	
 	/*346*/comParams.pushDataBufferF[151]=fc49_obj1_therm.k;
 	/*348*/comParams.pushDataBufferF[152]=fc49_obj1_therm.tau;
 	/*350*/comParams.pushDataBufferF[153]=fc49_obj1_L1_in.alarm_level;
-	/*352*/comParams.pushDataBufferF[154]=fc49_obj1_therm.Inom;
+
+	
+	/*346*/comParams.pushDataBufferF[154]=fc49_obj2_therm.k;
+	/*348*/comParams.pushDataBufferF[155]=fc49_obj2_therm.tau;
+	/*350*/comParams.pushDataBufferF[156]=fc49_obj2_L1_in.alarm_level;
+
 	
 	//discard
 	//discard
 	
-	//discard
-	/*360*/comParams.pushDataBufferF[158]=fcBF_in.delay;
-	/*362*/comParams.pushDataBufferF[159]=fcBF_in.threshold;
+
 	
 	//discard
 	//discard
@@ -306,65 +326,6 @@ void pushDataToMaster(void){
 	/*382*/comParams.pushDataBufferF[168]=fc37_obj1_L1_in.level;
 	/*384*/comParams.pushDataBufferF[169]=fc37_obj1_L1_in.delay;
 	
-	/*386*/comParams.pushDataBufferF[170]=fcUNBd_obj1_L1_in.dropout_ratio;
-	//discard
-	/*390*/comParams.pushDataBufferF[172]=fcUNBd_obj1_L1_in.level;
-	/*392*/comParams.pushDataBufferF[173]=fcUNBd_obj1_L1_in.delay;
-	//discard
-	
-	
-	//discard
-	//discard
-	/*400*/comParams.pushDataBufferF[177]=fcUNBi_obj1_L1_in.level;
-	/*402*/comParams.pushDataBufferF[178]=fcUNBi_obj1_L1_in.time_multiplier;
-	
-	
-	/*404*/comParams.pushDataBufferF[179]=fcPVPd_obj1_L1_in.dropout_ratio;
-	//discard
-	/*408*/comParams.pushDataBufferF[181]=fcPVPd_obj1_L1_in.level;
-	/*410*/comParams.pushDataBufferF[182]=fcPVPd_obj1_L1_in.delay;
-	
-	
-	//discard
-	//discard
-	/*416*/comParams.pushDataBufferF[185]=fcPVPi_obj1_L1_in.level;
-	/*418*/comParams.pushDataBufferF[186]=fcPVPi_obj1_L1_in.time_multiplier;
-	//discard
-	
-	/*422*/comParams.pushDataBufferF[188]=fc50_obj2_L1_in.dropout_ratio;
-	/*424*/comParams.pushDataBufferF[189]=fc50_obj2_L1_in.dropout_time;
-	
-	
-	/*426*/comParams.pushDataBufferF[190]=fc50_obj2_L1_in.level;
-	/*428*/comParams.pushDataBufferF[191]=fc50_obj2_L1_in.delay;
-	
-	/*430*/comParams.pushDataBufferF[192]=fc50_obj2_L2_in.level;
-	/*432*/comParams.pushDataBufferF[193]=fc50_obj2_L2_in.delay;
-	
-	/*434*/comParams.pushDataBufferF[194]=fc50_obj2_L3_in.level;
-	/*436*/comParams.pushDataBufferF[195]=fc50_obj2_L3_in.delay;
-	
-	
-	//discard
-	//discard
-	
-	/*442*/comParams.pushDataBufferF[198]=fc51_obj2_in.level;
-	/*444*/comParams.pushDataBufferF[199]=fc51_obj2_in.time_multiplier;
-	
-	
-	/*446*/comParams.pushDataBufferF[200]=fc49_obj2_therm.k;
-	/*448*/comParams.pushDataBufferF[201]=fc49_obj2_therm.tau;
-	/*450*/comParams.pushDataBufferF[202]=fc49_obj2_L1_in.alarm_level;
-	/*452*/comParams.pushDataBufferF[203]=fc49_obj2_therm.Inom;
-	//discard
-	//discard
-	
-	
-	/*458*/comParams.pushDataBufferF[206]=fc37_obj2_L1_in.dropout_ratio;
-	//discard
-	/*462*/comParams.pushDataBufferF[208]=fc37_obj2_L1_in.level;
-	/*464*/comParams.pushDataBufferF[209]=fc37_obj2_L1_in.delay;
-	
 	/*466*/comParams.pushDataBufferF[210]=Sys.Q_TCR; //cau im MVar
 	/*468*/comParams.pushDataBufferF[211]=Sys.Q_HF2;
 	/*470*/comParams.pushDataBufferF[212]=Sys.Q_HF3;
@@ -373,16 +334,16 @@ void pushDataToMaster(void){
 	/*474*/comParams.pushDataBufferF[214]=Sys.I_Nom_obj1;
 	/*476*/comParams.pushDataBufferF[215]=Sys.I_Nom_obj2;
 	/*478*/comParams.pushDataBufferF[216]=Sys.I_BreakerClosed_MIN;
-	/*480*/comParams.pushDataBufferF[217]=Sys.Rvalue;
+
 	
 	/*474*/comParams.pushDataBufferF[218]=TR.VT_MV_Primary;
 	/*476*/comParams.pushDataBufferF[219]=TR.VT_MV_Secondary;
-	/*478*/comParams.pushDataBufferF[220]=TR.CT_Primary;
-	/*480*/comParams.pushDataBufferF[221]=TR.CT_Secondary  ;
-	/*478*/comParams.pushDataBufferF[222]=TR.TCR_Primary;
-	/*480*/comParams.pushDataBufferF[223]=TR.TCR_Secondary;
-	/*478*/comParams.pushDataBufferF[224]=0;
-	/*480*/comParams.pushDataBufferF[225]=0;
+	/*478*/comParams.pushDataBufferF[220]=TR.VT_HV_Primary;
+	/*480*/comParams.pushDataBufferF[221]=TR.VT_HV_Secondary ;
+	/*478*/comParams.pushDataBufferF[222]=TR.CT_Primary;
+	/*480*/comParams.pushDataBufferF[223]=TR.CT_Secondary;
+	/*478*/comParams.pushDataBufferF[224]=TR.TCR_Primary;
+	/*480*/comParams.pushDataBufferF[225]=TR.TCR_Secondary;
 	
 	//discard
 	//discard

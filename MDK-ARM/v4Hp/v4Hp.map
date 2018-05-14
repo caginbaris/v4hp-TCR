@@ -1172,6 +1172,7 @@ Section Cross References
     uart_masterslave.o(i.uart_runComApp) refers to uart_masterslave.o(.bss) for .bss
     uart_masterslave.o(i.uart_runComApp) refers to usart.o(.bss) for huart2
     uart_masterslave.o(i.uart_sysTickCallApp) refers to uart_masterslave.o(.bss) for .bss
+    commparams.o(i.pushDataToMaster) refers to sqrtf.o(i.__hardfp_sqrtf) for __hardfp_sqrtf
     commparams.o(i.pushDataToMaster) refers to pickup_handles.o(.bss) for pick_words
     commparams.o(i.pushDataToMaster) refers to spi_masterslave.o(.bss) for comParams
     commparams.o(i.pushDataToMaster) refers to pickup_handles.o(.data) for fault_code
@@ -1180,6 +1181,7 @@ Section Cross References
     commparams.o(i.pushDataToMaster) refers to cs_handles.o(.bss) for fRMS
     commparams.o(i.pushDataToMaster) refers to spectra.o(.bss) for spect_Ia
     commparams.o(i.pushDataToMaster) refers to powersysdata.o(.bss) for Sys
+    commparams.o(i.pushDataToMaster) refers to fc49.o(.data) for therm_a_obj1
     commparams.o(i.pushDataToMaster) refers to configparams.o(.data) for pEN
     commparams.o(i.pushDataToMaster) refers to init_protection.o(.data) for cSelect1
     commparams.o(i.pushDataToMaster) refers to fc50.o(.bss) for fc50_obj1_L1_in
@@ -1188,14 +1190,8 @@ Section Cross References
     commparams.o(i.pushDataToMaster) refers to fc51n.o(.bss) for fc51N_obj1_in
     commparams.o(i.pushDataToMaster) refers to fc59.o(.bss) for fc59_obj1_L1_in
     commparams.o(i.pushDataToMaster) refers to fc27.o(.bss) for fc27_obj1_L1_in
-    commparams.o(i.pushDataToMaster) refers to fc46.o(.bss) for fc46d_obj1_L1_in
     commparams.o(i.pushDataToMaster) refers to fc49.o(.bss) for fc49_obj1_therm
-    commparams.o(i.pushDataToMaster) refers to fc49.o(.data) for fc49_obj1_L1_in
-    commparams.o(i.pushDataToMaster) refers to fcbf.o(.bss) for fcBF_in
     commparams.o(i.pushDataToMaster) refers to fc37.o(.bss) for fc37_obj1_L1_in
-    commparams.o(i.pushDataToMaster) refers to fcunb.o(.bss) for fcUNBd_obj1_L1_in
-    commparams.o(i.pushDataToMaster) refers to fcunb.o(.data) for fcUNBi_obj1_L1_in
-    commparams.o(i.pushDataToMaster) refers to fcpvp.o(.bss) for fcPVPd_obj1_L1_in
     commparams.o(i.pushDataToMaster) refers to conversion.o(.bss) for TR
     configparams.o(i.pullDataFromMaster) refers to init_protection.o(i.init_protection) for init_protection
     configparams.o(i.pullDataFromMaster) refers to uart_masterslave.o(.bss) for comParams_uart
@@ -1208,14 +1204,9 @@ Section Cross References
     configparams.o(i.pullDataFromMaster) refers to fc51n.o(.bss) for fc51N_obj1_in
     configparams.o(i.pullDataFromMaster) refers to fc59.o(.bss) for fc59_obj1_L1_in
     configparams.o(i.pullDataFromMaster) refers to fc27.o(.bss) for fc27_obj1_L1_in
-    configparams.o(i.pullDataFromMaster) refers to fc46.o(.bss) for fc46d_obj1_L1_in
     configparams.o(i.pullDataFromMaster) refers to fc49.o(.bss) for fc49_obj1_therm
     configparams.o(i.pullDataFromMaster) refers to fc49.o(.data) for fc49_obj1_L1_in
-    configparams.o(i.pullDataFromMaster) refers to fcbf.o(.bss) for fcBF_in
     configparams.o(i.pullDataFromMaster) refers to fc37.o(.bss) for fc37_obj1_L1_in
-    configparams.o(i.pullDataFromMaster) refers to fcunb.o(.bss) for fcUNBd_obj1_L1_in
-    configparams.o(i.pullDataFromMaster) refers to fcunb.o(.data) for fcUNBi_obj1_L1_in
-    configparams.o(i.pullDataFromMaster) refers to fcpvp.o(.bss) for fcPVPd_obj1_L1_in
     configparams.o(i.pullDataFromMaster) refers to conversion.o(.bss) for TR
     main_flow.o(i.main_flow) refers to spectra.o(i.spectral_analysis) for spectral_analysis
     main_flow.o(i.main_flow) refers to cs_handles.o(i.cs_handles) for cs_handles
@@ -2551,58 +2542,58 @@ Image Symbol Table
     i.pick_up_handles                        0x080068d0   Section        0  pickup_handles.o(i.pick_up_handles)
     i.prefilter_oc                           0x08006da8   Section        0  measurement_functions.o(i.prefilter_oc)
     i.pullDataFromMaster                     0x08006de0   Section        0  configparams.o(i.pullDataFromMaster)
-    i.pushDataToMaster                       0x08007278   Section        0  commparams.o(i.pushDataToMaster)
-    i.reset_handles                          0x080079d8   Section        0  pickup_handles.o(i.reset_handles)
-    i.signal_spectra                         0x08007c28   Section        0  measurement_functions.o(i.signal_spectra)
-    i.signal_thd                             0x08007ccc   Section        0  measurement_functions.o(i.signal_thd)
-    i.spectral_analysis                      0x08007d30   Section        0  spectra.o(i.spectral_analysis)
-    i.spi_crcCalculation                     0x08007e00   Section        0  spi_masterslave.o(i.spi_crcCalculation)
-    spi_crcCalculation                       0x08007e01   Thumb Code    62  spi_masterslave.o(i.spi_crcCalculation)
-    i.spi_initComApp                         0x08007e44   Section        0  spi_masterslave.o(i.spi_initComApp)
-    i.spi_preparePushData                    0x08007e48   Section        0  spi_masterslave.o(i.spi_preparePushData)
-    spi_preparePushData                      0x08007e49   Thumb Code   264  spi_masterslave.o(i.spi_preparePushData)
-    i.spi_prepareReceiveData                 0x08007f5c   Section        0  spi_masterslave.o(i.spi_prepareReceiveData)
-    spi_prepareReceiveData                   0x08007f5d   Thumb Code   260  spi_masterslave.o(i.spi_prepareReceiveData)
-    i.spi_runComApp                          0x0800806c   Section        0  spi_masterslave.o(i.spi_runComApp)
-    i.spi_sysTickCallApp                     0x080080ac   Section        0  spi_masterslave.o(i.spi_sysTickCallApp)
-    i.sym_comp                               0x080080ec   Section        0  measurement_functions.o(i.sym_comp)
-    i.sym_mag                                0x0800817c   Section        0  measurement_functions.o(i.sym_mag)
-    i.thermal_status                         0x08008300   Section        0  measurement_functions.o(i.thermal_status)
-    i.trip_handles                           0x08008378   Section        0  pickup_handles.o(i.trip_handles)
-    i.trueRMS                                0x080086c8   Section        0  truerms.o(i.trueRMS)
-    i.true_rms                               0x0800887c   Section        0  measurement_functions.o(i.true_rms)
-    i.uart_initComApp                        0x080088d0   Section        0  uart_masterslave.o(i.uart_initComApp)
-    i.uart_prepareReceiveData                0x080088e4   Section        0  uart_masterslave.o(i.uart_prepareReceiveData)
-    uart_prepareReceiveData                  0x080088e5   Thumb Code   226  uart_masterslave.o(i.uart_prepareReceiveData)
-    i.uart_runComApp                         0x080089d4   Section        0  uart_masterslave.o(i.uart_runComApp)
-    i.uart_sysTickCallApp                    0x08008a18   Section        0  uart_masterslave.o(i.uart_sysTickCallApp)
-    .constdata                               0x08008a58   Section        8  stm32f7xx_hal_dma.o(.constdata)
-    flagBitshiftOffset                       0x08008a58   Data           8  stm32f7xx_hal_dma.o(.constdata)
-    .constdata                               0x08008a60   Section       16  fc50.o(.constdata)
-    .constdata                               0x08008a70   Section       16  fc50n.o(.constdata)
-    .constdata                               0x08008a80   Section       20  fc51.o(.constdata)
-    .constdata                               0x08008a94   Section       20  fc51n.o(.constdata)
-    .constdata                               0x08008aa8   Section       12  fc27.o(.constdata)
-    .constdata                               0x08008ab4   Section       12  fc59.o(.constdata)
-    .constdata                               0x08008ac0   Section       36  fc46.o(.constdata)
-    .constdata                               0x08008ae4   Section       24  fc49.o(.constdata)
-    .constdata                               0x08008afc   Section       24  fcbf.o(.constdata)
-    .constdata                               0x08008b14   Section       12  fc37.o(.constdata)
-    .constdata                               0x08008b20   Section       20  fcunb.o(.constdata)
-    .constdata                               0x08008b34   Section       32  fcpvp.o(.constdata)
-    .constdata                               0x08008b54   Section       16  system_stm32f7xx.o(.constdata)
-    .constdata                               0x08008b64   Section        8  system_stm32f7xx.o(.constdata)
-    .constdata                               0x08008b6c   Section      320  powf.o(.constdata)
-    table                                    0x08008b6c   Data         128  powf.o(.constdata)
-    powersof2to1over16top                    0x08008bec   Data          64  powf.o(.constdata)
-    powersof2to1over16bot                    0x08008c2c   Data          64  powf.o(.constdata)
-    powersof2to1over16all                    0x08008c6c   Data          64  powf.o(.constdata)
-    .constdata                               0x08008cb0   Section      152  atan.o(.constdata)
-    atanhi                                   0x08008cb0   Data          32  atan.o(.constdata)
-    atanlo                                   0x08008cd0   Data          32  atan.o(.constdata)
-    aTodd                                    0x08008cf0   Data          40  atan.o(.constdata)
-    aTeven                                   0x08008d18   Data          48  atan.o(.constdata)
-    .constdata                               0x08008d48   Section        8  qnan.o(.constdata)
+    i.pushDataToMaster                       0x08007108   Section        0  commparams.o(i.pushDataToMaster)
+    i.reset_handles                          0x080078c4   Section        0  pickup_handles.o(i.reset_handles)
+    i.signal_spectra                         0x08007b14   Section        0  measurement_functions.o(i.signal_spectra)
+    i.signal_thd                             0x08007bb8   Section        0  measurement_functions.o(i.signal_thd)
+    i.spectral_analysis                      0x08007c1c   Section        0  spectra.o(i.spectral_analysis)
+    i.spi_crcCalculation                     0x08007cec   Section        0  spi_masterslave.o(i.spi_crcCalculation)
+    spi_crcCalculation                       0x08007ced   Thumb Code    62  spi_masterslave.o(i.spi_crcCalculation)
+    i.spi_initComApp                         0x08007d30   Section        0  spi_masterslave.o(i.spi_initComApp)
+    i.spi_preparePushData                    0x08007d34   Section        0  spi_masterslave.o(i.spi_preparePushData)
+    spi_preparePushData                      0x08007d35   Thumb Code   264  spi_masterslave.o(i.spi_preparePushData)
+    i.spi_prepareReceiveData                 0x08007e48   Section        0  spi_masterslave.o(i.spi_prepareReceiveData)
+    spi_prepareReceiveData                   0x08007e49   Thumb Code   260  spi_masterslave.o(i.spi_prepareReceiveData)
+    i.spi_runComApp                          0x08007f58   Section        0  spi_masterslave.o(i.spi_runComApp)
+    i.spi_sysTickCallApp                     0x08007f98   Section        0  spi_masterslave.o(i.spi_sysTickCallApp)
+    i.sym_comp                               0x08007fd8   Section        0  measurement_functions.o(i.sym_comp)
+    i.sym_mag                                0x08008068   Section        0  measurement_functions.o(i.sym_mag)
+    i.thermal_status                         0x080081ec   Section        0  measurement_functions.o(i.thermal_status)
+    i.trip_handles                           0x08008264   Section        0  pickup_handles.o(i.trip_handles)
+    i.trueRMS                                0x080085c0   Section        0  truerms.o(i.trueRMS)
+    i.true_rms                               0x08008774   Section        0  measurement_functions.o(i.true_rms)
+    i.uart_initComApp                        0x080087c8   Section        0  uart_masterslave.o(i.uart_initComApp)
+    i.uart_prepareReceiveData                0x080087dc   Section        0  uart_masterslave.o(i.uart_prepareReceiveData)
+    uart_prepareReceiveData                  0x080087dd   Thumb Code   226  uart_masterslave.o(i.uart_prepareReceiveData)
+    i.uart_runComApp                         0x080088cc   Section        0  uart_masterslave.o(i.uart_runComApp)
+    i.uart_sysTickCallApp                    0x08008910   Section        0  uart_masterslave.o(i.uart_sysTickCallApp)
+    .constdata                               0x08008950   Section        8  stm32f7xx_hal_dma.o(.constdata)
+    flagBitshiftOffset                       0x08008950   Data           8  stm32f7xx_hal_dma.o(.constdata)
+    .constdata                               0x08008958   Section       16  fc50.o(.constdata)
+    .constdata                               0x08008968   Section       16  fc50n.o(.constdata)
+    .constdata                               0x08008978   Section       20  fc51.o(.constdata)
+    .constdata                               0x0800898c   Section       20  fc51n.o(.constdata)
+    .constdata                               0x080089a0   Section       12  fc27.o(.constdata)
+    .constdata                               0x080089ac   Section       12  fc59.o(.constdata)
+    .constdata                               0x080089b8   Section       36  fc46.o(.constdata)
+    .constdata                               0x080089dc   Section       24  fc49.o(.constdata)
+    .constdata                               0x080089f4   Section       24  fcbf.o(.constdata)
+    .constdata                               0x08008a0c   Section       12  fc37.o(.constdata)
+    .constdata                               0x08008a18   Section       20  fcunb.o(.constdata)
+    .constdata                               0x08008a2c   Section       32  fcpvp.o(.constdata)
+    .constdata                               0x08008a4c   Section       16  system_stm32f7xx.o(.constdata)
+    .constdata                               0x08008a5c   Section        8  system_stm32f7xx.o(.constdata)
+    .constdata                               0x08008a64   Section      320  powf.o(.constdata)
+    table                                    0x08008a64   Data         128  powf.o(.constdata)
+    powersof2to1over16top                    0x08008ae4   Data          64  powf.o(.constdata)
+    powersof2to1over16bot                    0x08008b24   Data          64  powf.o(.constdata)
+    powersof2to1over16all                    0x08008b64   Data          64  powf.o(.constdata)
+    .constdata                               0x08008ba8   Section      152  atan.o(.constdata)
+    atanhi                                   0x08008ba8   Data          32  atan.o(.constdata)
+    atanlo                                   0x08008bc8   Data          32  atan.o(.constdata)
+    aTodd                                    0x08008be8   Data          40  atan.o(.constdata)
+    aTeven                                   0x08008c10   Data          48  atan.o(.constdata)
+    .constdata                               0x08008c40   Section        8  qnan.o(.constdata)
     .data                                    0x20000000   Section        8  main.o(.data)
     .data                                    0x20000008   Section       12  stm32f7xx_hal.o(.data)
     .data                                    0x20000014   Section      108  init_protection.o(.data)
@@ -2985,29 +2976,29 @@ Image Symbol Table
     pick_trip_reset_handles                  0x080068bd   Thumb Code    18  pickup_handles.o(i.pick_trip_reset_handles)
     pick_up_handles                          0x080068d1   Thumb Code  1236  pickup_handles.o(i.pick_up_handles)
     prefilter_oc                             0x08006da9   Thumb Code    46  measurement_functions.o(i.prefilter_oc)
-    pullDataFromMaster                       0x08006de1   Thumb Code  1174  configparams.o(i.pullDataFromMaster)
-    pushDataToMaster                         0x08007279   Thumb Code  1788  commparams.o(i.pushDataToMaster)
-    reset_handles                            0x080079d9   Thumb Code   452  pickup_handles.o(i.reset_handles)
-    signal_spectra                           0x08007c29   Thumb Code   158  measurement_functions.o(i.signal_spectra)
-    signal_thd                               0x08007ccd   Thumb Code    92  measurement_functions.o(i.signal_thd)
-    spectral_analysis                        0x08007d31   Thumb Code   184  spectra.o(i.spectral_analysis)
-    spi_initComApp                           0x08007e45   Thumb Code     2  spi_masterslave.o(i.spi_initComApp)
-    spi_runComApp                            0x0800806d   Thumb Code    56  spi_masterslave.o(i.spi_runComApp)
-    spi_sysTickCallApp                       0x080080ad   Thumb Code    58  spi_masterslave.o(i.spi_sysTickCallApp)
-    sym_comp                                 0x080080ed   Thumb Code   134  measurement_functions.o(i.sym_comp)
-    sym_mag                                  0x0800817d   Thumb Code   378  measurement_functions.o(i.sym_mag)
-    thermal_status                           0x08008301   Thumb Code   114  measurement_functions.o(i.thermal_status)
-    trip_handles                             0x08008379   Thumb Code   702  pickup_handles.o(i.trip_handles)
-    trueRMS                                  0x080086c9   Thumb Code   422  truerms.o(i.trueRMS)
-    true_rms                                 0x0800887d   Thumb Code    78  measurement_functions.o(i.true_rms)
-    uart_initComApp                          0x080088d1   Thumb Code    10  uart_masterslave.o(i.uart_initComApp)
-    uart_runComApp                           0x080089d5   Thumb Code    60  uart_masterslave.o(i.uart_runComApp)
-    uart_sysTickCallApp                      0x08008a19   Thumb Code    58  uart_masterslave.o(i.uart_sysTickCallApp)
-    AHBPrescTable                            0x08008b54   Data          16  system_stm32f7xx.o(.constdata)
-    APBPrescTable                            0x08008b64   Data           8  system_stm32f7xx.o(.constdata)
-    __mathlib_zero                           0x08008d48   Data           8  qnan.o(.constdata)
-    Region$$Table$$Base                      0x08008d50   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08008d70   Number         0  anon$$obj.o(Region$$Table)
+    pullDataFromMaster                       0x08006de1   Thumb Code   698  configparams.o(i.pullDataFromMaster)
+    pushDataToMaster                         0x08007109   Thumb Code  1864  commparams.o(i.pushDataToMaster)
+    reset_handles                            0x080078c5   Thumb Code   452  pickup_handles.o(i.reset_handles)
+    signal_spectra                           0x08007b15   Thumb Code   158  measurement_functions.o(i.signal_spectra)
+    signal_thd                               0x08007bb9   Thumb Code    92  measurement_functions.o(i.signal_thd)
+    spectral_analysis                        0x08007c1d   Thumb Code   184  spectra.o(i.spectral_analysis)
+    spi_initComApp                           0x08007d31   Thumb Code     2  spi_masterslave.o(i.spi_initComApp)
+    spi_runComApp                            0x08007f59   Thumb Code    56  spi_masterslave.o(i.spi_runComApp)
+    spi_sysTickCallApp                       0x08007f99   Thumb Code    58  spi_masterslave.o(i.spi_sysTickCallApp)
+    sym_comp                                 0x08007fd9   Thumb Code   134  measurement_functions.o(i.sym_comp)
+    sym_mag                                  0x08008069   Thumb Code   378  measurement_functions.o(i.sym_mag)
+    thermal_status                           0x080081ed   Thumb Code   114  measurement_functions.o(i.thermal_status)
+    trip_handles                             0x08008265   Thumb Code   714  pickup_handles.o(i.trip_handles)
+    trueRMS                                  0x080085c1   Thumb Code   422  truerms.o(i.trueRMS)
+    true_rms                                 0x08008775   Thumb Code    78  measurement_functions.o(i.true_rms)
+    uart_initComApp                          0x080087c9   Thumb Code    10  uart_masterslave.o(i.uart_initComApp)
+    uart_runComApp                           0x080088cd   Thumb Code    60  uart_masterslave.o(i.uart_runComApp)
+    uart_sysTickCallApp                      0x08008911   Thumb Code    58  uart_masterslave.o(i.uart_sysTickCallApp)
+    AHBPrescTable                            0x08008a4c   Data          16  system_stm32f7xx.o(.constdata)
+    APBPrescTable                            0x08008a5c   Data           8  system_stm32f7xx.o(.constdata)
+    __mathlib_zero                           0x08008c40   Data           8  qnan.o(.constdata)
+    Region$$Table$$Base                      0x08008c48   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08008c68   Number         0  anon$$obj.o(Region$$Table)
     incoming_data_flag                       0x20000000   Data           1  main.o(.data)
     incoming_data_flag_counter               0x20000004   Data           4  main.o(.data)
     uwTickFreq                               0x20000008   Data           1  stm32f7xx_hal.o(.data)
@@ -3191,9 +3182,9 @@ Memory Map of the image
 
   Image Entry point : 0x080001f9
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x000091dc, Max: 0x00200000, ABSOLUTE, COMPRESSED[0x00008f00])
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x000090d4, Max: 0x00200000, ABSOLUTE, COMPRESSED[0x00008df8])
 
-    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x00008d70, Max: 0x00200000, ABSOLUTE)
+    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x00008c68, Max: 0x00200000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -3436,50 +3427,49 @@ Memory Map of the image
     0x080068ce   0x00000002   PAD
     0x080068d0   0x000004d8   Code   RO         5309    i.pick_up_handles   pickup_handles.o
     0x08006da8   0x00000038   Code   RO          682    i.prefilter_oc      measurement_functions.o
-    0x08006de0   0x00000496   Code   RO         5858    i.pullDataFromMaster  configparams.o
-    0x08007276   0x00000002   PAD
-    0x08007278   0x00000760   Code   RO         5809    i.pushDataToMaster  commparams.o
-    0x080079d8   0x00000250   Code   RO         5310    i.reset_handles     pickup_handles.o
-    0x08007c28   0x000000a4   Code   RO          685    i.signal_spectra    measurement_functions.o
-    0x08007ccc   0x00000064   Code   RO          686    i.signal_thd        measurement_functions.o
-    0x08007d30   0x000000d0   Code   RO         5422    i.spectral_analysis  spectra.o
-    0x08007e00   0x00000044   Code   RO         5683    i.spi_crcCalculation  spi_masterslave.o
-    0x08007e44   0x00000002   Code   RO         5684    i.spi_initComApp    spi_masterslave.o
-    0x08007e46   0x00000002   PAD
-    0x08007e48   0x00000114   Code   RO         5685    i.spi_preparePushData  spi_masterslave.o
-    0x08007f5c   0x00000110   Code   RO         5686    i.spi_prepareReceiveData  spi_masterslave.o
-    0x0800806c   0x00000040   Code   RO         5687    i.spi_runComApp     spi_masterslave.o
-    0x080080ac   0x00000040   Code   RO         5688    i.spi_sysTickCallApp  spi_masterslave.o
-    0x080080ec   0x00000090   Code   RO          687    i.sym_comp          measurement_functions.o
-    0x0800817c   0x00000184   Code   RO          688    i.sym_mag           measurement_functions.o
-    0x08008300   0x00000078   Code   RO          689    i.thermal_status    measurement_functions.o
-    0x08008378   0x00000350   Code   RO         5311    i.trip_handles      pickup_handles.o
-    0x080086c8   0x000001b4   Code   RO         5402    i.trueRMS           truerms.o
-    0x0800887c   0x00000054   Code   RO          690    i.true_rms          measurement_functions.o
-    0x080088d0   0x00000014   Code   RO         5752    i.uart_initComApp   uart_masterslave.o
-    0x080088e4   0x000000f0   Code   RO         5753    i.uart_prepareReceiveData  uart_masterslave.o
-    0x080089d4   0x00000044   Code   RO         5754    i.uart_runComApp    uart_masterslave.o
-    0x08008a18   0x00000040   Code   RO         5755    i.uart_sysTickCallApp  uart_masterslave.o
-    0x08008a58   0x00000008   Data   RO         2585    .constdata          stm32f7xx_hal_dma.o
-    0x08008a60   0x00000010   Data   RO         4947    .constdata          fc50.o
-    0x08008a70   0x00000010   Data   RO         4977    .constdata          fc50n.o
-    0x08008a80   0x00000014   Data   RO         5006    .constdata          fc51.o
-    0x08008a94   0x00000014   Data   RO         5032    .constdata          fc51n.o
-    0x08008aa8   0x0000000c   Data   RO         5058    .constdata          fc27.o
-    0x08008ab4   0x0000000c   Data   RO         5093    .constdata          fc59.o
-    0x08008ac0   0x00000024   Data   RO         5116    .constdata          fc46.o
-    0x08008ae4   0x00000018   Data   RO         5139    .constdata          fc49.o
-    0x08008afc   0x00000018   Data   RO         5167    .constdata          fcbf.o
-    0x08008b14   0x0000000c   Data   RO         5205    .constdata          fc37.o
-    0x08008b20   0x00000014   Data   RO         5241    .constdata          fcunb.o
-    0x08008b34   0x00000020   Data   RO         5278    .constdata          fcpvp.o
-    0x08008b54   0x00000010   Data   RO         5914    .constdata          system_stm32f7xx.o
-    0x08008b64   0x00000008   Data   RO         5915    .constdata          system_stm32f7xx.o
-    0x08008b6c   0x00000140   Data   RO         5962    .constdata          m_wv.l(powf.o)
-    0x08008cac   0x00000004   PAD
-    0x08008cb0   0x00000098   Data   RO         6021    .constdata          m_wv.l(atan.o)
-    0x08008d48   0x00000008   Data   RO         6071    .constdata          m_wv.l(qnan.o)
-    0x08008d50   0x00000020   Data   RO         6117    Region$$Table       anon$$obj.o
+    0x08006de0   0x00000328   Code   RO         5858    i.pullDataFromMaster  configparams.o
+    0x08007108   0x000007bc   Code   RO         5809    i.pushDataToMaster  commparams.o
+    0x080078c4   0x00000250   Code   RO         5310    i.reset_handles     pickup_handles.o
+    0x08007b14   0x000000a4   Code   RO          685    i.signal_spectra    measurement_functions.o
+    0x08007bb8   0x00000064   Code   RO          686    i.signal_thd        measurement_functions.o
+    0x08007c1c   0x000000d0   Code   RO         5422    i.spectral_analysis  spectra.o
+    0x08007cec   0x00000044   Code   RO         5683    i.spi_crcCalculation  spi_masterslave.o
+    0x08007d30   0x00000002   Code   RO         5684    i.spi_initComApp    spi_masterslave.o
+    0x08007d32   0x00000002   PAD
+    0x08007d34   0x00000114   Code   RO         5685    i.spi_preparePushData  spi_masterslave.o
+    0x08007e48   0x00000110   Code   RO         5686    i.spi_prepareReceiveData  spi_masterslave.o
+    0x08007f58   0x00000040   Code   RO         5687    i.spi_runComApp     spi_masterslave.o
+    0x08007f98   0x00000040   Code   RO         5688    i.spi_sysTickCallApp  spi_masterslave.o
+    0x08007fd8   0x00000090   Code   RO          687    i.sym_comp          measurement_functions.o
+    0x08008068   0x00000184   Code   RO          688    i.sym_mag           measurement_functions.o
+    0x080081ec   0x00000078   Code   RO          689    i.thermal_status    measurement_functions.o
+    0x08008264   0x0000035c   Code   RO         5311    i.trip_handles      pickup_handles.o
+    0x080085c0   0x000001b4   Code   RO         5402    i.trueRMS           truerms.o
+    0x08008774   0x00000054   Code   RO          690    i.true_rms          measurement_functions.o
+    0x080087c8   0x00000014   Code   RO         5752    i.uart_initComApp   uart_masterslave.o
+    0x080087dc   0x000000f0   Code   RO         5753    i.uart_prepareReceiveData  uart_masterslave.o
+    0x080088cc   0x00000044   Code   RO         5754    i.uart_runComApp    uart_masterslave.o
+    0x08008910   0x00000040   Code   RO         5755    i.uart_sysTickCallApp  uart_masterslave.o
+    0x08008950   0x00000008   Data   RO         2585    .constdata          stm32f7xx_hal_dma.o
+    0x08008958   0x00000010   Data   RO         4947    .constdata          fc50.o
+    0x08008968   0x00000010   Data   RO         4977    .constdata          fc50n.o
+    0x08008978   0x00000014   Data   RO         5006    .constdata          fc51.o
+    0x0800898c   0x00000014   Data   RO         5032    .constdata          fc51n.o
+    0x080089a0   0x0000000c   Data   RO         5058    .constdata          fc27.o
+    0x080089ac   0x0000000c   Data   RO         5093    .constdata          fc59.o
+    0x080089b8   0x00000024   Data   RO         5116    .constdata          fc46.o
+    0x080089dc   0x00000018   Data   RO         5139    .constdata          fc49.o
+    0x080089f4   0x00000018   Data   RO         5167    .constdata          fcbf.o
+    0x08008a0c   0x0000000c   Data   RO         5205    .constdata          fc37.o
+    0x08008a18   0x00000014   Data   RO         5241    .constdata          fcunb.o
+    0x08008a2c   0x00000020   Data   RO         5278    .constdata          fcpvp.o
+    0x08008a4c   0x00000010   Data   RO         5914    .constdata          system_stm32f7xx.o
+    0x08008a5c   0x00000008   Data   RO         5915    .constdata          system_stm32f7xx.o
+    0x08008a64   0x00000140   Data   RO         5962    .constdata          m_wv.l(powf.o)
+    0x08008ba4   0x00000004   PAD
+    0x08008ba8   0x00000098   Data   RO         6021    .constdata          m_wv.l(atan.o)
+    0x08008c40   0x00000008   Data   RO         6071    .constdata          m_wv.l(qnan.o)
+    0x08008c48   0x00000020   Data   RO         6117    Region$$Table       anon$$obj.o
 
 
     Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00006b50, Max: 0x0001ffff, ABSOLUTE, COMPRESSED[0x00000190])

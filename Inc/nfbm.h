@@ -207,6 +207,8 @@ struct powerParameters{
 
 extern struct powerParameters P;
 extern struct powerParameters Q;
+extern struct powerParameters P_TCR;
+extern struct powerParameters Q_TCR;
 
 
 struct TurnRatios{
