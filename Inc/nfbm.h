@@ -5,7 +5,7 @@
 
 
 
-#define channelNo 12
+#define channelNo 20
 
 
 struct AdcData{
@@ -24,7 +24,7 @@ struct AdcData{
 	
 	
 	float Vb_synch;//AN-8
-	float Va_synch;		//AN-7
+	float Va_synch;//AN-7
 	float BC_synth;
 	
 	float Vc_synch;//AN-9

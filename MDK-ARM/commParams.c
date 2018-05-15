@@ -78,13 +78,13 @@ void pushDataToMaster(void){
 	
 	//Real Parameters
 	
-	/*30*/comParams.pushDataBufferF[0]=tRMS.Ia; 	// Ia true RMS
-	/*32*/comParams.pushDataBufferF[1]=tRMS.Ib; 	// Ib true RMS
-	/*34*/comParams.pushDataBufferF[2]=tRMS.Ic; 	// Ic true RMS
+	/*30*/comParams.pushDataBufferF[0]=tRMS.ITCR_ab; 	// Ia true RMS
+	/*32*/comParams.pushDataBufferF[1]=tRMS.ITCR_bc; 	// Ib true RMS
+	/*34*/comParams.pushDataBufferF[2]=tRMS.ITCR_ca; 	// Ic true RMS
 	
-	/*36*/comParams.pushDataBufferF[3]=fRMS.Ia; 	// Ia fund RMS
-	/*38*/comParams.pushDataBufferF[4]=fRMS.Ib; 	// Ib fund RMS
-	/*40*/comParams.pushDataBufferF[5]=fRMS.Ic; 	// Ic fund RMS
+	/*36*/comParams.pushDataBufferF[3]=fRMS.ITCR_ab; 	// Ia fund RMS
+	/*38*/comParams.pushDataBufferF[4]=fRMS.ITCR_bc; 	// Ib fund RMS
+	/*40*/comParams.pushDataBufferF[5]=fRMS.ITCR_ca; 	// Ic fund RMS
 	
 	/*42*/comParams.pushDataBufferF[6]=P_TCR.total; 	// Ptotal
 	
@@ -192,9 +192,9 @@ void pushDataToMaster(void){
 	/*192*/comParams.pushDataBufferF[81]=phase_cs_TCR_A_out.X; //ohm;
 	/*196*/comParams.pushDataBufferF[82]=phase_cs_TCR_B_out.X; //ohm;
 	/*198*/comParams.pushDataBufferF[83]=phase_cs_TCR_C_out.X; //ohm;
-	/*200*/comParams.pushDataBufferF[84]=(Sys.Q_TCR>1.0f) ? (Q_TCR.ab/(Sys.Q_TCR)):0.0f ; //pu;
-	/*202*/comParams.pushDataBufferF[85]=(Sys.Q_TCR>1.0f) ? (Q_TCR.bc/(Sys.Q_TCR)):0.0f ; //pu;
-	/*204*/comParams.pushDataBufferF[86]=(Sys.Q_TCR>1.0f) ? (Q_TCR.ca/(Sys.Q_TCR)):0.0f ; //pu;
+	/*200*/comParams.pushDataBufferF[84]=(Sys.Q_TCR>1.0f) ? (Q_TCR.ab/(Sys.Q_TCR*1000000)):0.0f ; //pu;
+	/*202*/comParams.pushDataBufferF[85]=(Sys.Q_TCR>1.0f) ? (Q_TCR.bc/(Sys.Q_TCR*1000000)):0.0f ; //pu;
+	/*204*/comParams.pushDataBufferF[86]=(Sys.Q_TCR>1.0f) ? (Q_TCR.ca/(Sys.Q_TCR*1000000)):0.0f ; //pu;
 	
 	/*206*/comParams.pushDataBufferF[87]=therm_a_obj1;
 	/*208*/comParams.pushDataBufferF[88]=therm_b_obj1;
@@ -204,13 +204,13 @@ void pushDataToMaster(void){
 	/*214*/comParams.pushDataBufferF[91]=therm_b_obj1;
 	/*216*/comParams.pushDataBufferF[92]=therm_c_obj1;
 	
-	/*218*/comParams.pushDataBufferF[93]=tRMS.Ia;
-	/*220*/comParams.pushDataBufferF[94]=tRMS.Ib;
-	/*222*/comParams.pushDataBufferF[95]=tRMS.Ic;
+	/*218*/comParams.pushDataBufferF[93]=tRMS.ITCR_a;
+	/*220*/comParams.pushDataBufferF[94]=tRMS.ITCR_b;
+	/*222*/comParams.pushDataBufferF[95]=tRMS.ITCR_c;
 	
-	/*224*/comParams.pushDataBufferF[96]=fRMS.Ia;
-	/*226*/comParams.pushDataBufferF[97]=fRMS.Ib;
-	/*228*/comParams.pushDataBufferF[98]=fRMS.Ic;
+	/*224*/comParams.pushDataBufferF[96]=fRMS.ITCR_a;
+	/*226*/comParams.pushDataBufferF[97]=fRMS.ITCR_b;
+	/*228*/comParams.pushDataBufferF[98]=fRMS.ITCR_c;
 	
 	/*230*/comParams.pushDataBufferF[99] =fRMS.ITCR_N;
 	/*232*/comParams.pushDataBufferF[100]=tRMS.ITCR_N;

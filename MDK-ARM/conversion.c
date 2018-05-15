@@ -68,8 +68,8 @@ void init_conversion(){
 
 
 	
-	scale.ITCR_bc=0.005507f;
-	scale.ITCR_ca=0.005507f;
+	scale.ITCR_bc=0.055470985603544f;
+	scale.ITCR_ca=0.055470985603544f;
 	
 	scale.Van=0.10699f;
 	scale.Vbn=0.10699f;
@@ -77,7 +77,13 @@ void init_conversion(){
 	
 	scale.Vb_synch=0.005502f; 
 	scale.Vc_synch=0.005502f; 
-	scale.ITCR_ab=0.005502f; 
+	scale.ITCR_ab=0.055470985603544f; 
+	
+	
+	TR.TCR=1000.0f;
+	TR.VT_MV=345;
+	TR.VT_HV=345;
+	TR.CT=1000.0f;
 	
 }
 

@@ -72,12 +72,12 @@
 //   <o> Fourth Cycle DW Block Size
 //   <i> Defines modbus fourth DW block size 
 //   <i> Default: 0
-#define FOURTH_DWORD_BLOCK_SIZE 5
+#define FOURTH_DWORD_BLOCK_SIZE 0
 
 //   <o> Fourth Cycle Float Block Size
 //   <i> Defines modbus fourth float block size 
 //   <i> Default: 57
-#define FOURTH_FLOAT_BLOCK_SIZE 57
+#define FOURTH_FLOAT_BLOCK_SIZE 62
 
 // </h>
 
