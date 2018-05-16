@@ -1005,13 +1005,11 @@ Section Cross References
     fcbf.o(i.fcBF_init) refers to fcbf.o(.constdata) for .constdata
     fcbf.o(i.fcBF_init) refers to fcbf.o(.bss) for .bss
     fc37.o(i.fc37_all) refers to protection_functions.o(i.maxSelector_3p) for maxSelector_3p
-    fc37.o(i.fc37_all) refers to protection_functions.o(i.on_delay) for on_delay
     fc37.o(i.fc37_all) refers to protection_functions.o(i.fc37) for fc37
     fc37.o(i.fc37_all) refers to cs_handles.o(.bss) for fRMS
     fc37.o(i.fc37_all) refers to boardio.o(.data) for DI
-    fc37.o(i.fc37_all) refers to powersysdata.o(.bss) for Sys
-    fc37.o(i.fc37_all) refers to fc37.o(.data) for .data
     fc37.o(i.fc37_all) refers to init_protection.o(.bss) for EN
+    fc37.o(i.fc37_all) refers to fc37.o(.data) for .data
     fc37.o(i.fc37_all) refers to fc37.o(.bss) for .bss
     fc37.o(i.fc37_init) refers to fc37.o(.constdata) for .constdata
     fc37.o(i.fc37_init) refers to fc37.o(.bss) for .bss
@@ -1434,6 +1432,7 @@ Removing Unused input sections from the image.
     Removing protection_functions.o(i.fcPVPi), (188 bytes).
     Removing protection_functions.o(i.fcUNBd), (112 bytes).
     Removing protection_functions.o(i.fcUNBi), (220 bytes).
+    Removing protection_functions.o(i.on_delay), (56 bytes).
     Removing protection_functions.o(i.pvp_curve), (340 bytes).
     Removing startup_stm32f767xx.o(HEAP), (512 bytes).
     Removing stm32f7xx_hal_adc.o(.rev16_text), (4 bytes).
@@ -2130,7 +2129,7 @@ Removing Unused input sections from the image.
     Removing system_stm32f7xx.o(.rrx_text), (6 bytes).
     Removing system_stm32f7xx.o(i.SystemCoreClockUpdate), (124 bytes).
 
-745 unused section(s) (total 65849 bytes) removed from the image.
+746 unused section(s) (total 65905 bytes) removed from the image.
 
 ==============================================================================
 
@@ -2177,29 +2176,29 @@ Image Symbol Table
     ../clib/../cmprslib/lz77c.c              0x00000000   Number         0  __dclz77c.o ABSOLUTE
     ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
     ../clib/microlib/errno.c                 0x00000000   Number         0  errno.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
-    ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
-    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
     ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
     ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
     ../fplib/microlib/fpstat.c               0x00000000   Number         0  fpstat.o ABSOLUTE
-    ../mathlib/atan.c                        0x00000000   Number         0  atan.o ABSOLUTE
     ../mathlib/atan.c                        0x00000000   Number         0  atan_x.o ABSOLUTE
-    ../mathlib/atan2.c                       0x00000000   Number         0  atan2.o ABSOLUTE
+    ../mathlib/atan.c                        0x00000000   Number         0  atan.o ABSOLUTE
     ../mathlib/atan2.c                       0x00000000   Number         0  atan2_x.o ABSOLUTE
+    ../mathlib/atan2.c                       0x00000000   Number         0  atan2.o ABSOLUTE
     ../mathlib/cos_i.c                       0x00000000   Number         0  cos_i.o ABSOLUTE
     ../mathlib/dunder.c                      0x00000000   Number         0  dunder.o ABSOLUTE
     ../mathlib/fabs.c                        0x00000000   Number         0  fabs.o ABSOLUTE
@@ -2213,8 +2212,8 @@ Image Symbol Table
     ../mathlib/rred.c                        0x00000000   Number         0  rred.o ABSOLUTE
     ../mathlib/sin.c                         0x00000000   Number         0  sin_x.o ABSOLUTE
     ../mathlib/sin.c                         0x00000000   Number         0  sin.o ABSOLUTE
-    ../mathlib/sin_i.c                       0x00000000   Number         0  sin_i_x.o ABSOLUTE
     ../mathlib/sin_i.c                       0x00000000   Number         0  sin_i.o ABSOLUTE
+    ../mathlib/sin_i.c                       0x00000000   Number         0  sin_i_x.o ABSOLUTE
     ../mathlib/sqrt.c                        0x00000000   Number         0  sqrt_x.o ABSOLUTE
     ../mathlib/sqrt.c                        0x00000000   Number         0  sqrt.o ABSOLUTE
     ../mathlib/sqrtf.c                       0x00000000   Number         0  sqrtf_x.o ABSOLUTE
@@ -2507,93 +2506,92 @@ Image Symbol Table
     i.fc27_init                              0x080053e8   Section        0  fc27.o(i.fc27_init)
     i.fc37                                   0x08005400   Section        0  protection_functions.o(i.fc37)
     i.fc37_all                               0x08005478   Section        0  fc37.o(i.fc37_all)
-    i.fc37_init                              0x08005538   Section        0  fc37.o(i.fc37_init)
-    i.fc46_init                              0x08005550   Section        0  fc46.o(i.fc46_init)
-    i.fc49                                   0x080055a4   Section        0  protection_functions.o(i.fc49)
-    i.fc49_all                               0x080055f0   Section        0  fc49.o(i.fc49_all)
-    i.fc49_init                              0x0800570c   Section        0  fc49.o(i.fc49_init)
-    i.fc50                                   0x08005774   Section        0  protection_functions.o(i.fc50)
-    i.fc50N_all                              0x08005820   Section        0  fc50n.o(i.fc50N_all)
-    i.fc50N_init                             0x080058b4   Section        0  fc50n.o(i.fc50N_init)
-    i.fc50_all                               0x080058e4   Section        0  fc50.o(i.fc50_all)
-    i.fc50_init                              0x08005a30   Section        0  fc50.o(i.fc50_init)
-    i.fc51                                   0x08005a54   Section        0  protection_functions.o(i.fc51)
-    i.fc51N_all                              0x08005b48   Section        0  fc51n.o(i.fc51N_all)
-    i.fc51N_init                             0x08005b88   Section        0  fc51n.o(i.fc51N_init)
-    i.fc51_all                               0x08005bcc   Section        0  fc51.o(i.fc51_all)
-    i.fc51_init                              0x08005c68   Section        0  fc51.o(i.fc51_init)
-    i.fc59                                   0x08005cc0   Section        0  protection_functions.o(i.fc59)
-    i.fc59_all                               0x08005d20   Section        0  fc59.o(i.fc59_all)
-    i.fc59_init                              0x08005db8   Section        0  fc59.o(i.fc59_init)
-    i.fcBF_init                              0x08005dd0   Section        0  fcbf.o(i.fcBF_init)
-    i.fcPVP_init                             0x08005df4   Section        0  fcpvp.o(i.fcPVP_init)
-    i.fcUNB_init                             0x08005e28   Section        0  fcunb.o(i.fcUNB_init)
-    i.initFunctions                          0x08005e4c   Section        0  initfunctions.o(i.initFunctions)
-    i.init_conversion                        0x08005e88   Section        0  conversion.o(i.init_conversion)
-    i.init_protection                        0x08005f68   Section        0  init_protection.o(i.init_protection)
-    i.main                                   0x08006714   Section        0  main.o(i.main)
-    i.main_flow                              0x08006860   Section        0  main_flow.o(i.main_flow)
-    i.maxSelector_3p                         0x0800689a   Section        0  protection_functions.o(i.maxSelector_3p)
-    i.minSelector_3p                         0x080068b8   Section        0  protection_functions.o(i.minSelector_3p)
-    i.off_delay                              0x080068d6   Section        0  protection_functions.o(i.off_delay)
-    i.on_delay                               0x0800690e   Section        0  protection_functions.o(i.on_delay)
-    i.on_off_delay                           0x08006946   Section        0  protection_functions.o(i.on_off_delay)
-    i.pick_trip_reset_handles                0x0800696c   Section        0  pickup_handles.o(i.pick_trip_reset_handles)
-    i.pick_up_handles                        0x08006980   Section        0  pickup_handles.o(i.pick_up_handles)
-    i.prefilter_oc                           0x08006e58   Section        0  measurement_functions.o(i.prefilter_oc)
-    i.pullDataFromMaster                     0x08006e90   Section        0  configparams.o(i.pullDataFromMaster)
-    i.pushDataToMaster                       0x080071b8   Section        0  commparams.o(i.pushDataToMaster)
-    i.reset_handles                          0x080079a4   Section        0  pickup_handles.o(i.reset_handles)
-    i.signal_spectra                         0x08007bf4   Section        0  measurement_functions.o(i.signal_spectra)
-    i.signal_thd                             0x08007c98   Section        0  measurement_functions.o(i.signal_thd)
-    i.spectral_analysis                      0x08007cfc   Section        0  spectra.o(i.spectral_analysis)
-    i.spi_crcCalculation                     0x08007dcc   Section        0  spi_masterslave.o(i.spi_crcCalculation)
-    spi_crcCalculation                       0x08007dcd   Thumb Code    62  spi_masterslave.o(i.spi_crcCalculation)
-    i.spi_initComApp                         0x08007e10   Section        0  spi_masterslave.o(i.spi_initComApp)
-    i.spi_preparePushData                    0x08007e14   Section        0  spi_masterslave.o(i.spi_preparePushData)
-    spi_preparePushData                      0x08007e15   Thumb Code   242  spi_masterslave.o(i.spi_preparePushData)
-    i.spi_prepareReceiveData                 0x08007f14   Section        0  spi_masterslave.o(i.spi_prepareReceiveData)
-    spi_prepareReceiveData                   0x08007f15   Thumb Code   236  spi_masterslave.o(i.spi_prepareReceiveData)
-    i.spi_runComApp                          0x0800800c   Section        0  spi_masterslave.o(i.spi_runComApp)
-    i.spi_sysTickCallApp                     0x0800804c   Section        0  spi_masterslave.o(i.spi_sysTickCallApp)
-    i.sym_comp                               0x0800808c   Section        0  measurement_functions.o(i.sym_comp)
-    i.sym_mag                                0x0800811c   Section        0  measurement_functions.o(i.sym_mag)
-    i.thermal_status                         0x080082a0   Section        0  measurement_functions.o(i.thermal_status)
-    i.trip_handles                           0x08008318   Section        0  pickup_handles.o(i.trip_handles)
-    i.trueRMS                                0x08008674   Section        0  truerms.o(i.trueRMS)
-    i.true_rms                               0x08008828   Section        0  measurement_functions.o(i.true_rms)
-    i.uart_initComApp                        0x0800887c   Section        0  uart_masterslave.o(i.uart_initComApp)
-    i.uart_prepareReceiveData                0x08008890   Section        0  uart_masterslave.o(i.uart_prepareReceiveData)
-    uart_prepareReceiveData                  0x08008891   Thumb Code   226  uart_masterslave.o(i.uart_prepareReceiveData)
-    i.uart_runComApp                         0x08008980   Section        0  uart_masterslave.o(i.uart_runComApp)
-    i.uart_sysTickCallApp                    0x080089c4   Section        0  uart_masterslave.o(i.uart_sysTickCallApp)
-    .constdata                               0x08008a04   Section        8  stm32f7xx_hal_dma.o(.constdata)
-    flagBitshiftOffset                       0x08008a04   Data           8  stm32f7xx_hal_dma.o(.constdata)
-    .constdata                               0x08008a0c   Section       16  fc50.o(.constdata)
-    .constdata                               0x08008a1c   Section       16  fc50n.o(.constdata)
-    .constdata                               0x08008a2c   Section       20  fc51.o(.constdata)
-    .constdata                               0x08008a40   Section       20  fc51n.o(.constdata)
-    .constdata                               0x08008a54   Section       12  fc27.o(.constdata)
-    .constdata                               0x08008a60   Section       12  fc59.o(.constdata)
-    .constdata                               0x08008a6c   Section       36  fc46.o(.constdata)
-    .constdata                               0x08008a90   Section       24  fc49.o(.constdata)
-    .constdata                               0x08008aa8   Section       24  fcbf.o(.constdata)
-    .constdata                               0x08008ac0   Section       12  fc37.o(.constdata)
-    .constdata                               0x08008acc   Section       20  fcunb.o(.constdata)
-    .constdata                               0x08008ae0   Section       32  fcpvp.o(.constdata)
-    .constdata                               0x08008b00   Section       16  system_stm32f7xx.o(.constdata)
-    .constdata                               0x08008b10   Section        8  system_stm32f7xx.o(.constdata)
-    .constdata                               0x08008b18   Section      320  powf.o(.constdata)
-    table                                    0x08008b18   Data         128  powf.o(.constdata)
-    powersof2to1over16top                    0x08008b98   Data          64  powf.o(.constdata)
-    powersof2to1over16bot                    0x08008bd8   Data          64  powf.o(.constdata)
-    powersof2to1over16all                    0x08008c18   Data          64  powf.o(.constdata)
-    .constdata                               0x08008c58   Section      152  atan.o(.constdata)
-    atanhi                                   0x08008c58   Data          32  atan.o(.constdata)
-    atanlo                                   0x08008c78   Data          32  atan.o(.constdata)
-    aTodd                                    0x08008c98   Data          40  atan.o(.constdata)
-    aTeven                                   0x08008cc0   Data          48  atan.o(.constdata)
-    .constdata                               0x08008cf0   Section        8  qnan.o(.constdata)
+    i.fc37_init                              0x080054ec   Section        0  fc37.o(i.fc37_init)
+    i.fc46_init                              0x08005504   Section        0  fc46.o(i.fc46_init)
+    i.fc49                                   0x08005558   Section        0  protection_functions.o(i.fc49)
+    i.fc49_all                               0x080055a4   Section        0  fc49.o(i.fc49_all)
+    i.fc49_init                              0x080056c0   Section        0  fc49.o(i.fc49_init)
+    i.fc50                                   0x08005728   Section        0  protection_functions.o(i.fc50)
+    i.fc50N_all                              0x080057d4   Section        0  fc50n.o(i.fc50N_all)
+    i.fc50N_init                             0x08005868   Section        0  fc50n.o(i.fc50N_init)
+    i.fc50_all                               0x08005898   Section        0  fc50.o(i.fc50_all)
+    i.fc50_init                              0x080059e4   Section        0  fc50.o(i.fc50_init)
+    i.fc51                                   0x08005a08   Section        0  protection_functions.o(i.fc51)
+    i.fc51N_all                              0x08005afc   Section        0  fc51n.o(i.fc51N_all)
+    i.fc51N_init                             0x08005b3c   Section        0  fc51n.o(i.fc51N_init)
+    i.fc51_all                               0x08005b80   Section        0  fc51.o(i.fc51_all)
+    i.fc51_init                              0x08005c1c   Section        0  fc51.o(i.fc51_init)
+    i.fc59                                   0x08005c74   Section        0  protection_functions.o(i.fc59)
+    i.fc59_all                               0x08005cd4   Section        0  fc59.o(i.fc59_all)
+    i.fc59_init                              0x08005d6c   Section        0  fc59.o(i.fc59_init)
+    i.fcBF_init                              0x08005d84   Section        0  fcbf.o(i.fcBF_init)
+    i.fcPVP_init                             0x08005da8   Section        0  fcpvp.o(i.fcPVP_init)
+    i.fcUNB_init                             0x08005ddc   Section        0  fcunb.o(i.fcUNB_init)
+    i.initFunctions                          0x08005e00   Section        0  initfunctions.o(i.initFunctions)
+    i.init_conversion                        0x08005e3c   Section        0  conversion.o(i.init_conversion)
+    i.init_protection                        0x08005f1c   Section        0  init_protection.o(i.init_protection)
+    i.main                                   0x080066c8   Section        0  main.o(i.main)
+    i.main_flow                              0x08006814   Section        0  main_flow.o(i.main_flow)
+    i.maxSelector_3p                         0x0800684e   Section        0  protection_functions.o(i.maxSelector_3p)
+    i.minSelector_3p                         0x0800686c   Section        0  protection_functions.o(i.minSelector_3p)
+    i.off_delay                              0x0800688a   Section        0  protection_functions.o(i.off_delay)
+    i.on_off_delay                           0x080068c2   Section        0  protection_functions.o(i.on_off_delay)
+    i.pick_trip_reset_handles                0x080068e8   Section        0  pickup_handles.o(i.pick_trip_reset_handles)
+    i.pick_up_handles                        0x080068fc   Section        0  pickup_handles.o(i.pick_up_handles)
+    i.prefilter_oc                           0x08006dd4   Section        0  measurement_functions.o(i.prefilter_oc)
+    i.pullDataFromMaster                     0x08006e0c   Section        0  configparams.o(i.pullDataFromMaster)
+    i.pushDataToMaster                       0x08007134   Section        0  commparams.o(i.pushDataToMaster)
+    i.reset_handles                          0x08007920   Section        0  pickup_handles.o(i.reset_handles)
+    i.signal_spectra                         0x08007b70   Section        0  measurement_functions.o(i.signal_spectra)
+    i.signal_thd                             0x08007c14   Section        0  measurement_functions.o(i.signal_thd)
+    i.spectral_analysis                      0x08007c78   Section        0  spectra.o(i.spectral_analysis)
+    i.spi_crcCalculation                     0x08007d48   Section        0  spi_masterslave.o(i.spi_crcCalculation)
+    spi_crcCalculation                       0x08007d49   Thumb Code    62  spi_masterslave.o(i.spi_crcCalculation)
+    i.spi_initComApp                         0x08007d8c   Section        0  spi_masterslave.o(i.spi_initComApp)
+    i.spi_preparePushData                    0x08007d90   Section        0  spi_masterslave.o(i.spi_preparePushData)
+    spi_preparePushData                      0x08007d91   Thumb Code   242  spi_masterslave.o(i.spi_preparePushData)
+    i.spi_prepareReceiveData                 0x08007e90   Section        0  spi_masterslave.o(i.spi_prepareReceiveData)
+    spi_prepareReceiveData                   0x08007e91   Thumb Code   236  spi_masterslave.o(i.spi_prepareReceiveData)
+    i.spi_runComApp                          0x08007f88   Section        0  spi_masterslave.o(i.spi_runComApp)
+    i.spi_sysTickCallApp                     0x08007fc8   Section        0  spi_masterslave.o(i.spi_sysTickCallApp)
+    i.sym_comp                               0x08008008   Section        0  measurement_functions.o(i.sym_comp)
+    i.sym_mag                                0x08008098   Section        0  measurement_functions.o(i.sym_mag)
+    i.thermal_status                         0x0800821c   Section        0  measurement_functions.o(i.thermal_status)
+    i.trip_handles                           0x08008294   Section        0  pickup_handles.o(i.trip_handles)
+    i.trueRMS                                0x080085f0   Section        0  truerms.o(i.trueRMS)
+    i.true_rms                               0x080087a4   Section        0  measurement_functions.o(i.true_rms)
+    i.uart_initComApp                        0x080087f8   Section        0  uart_masterslave.o(i.uart_initComApp)
+    i.uart_prepareReceiveData                0x0800880c   Section        0  uart_masterslave.o(i.uart_prepareReceiveData)
+    uart_prepareReceiveData                  0x0800880d   Thumb Code   226  uart_masterslave.o(i.uart_prepareReceiveData)
+    i.uart_runComApp                         0x080088fc   Section        0  uart_masterslave.o(i.uart_runComApp)
+    i.uart_sysTickCallApp                    0x08008940   Section        0  uart_masterslave.o(i.uart_sysTickCallApp)
+    .constdata                               0x08008980   Section        8  stm32f7xx_hal_dma.o(.constdata)
+    flagBitshiftOffset                       0x08008980   Data           8  stm32f7xx_hal_dma.o(.constdata)
+    .constdata                               0x08008988   Section       16  fc50.o(.constdata)
+    .constdata                               0x08008998   Section       16  fc50n.o(.constdata)
+    .constdata                               0x080089a8   Section       20  fc51.o(.constdata)
+    .constdata                               0x080089bc   Section       20  fc51n.o(.constdata)
+    .constdata                               0x080089d0   Section       12  fc27.o(.constdata)
+    .constdata                               0x080089dc   Section       12  fc59.o(.constdata)
+    .constdata                               0x080089e8   Section       36  fc46.o(.constdata)
+    .constdata                               0x08008a0c   Section       24  fc49.o(.constdata)
+    .constdata                               0x08008a24   Section       24  fcbf.o(.constdata)
+    .constdata                               0x08008a3c   Section       12  fc37.o(.constdata)
+    .constdata                               0x08008a48   Section       20  fcunb.o(.constdata)
+    .constdata                               0x08008a5c   Section       32  fcpvp.o(.constdata)
+    .constdata                               0x08008a7c   Section       16  system_stm32f7xx.o(.constdata)
+    .constdata                               0x08008a8c   Section        8  system_stm32f7xx.o(.constdata)
+    .constdata                               0x08008a94   Section      320  powf.o(.constdata)
+    table                                    0x08008a94   Data         128  powf.o(.constdata)
+    powersof2to1over16top                    0x08008b14   Data          64  powf.o(.constdata)
+    powersof2to1over16bot                    0x08008b54   Data          64  powf.o(.constdata)
+    powersof2to1over16all                    0x08008b94   Data          64  powf.o(.constdata)
+    .constdata                               0x08008bd8   Section      152  atan.o(.constdata)
+    atanhi                                   0x08008bd8   Data          32  atan.o(.constdata)
+    atanlo                                   0x08008bf8   Data          32  atan.o(.constdata)
+    aTodd                                    0x08008c18   Data          40  atan.o(.constdata)
+    aTeven                                   0x08008c40   Data          48  atan.o(.constdata)
+    .constdata                               0x08008c70   Section        8  qnan.o(.constdata)
     .data                                    0x20000000   Section        8  main.o(.data)
     .data                                    0x20000008   Section       12  stm32f7xx_hal.o(.data)
     .data                                    0x20000014   Section      108  init_protection.o(.data)
@@ -2601,65 +2599,62 @@ Image Symbol Table
     cs_qual                                  0x20000080   Data           1  fc27.o(.data)
     cs_counter                               0x20000084   Data           4  fc27.o(.data)
     .data                                    0x20000098   Section       56  fc49.o(.data)
-    .data                                    0x200000d0   Section       32  fc37.o(.data)
-    current_checked                          0x200000d0   Data           1  fc37.o(.data)
-    inhibit_enabled                          0x200000d1   Data           1  fc37.o(.data)
-    pick_current_counter                     0x200000d4   Data           4  fc37.o(.data)
-    .data                                    0x200000f0   Section       24  fcunb.o(.data)
-    passed                                   0x200000f0   Data           1  fcunb.o(.data)
-    counter                                  0x200000f1   Data           1  fcunb.o(.data)
-    time_out_counter                         0x200000fc   Data           4  fcunb.o(.data)
-    .data                                    0x20000108   Section        2  pickup_handles.o(.data)
-    pick_up_counter                          0x20000109   Data           1  pickup_handles.o(.data)
-    .data                                    0x2000010c   Section      400  cs_handles.o(.data)
-    .data                                    0x2000029c   Section        1  truerms.o(.data)
-    counter                                  0x2000029c   Data           1  truerms.o(.data)
-    .data                                    0x200002a0   Section      404  spectra.o(.data)
-    count                                    0x200002a0   Data           4  spectra.o(.data)
-    .data                                    0x20000434   Section       20  conversion.o(.data)
-    count                                    0x2000043c   Data           4  conversion.o(.data)
-    sum                                      0x20000440   Data           4  conversion.o(.data)
-    x                                        0x20000444   Data           4  conversion.o(.data)
-    .data                                    0x20000448   Section        4  conversion.o(.data)
-    .data                                    0x2000044c   Section        8  boardio.o(.data)
-    .data                                    0x20000454   Section        4  dataparsermerger.o(.data)
-    .data                                    0x20000458   Section       12  configparams.o(.data)
-    .data                                    0x20000464   Section        4  system_stm32f7xx.o(.data)
-    .data                                    0x20000468   Section        4  errno.o(.data)
-    _errno                                   0x20000468   Data           4  errno.o(.data)
-    .bss                                     0x2000046c   Section      128  tim.o(.bss)
-    .bss                                     0x200004ec   Section       32  rtc.o(.bss)
-    .bss                                     0x2000050c   Section       76  quadspi.o(.bss)
-    .bss                                     0x20000558   Section      504  adc.o(.bss)
-    .bss                                     0x20000750   Section       60  main.o(.bss)
-    .bss                                     0x2000078c   Section      112  usart.o(.bss)
-    .bss                                     0x200007fc   Section      100  spi.o(.bss)
-    .bss                                     0x20000860   Section      116  init_protection.o(.bss)
-    .bss                                     0x200008d4   Section      204  fc50.o(.bss)
-    .bss                                     0x200009a0   Section       84  fc50n.o(.bss)
-    .bss                                     0x200009f4   Section       76  fc51.o(.bss)
-    .bss                                     0x20000a40   Section       32  fc51n.o(.bss)
-    .bss                                     0x20000a60   Section       24  fc27.o(.bss)
-    .bss                                     0x20000a78   Section       96  fc59.o(.bss)
-    .bss                                     0x20000ad8   Section       68  fc46.o(.bss)
-    .bss                                     0x20000b1c   Section       40  fc49.o(.bss)
-    .bss                                     0x20000b44   Section       36  fcbf.o(.bss)
-    .bss                                     0x20000b68   Section       24  fc37.o(.bss)
-    .bss                                     0x20000b80   Section      268  fcunb.o(.bss)
-    UNBa_buffer                              0x20000bb8   Data         100  fcunb.o(.bss)
-    UNBb_buffer                              0x20000c1c   Data         100  fcunb.o(.bss)
-    .bss                                     0x20000c8c   Section     2504  fcpvp.o(.bss)
-    peakBuffer                               0x20001184   Data        1200  fcpvp.o(.bss)
-    .bss                                     0x20001654   Section      296  pickup_handles.o(.bss)
-    pick_buffer                              0x20001684   Data         248  pickup_handles.o(.bss)
-    .bss                                     0x2000177c   Section     8756  cs_handles.o(.bss)
-    .bss                                     0x200039b0   Section     4152  truerms.o(.bss)
-    .bss                                     0x200049e8   Section     1116  spectra.o(.bss)
-    .bss                                     0x20004e44   Section      532  conversion.o(.bss)
-    .bss                                     0x20005058   Section       36  powersysdata.o(.bss)
-    .bss                                     0x2000507c   Section     6032  spi_masterslave.o(.bss)
-    .bss                                     0x2000680c   Section     3008  uart_masterslave.o(.bss)
-    STACK                                    0x200073d0   Section     1024  startup_stm32f767xx.o(STACK)
+    .data                                    0x200000d0   Section       24  fc37.o(.data)
+    .data                                    0x200000e8   Section       24  fcunb.o(.data)
+    passed                                   0x200000e8   Data           1  fcunb.o(.data)
+    counter                                  0x200000e9   Data           1  fcunb.o(.data)
+    time_out_counter                         0x200000f4   Data           4  fcunb.o(.data)
+    .data                                    0x20000100   Section        2  pickup_handles.o(.data)
+    pick_up_counter                          0x20000101   Data           1  pickup_handles.o(.data)
+    .data                                    0x20000104   Section      400  cs_handles.o(.data)
+    .data                                    0x20000294   Section        1  truerms.o(.data)
+    counter                                  0x20000294   Data           1  truerms.o(.data)
+    .data                                    0x20000298   Section      404  spectra.o(.data)
+    count                                    0x20000298   Data           4  spectra.o(.data)
+    .data                                    0x2000042c   Section       20  conversion.o(.data)
+    count                                    0x20000434   Data           4  conversion.o(.data)
+    sum                                      0x20000438   Data           4  conversion.o(.data)
+    x                                        0x2000043c   Data           4  conversion.o(.data)
+    .data                                    0x20000440   Section        4  conversion.o(.data)
+    .data                                    0x20000444   Section        8  boardio.o(.data)
+    .data                                    0x2000044c   Section        4  dataparsermerger.o(.data)
+    .data                                    0x20000450   Section       12  configparams.o(.data)
+    .data                                    0x2000045c   Section        4  system_stm32f7xx.o(.data)
+    .data                                    0x20000460   Section        4  errno.o(.data)
+    _errno                                   0x20000460   Data           4  errno.o(.data)
+    .bss                                     0x20000464   Section      128  tim.o(.bss)
+    .bss                                     0x200004e4   Section       32  rtc.o(.bss)
+    .bss                                     0x20000504   Section       76  quadspi.o(.bss)
+    .bss                                     0x20000550   Section      504  adc.o(.bss)
+    .bss                                     0x20000748   Section       60  main.o(.bss)
+    .bss                                     0x20000784   Section      112  usart.o(.bss)
+    .bss                                     0x200007f4   Section      100  spi.o(.bss)
+    .bss                                     0x20000858   Section      116  init_protection.o(.bss)
+    .bss                                     0x200008cc   Section      204  fc50.o(.bss)
+    .bss                                     0x20000998   Section       84  fc50n.o(.bss)
+    .bss                                     0x200009ec   Section       76  fc51.o(.bss)
+    .bss                                     0x20000a38   Section       32  fc51n.o(.bss)
+    .bss                                     0x20000a58   Section       24  fc27.o(.bss)
+    .bss                                     0x20000a70   Section       96  fc59.o(.bss)
+    .bss                                     0x20000ad0   Section       68  fc46.o(.bss)
+    .bss                                     0x20000b14   Section       40  fc49.o(.bss)
+    .bss                                     0x20000b3c   Section       36  fcbf.o(.bss)
+    .bss                                     0x20000b60   Section       24  fc37.o(.bss)
+    .bss                                     0x20000b78   Section      268  fcunb.o(.bss)
+    UNBa_buffer                              0x20000bb0   Data         100  fcunb.o(.bss)
+    UNBb_buffer                              0x20000c14   Data         100  fcunb.o(.bss)
+    .bss                                     0x20000c84   Section     2504  fcpvp.o(.bss)
+    peakBuffer                               0x2000117c   Data        1200  fcpvp.o(.bss)
+    .bss                                     0x2000164c   Section      296  pickup_handles.o(.bss)
+    pick_buffer                              0x2000167c   Data         248  pickup_handles.o(.bss)
+    .bss                                     0x20001774   Section     8756  cs_handles.o(.bss)
+    .bss                                     0x200039a8   Section     4152  truerms.o(.bss)
+    .bss                                     0x200049e0   Section     1116  spectra.o(.bss)
+    .bss                                     0x20004e3c   Section      532  conversion.o(.bss)
+    .bss                                     0x20005050   Section       36  powersysdata.o(.bss)
+    .bss                                     0x20005074   Section     6032  spi_masterslave.o(.bss)
+    .bss                                     0x20006804   Section     3008  uart_masterslave.o(.bss)
+    STACK                                    0x200073c8   Section     1024  startup_stm32f767xx.o(STACK)
 
     Global Symbols
 
@@ -2941,64 +2936,63 @@ Image Symbol Table
     fc27_all                                 0x08005309   Thumb Code   198  fc27.o(i.fc27_all)
     fc27_init                                0x080053e9   Thumb Code    16  fc27.o(i.fc27_init)
     fc37                                     0x08005401   Thumb Code   114  protection_functions.o(i.fc37)
-    fc37_all                                 0x08005479   Thumb Code   164  fc37.o(i.fc37_all)
-    fc37_init                                0x08005539   Thumb Code    16  fc37.o(i.fc37_init)
-    fc46_init                                0x08005551   Thumb Code    72  fc46.o(i.fc46_init)
-    fc49                                     0x080055a5   Thumb Code    72  protection_functions.o(i.fc49)
-    fc49_all                                 0x080055f1   Thumb Code   268  fc49.o(i.fc49_all)
-    fc49_init                                0x0800570d   Thumb Code    88  fc49.o(i.fc49_init)
-    fc50                                     0x08005775   Thumb Code   166  protection_functions.o(i.fc50)
-    fc50N_all                                0x08005821   Thumb Code   126  fc50n.o(i.fc50N_all)
-    fc50N_init                               0x080058b5   Thumb Code    40  fc50n.o(i.fc50N_init)
-    fc50_all                                 0x080058e5   Thumb Code   312  fc50.o(i.fc50_all)
-    fc50_init                                0x08005a31   Thumb Code    28  fc50.o(i.fc50_init)
-    fc51                                     0x08005a55   Thumb Code   226  protection_functions.o(i.fc51)
-    fc51N_all                                0x08005b49   Thumb Code    44  fc51n.o(i.fc51N_all)
-    fc51N_init                               0x08005b89   Thumb Code    56  fc51n.o(i.fc51N_init)
-    fc51_all                                 0x08005bcd   Thumb Code   136  fc51.o(i.fc51_all)
-    fc51_init                                0x08005c69   Thumb Code    76  fc51.o(i.fc51_init)
-    fc59                                     0x08005cc1   Thumb Code    90  protection_functions.o(i.fc59)
-    fc59_all                                 0x08005d21   Thumb Code   140  fc59.o(i.fc59_all)
-    fc59_init                                0x08005db9   Thumb Code    14  fc59.o(i.fc59_init)
-    fcBF_init                                0x08005dd1   Thumb Code    28  fcbf.o(i.fcBF_init)
-    fcPVP_init                               0x08005df5   Thumb Code    42  fcpvp.o(i.fcPVP_init)
-    fcUNB_init                               0x08005e29   Thumb Code    22  fcunb.o(i.fcUNB_init)
-    initFunctions                            0x08005e4d   Thumb Code    58  initfunctions.o(i.initFunctions)
-    init_conversion                          0x08005e89   Thumb Code   170  conversion.o(i.init_conversion)
-    init_protection                          0x08005f69   Thumb Code  1952  init_protection.o(i.init_protection)
-    main                                     0x08006715   Thumb Code   290  main.o(i.main)
-    main_flow                                0x08006861   Thumb Code    58  main_flow.o(i.main_flow)
-    maxSelector_3p                           0x0800689b   Thumb Code    30  protection_functions.o(i.maxSelector_3p)
-    minSelector_3p                           0x080068b9   Thumb Code    30  protection_functions.o(i.minSelector_3p)
-    off_delay                                0x080068d7   Thumb Code    56  protection_functions.o(i.off_delay)
-    on_delay                                 0x0800690f   Thumb Code    56  protection_functions.o(i.on_delay)
-    on_off_delay                             0x08006947   Thumb Code    38  protection_functions.o(i.on_off_delay)
-    pick_trip_reset_handles                  0x0800696d   Thumb Code    18  pickup_handles.o(i.pick_trip_reset_handles)
-    pick_up_handles                          0x08006981   Thumb Code  1236  pickup_handles.o(i.pick_up_handles)
-    prefilter_oc                             0x08006e59   Thumb Code    46  measurement_functions.o(i.prefilter_oc)
-    pullDataFromMaster                       0x08006e91   Thumb Code   698  configparams.o(i.pullDataFromMaster)
-    pushDataToMaster                         0x080071b9   Thumb Code  1892  commparams.o(i.pushDataToMaster)
-    reset_handles                            0x080079a5   Thumb Code   452  pickup_handles.o(i.reset_handles)
-    signal_spectra                           0x08007bf5   Thumb Code   158  measurement_functions.o(i.signal_spectra)
-    signal_thd                               0x08007c99   Thumb Code    92  measurement_functions.o(i.signal_thd)
-    spectral_analysis                        0x08007cfd   Thumb Code   184  spectra.o(i.spectral_analysis)
-    spi_initComApp                           0x08007e11   Thumb Code     2  spi_masterslave.o(i.spi_initComApp)
-    spi_runComApp                            0x0800800d   Thumb Code    56  spi_masterslave.o(i.spi_runComApp)
-    spi_sysTickCallApp                       0x0800804d   Thumb Code    58  spi_masterslave.o(i.spi_sysTickCallApp)
-    sym_comp                                 0x0800808d   Thumb Code   134  measurement_functions.o(i.sym_comp)
-    sym_mag                                  0x0800811d   Thumb Code   378  measurement_functions.o(i.sym_mag)
-    thermal_status                           0x080082a1   Thumb Code   114  measurement_functions.o(i.thermal_status)
-    trip_handles                             0x08008319   Thumb Code   714  pickup_handles.o(i.trip_handles)
-    trueRMS                                  0x08008675   Thumb Code   422  truerms.o(i.trueRMS)
-    true_rms                                 0x08008829   Thumb Code    78  measurement_functions.o(i.true_rms)
-    uart_initComApp                          0x0800887d   Thumb Code    10  uart_masterslave.o(i.uart_initComApp)
-    uart_runComApp                           0x08008981   Thumb Code    60  uart_masterslave.o(i.uart_runComApp)
-    uart_sysTickCallApp                      0x080089c5   Thumb Code    58  uart_masterslave.o(i.uart_sysTickCallApp)
-    AHBPrescTable                            0x08008b00   Data          16  system_stm32f7xx.o(.constdata)
-    APBPrescTable                            0x08008b10   Data           8  system_stm32f7xx.o(.constdata)
-    __mathlib_zero                           0x08008cf0   Data           8  qnan.o(.constdata)
-    Region$$Table$$Base                      0x08008cf8   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08008d18   Number         0  anon$$obj.o(Region$$Table)
+    fc37_all                                 0x08005479   Thumb Code    96  fc37.o(i.fc37_all)
+    fc37_init                                0x080054ed   Thumb Code    16  fc37.o(i.fc37_init)
+    fc46_init                                0x08005505   Thumb Code    72  fc46.o(i.fc46_init)
+    fc49                                     0x08005559   Thumb Code    72  protection_functions.o(i.fc49)
+    fc49_all                                 0x080055a5   Thumb Code   268  fc49.o(i.fc49_all)
+    fc49_init                                0x080056c1   Thumb Code    88  fc49.o(i.fc49_init)
+    fc50                                     0x08005729   Thumb Code   166  protection_functions.o(i.fc50)
+    fc50N_all                                0x080057d5   Thumb Code   126  fc50n.o(i.fc50N_all)
+    fc50N_init                               0x08005869   Thumb Code    40  fc50n.o(i.fc50N_init)
+    fc50_all                                 0x08005899   Thumb Code   312  fc50.o(i.fc50_all)
+    fc50_init                                0x080059e5   Thumb Code    28  fc50.o(i.fc50_init)
+    fc51                                     0x08005a09   Thumb Code   226  protection_functions.o(i.fc51)
+    fc51N_all                                0x08005afd   Thumb Code    44  fc51n.o(i.fc51N_all)
+    fc51N_init                               0x08005b3d   Thumb Code    56  fc51n.o(i.fc51N_init)
+    fc51_all                                 0x08005b81   Thumb Code   136  fc51.o(i.fc51_all)
+    fc51_init                                0x08005c1d   Thumb Code    76  fc51.o(i.fc51_init)
+    fc59                                     0x08005c75   Thumb Code    90  protection_functions.o(i.fc59)
+    fc59_all                                 0x08005cd5   Thumb Code   140  fc59.o(i.fc59_all)
+    fc59_init                                0x08005d6d   Thumb Code    14  fc59.o(i.fc59_init)
+    fcBF_init                                0x08005d85   Thumb Code    28  fcbf.o(i.fcBF_init)
+    fcPVP_init                               0x08005da9   Thumb Code    42  fcpvp.o(i.fcPVP_init)
+    fcUNB_init                               0x08005ddd   Thumb Code    22  fcunb.o(i.fcUNB_init)
+    initFunctions                            0x08005e01   Thumb Code    58  initfunctions.o(i.initFunctions)
+    init_conversion                          0x08005e3d   Thumb Code   170  conversion.o(i.init_conversion)
+    init_protection                          0x08005f1d   Thumb Code  1956  init_protection.o(i.init_protection)
+    main                                     0x080066c9   Thumb Code   290  main.o(i.main)
+    main_flow                                0x08006815   Thumb Code    58  main_flow.o(i.main_flow)
+    maxSelector_3p                           0x0800684f   Thumb Code    30  protection_functions.o(i.maxSelector_3p)
+    minSelector_3p                           0x0800686d   Thumb Code    30  protection_functions.o(i.minSelector_3p)
+    off_delay                                0x0800688b   Thumb Code    56  protection_functions.o(i.off_delay)
+    on_off_delay                             0x080068c3   Thumb Code    38  protection_functions.o(i.on_off_delay)
+    pick_trip_reset_handles                  0x080068e9   Thumb Code    18  pickup_handles.o(i.pick_trip_reset_handles)
+    pick_up_handles                          0x080068fd   Thumb Code  1236  pickup_handles.o(i.pick_up_handles)
+    prefilter_oc                             0x08006dd5   Thumb Code    46  measurement_functions.o(i.prefilter_oc)
+    pullDataFromMaster                       0x08006e0d   Thumb Code   698  configparams.o(i.pullDataFromMaster)
+    pushDataToMaster                         0x08007135   Thumb Code  1892  commparams.o(i.pushDataToMaster)
+    reset_handles                            0x08007921   Thumb Code   452  pickup_handles.o(i.reset_handles)
+    signal_spectra                           0x08007b71   Thumb Code   158  measurement_functions.o(i.signal_spectra)
+    signal_thd                               0x08007c15   Thumb Code    92  measurement_functions.o(i.signal_thd)
+    spectral_analysis                        0x08007c79   Thumb Code   184  spectra.o(i.spectral_analysis)
+    spi_initComApp                           0x08007d8d   Thumb Code     2  spi_masterslave.o(i.spi_initComApp)
+    spi_runComApp                            0x08007f89   Thumb Code    56  spi_masterslave.o(i.spi_runComApp)
+    spi_sysTickCallApp                       0x08007fc9   Thumb Code    58  spi_masterslave.o(i.spi_sysTickCallApp)
+    sym_comp                                 0x08008009   Thumb Code   134  measurement_functions.o(i.sym_comp)
+    sym_mag                                  0x08008099   Thumb Code   378  measurement_functions.o(i.sym_mag)
+    thermal_status                           0x0800821d   Thumb Code   114  measurement_functions.o(i.thermal_status)
+    trip_handles                             0x08008295   Thumb Code   714  pickup_handles.o(i.trip_handles)
+    trueRMS                                  0x080085f1   Thumb Code   422  truerms.o(i.trueRMS)
+    true_rms                                 0x080087a5   Thumb Code    78  measurement_functions.o(i.true_rms)
+    uart_initComApp                          0x080087f9   Thumb Code    10  uart_masterslave.o(i.uart_initComApp)
+    uart_runComApp                           0x080088fd   Thumb Code    60  uart_masterslave.o(i.uart_runComApp)
+    uart_sysTickCallApp                      0x08008941   Thumb Code    58  uart_masterslave.o(i.uart_sysTickCallApp)
+    AHBPrescTable                            0x08008a7c   Data          16  system_stm32f7xx.o(.constdata)
+    APBPrescTable                            0x08008a8c   Data           8  system_stm32f7xx.o(.constdata)
+    __mathlib_zero                           0x08008c70   Data           8  qnan.o(.constdata)
+    Region$$Table$$Base                      0x08008c78   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08008c98   Number         0  anon$$obj.o(Region$$Table)
     incoming_data_flag                       0x20000000   Data           1  main.o(.data)
     incoming_data_flag_counter               0x20000004   Data           4  main.o(.data)
     uwTickFreq                               0x20000008   Data           1  stm32f7xx_hal.o(.data)
@@ -3024,155 +3018,155 @@ Image Symbol Table
     therm_c_obj2                             0x200000c4   Data           4  fc49.o(.data)
     fc49_obj1_L1_in                          0x200000c8   Data           4  fc49.o(.data)
     fc49_obj2_L1_in                          0x200000cc   Data           4  fc49.o(.data)
-    fc37_obj1_L1_out_a                       0x200000d8   Data           8  fc37.o(.data)
-    fc37_obj1_L1_out_b                       0x200000e0   Data           8  fc37.o(.data)
-    fc37_obj1_L1_out_c                       0x200000e8   Data           8  fc37.o(.data)
-    UNBa_rms                                 0x200000f4   Data           4  fcunb.o(.data)
-    UNBb_rms                                 0x200000f8   Data           4  fcunb.o(.data)
-    fcUNBi_obj1_L1_in                        0x20000100   Data           8  fcunb.o(.data)
-    fault_code                               0x20000108   Data           1  pickup_handles.o(.data)
-    sin_coeffs                               0x2000010c   Data         200  cs_handles.o(.data)
-    cos_coeffs                               0x200001d4   Data         200  cs_handles.o(.data)
-    coeffs_real                              0x200002a4   Data         200  spectra.o(.data)
-    coeffs_imag                              0x2000036c   Data         200  spectra.o(.data)
-    conversion_completed                     0x20000434   Data           1  conversion.o(.data)
-    ch                                       0x20000435   Data           1  conversion.o(.data)
-    cycle_count_1                            0x20000438   Data           4  conversion.o(.data)
-    cycle_count_2                            0x20000448   Data           4  conversion.o(.data)
-    DI                                       0x2000044c   Data           4  boardio.o(.data)
-    DO                                       0x20000450   Data           4  boardio.o(.data)
-    typeCnv                                  0x20000454   Data           4  dataparsermerger.o(.data)
-    mSelect                                  0x20000458   Data           4  configparams.o(.data)
-    pFlag                                    0x2000045c   Data           4  configparams.o(.data)
-    pEN                                      0x20000460   Data           4  configparams.o(.data)
-    SystemCoreClock                          0x20000464   Data           4  system_stm32f7xx.o(.data)
-    htim1                                    0x2000046c   Data          64  tim.o(.bss)
-    htim6                                    0x200004ac   Data          64  tim.o(.bss)
-    hrtc                                     0x200004ec   Data          32  rtc.o(.bss)
-    hqspi                                    0x2000050c   Data          76  quadspi.o(.bss)
-    hadc1                                    0x20000558   Data          72  adc.o(.bss)
-    hadc2                                    0x200005a0   Data          72  adc.o(.bss)
-    hadc3                                    0x200005e8   Data          72  adc.o(.bss)
-    hdma_adc1                                0x20000630   Data          96  adc.o(.bss)
-    hdma_adc2                                0x20000690   Data          96  adc.o(.bss)
-    hdma_adc3                                0x200006f0   Data          96  adc.o(.bss)
-    adc_values                               0x20000750   Data          60  main.o(.bss)
-    huart2                                   0x2000078c   Data         112  usart.o(.bss)
-    hspi2                                    0x200007fc   Data         100  spi.o(.bss)
-    EN                                       0x20000860   Data         116  init_protection.o(.bss)
-    fc50_obj1_L1_out_a                       0x200008d4   Data          12  fc50.o(.bss)
-    fc50_obj1_L1_out_b                       0x200008e0   Data          12  fc50.o(.bss)
-    fc50_obj1_L1_out_c                       0x200008ec   Data          12  fc50.o(.bss)
-    fc50_obj1_L2_out_a                       0x200008f8   Data          12  fc50.o(.bss)
-    fc50_obj1_L2_out_b                       0x20000904   Data          12  fc50.o(.bss)
-    fc50_obj1_L2_out_c                       0x20000910   Data          12  fc50.o(.bss)
-    fc50_obj1_L3_out_a                       0x2000091c   Data          12  fc50.o(.bss)
-    fc50_obj1_L3_out_b                       0x20000928   Data          12  fc50.o(.bss)
-    fc50_obj1_L3_out_c                       0x20000934   Data          12  fc50.o(.bss)
-    fc50_obj1_L1_in                          0x20000940   Data          16  fc50.o(.bss)
-    fc50_obj1_L2_in                          0x20000950   Data          16  fc50.o(.bss)
-    fc50_obj1_L3_in                          0x20000960   Data          16  fc50.o(.bss)
-    fc50_obj2_L1_in                          0x20000970   Data          16  fc50.o(.bss)
-    fc50_obj2_L2_in                          0x20000980   Data          16  fc50.o(.bss)
-    fc50_obj2_L3_in                          0x20000990   Data          16  fc50.o(.bss)
-    fc50N_obj1_L1_out                        0x200009a0   Data          12  fc50n.o(.bss)
-    fc50N_obj1_L2_out                        0x200009ac   Data          12  fc50n.o(.bss)
-    fc50N_obj1_L3_out                        0x200009b8   Data          12  fc50n.o(.bss)
-    fc50N_obj1_L1_in                         0x200009c4   Data          16  fc50n.o(.bss)
-    fc50N_obj1_L2_in                         0x200009d4   Data          16  fc50n.o(.bss)
-    fc50N_obj1_L3_in                         0x200009e4   Data          16  fc50n.o(.bss)
-    fc51_obj1_out_a                          0x200009f4   Data          12  fc51.o(.bss)
-    fc51_obj1_out_b                          0x20000a00   Data          12  fc51.o(.bss)
-    fc51_obj1_out_c                          0x20000a0c   Data          12  fc51.o(.bss)
-    fc51_obj1_in                             0x20000a18   Data          20  fc51.o(.bss)
-    fc51_obj2_in                             0x20000a2c   Data          20  fc51.o(.bss)
-    fc51N_obj1_out                           0x20000a40   Data          12  fc51n.o(.bss)
-    fc51N_obj1_in                            0x20000a4c   Data          20  fc51n.o(.bss)
-    fc27_obj1_L1_in                          0x20000a60   Data          12  fc27.o(.bss)
-    fc27_obj1_L2_in                          0x20000a6c   Data          12  fc27.o(.bss)
-    fc59_obj1_L1_out_a                       0x20000a78   Data          12  fc59.o(.bss)
-    fc59_obj1_L1_out_b                       0x20000a84   Data          12  fc59.o(.bss)
-    fc59_obj1_L1_out_c                       0x20000a90   Data          12  fc59.o(.bss)
-    fc59_obj1_L2_out_a                       0x20000a9c   Data          12  fc59.o(.bss)
-    fc59_obj1_L2_out_b                       0x20000aa8   Data          12  fc59.o(.bss)
-    fc59_obj1_L2_out_c                       0x20000ab4   Data          12  fc59.o(.bss)
-    fc59_obj1_L1_in                          0x20000ac0   Data          12  fc59.o(.bss)
-    fc59_obj1_L2_in                          0x20000acc   Data          12  fc59.o(.bss)
-    fc46d_obj1_L1_out                        0x20000ad8   Data          16  fc46.o(.bss)
-    fc46i_obj1_L1_out                        0x20000ae8   Data          16  fc46.o(.bss)
-    fc46d_obj1_L1_in                         0x20000af8   Data          16  fc46.o(.bss)
-    fc46i_obj1_L1_in                         0x20000b08   Data          20  fc46.o(.bss)
-    fc49_obj1_therm                          0x20000b1c   Data          20  fc49.o(.bss)
-    fc49_obj2_therm                          0x20000b30   Data          20  fc49.o(.bss)
-    fcBF_out                                 0x20000b44   Data          12  fcbf.o(.bss)
-    fcBF_in                                  0x20000b50   Data          24  fcbf.o(.bss)
-    fc37_obj1_L1_in                          0x20000b68   Data          12  fc37.o(.bss)
-    fc37_obj2_L1_in                          0x20000b74   Data          12  fc37.o(.bss)
-    fcUNBd_obj1_L1_out_a                     0x20000b80   Data          16  fcunb.o(.bss)
-    fcUNBd_obj1_L1_out_b                     0x20000b90   Data          16  fcunb.o(.bss)
-    fcUNBi_obj1_L1_out_a                     0x20000ba0   Data          12  fcunb.o(.bss)
-    fcUNBi_obj1_L1_out_b                     0x20000bac   Data          12  fcunb.o(.bss)
-    fcUNBd_obj1_L1_in                        0x20000c80   Data          12  fcunb.o(.bss)
-    pvp_out                                  0x20000c8c   Data          12  fcpvp.o(.bss)
-    pvp_out_back                             0x20000c98   Data          12  fcpvp.o(.bss)
-    fcPVPi_obj1_L1_out_a                     0x20000ca4   Data          12  fcpvp.o(.bss)
-    fcPVPi_obj1_L1_out_b                     0x20000cb0   Data          12  fcpvp.o(.bss)
-    fcPVPi_obj1_L1_out_c                     0x20000cbc   Data          12  fcpvp.o(.bss)
-    pvp_buf                                  0x20000cc8   Data        1212  fcpvp.o(.bss)
-    fcPVPd_obj1_L1_in                        0x20001634   Data          12  fcpvp.o(.bss)
-    fcPVPi_obj1_L1_in                        0x20001640   Data          20  fcpvp.o(.bss)
-    pick                                     0x20001654   Data          12  pickup_handles.o(.bss)
-    trip                                     0x20001660   Data          12  pickup_handles.o(.bss)
-    pick_words                               0x2000166c   Data          12  pickup_handles.o(.bss)
-    trip_words                               0x20001678   Data          12  pickup_handles.o(.bss)
-    phase_cs_A                               0x2000177c   Data          16  cs_handles.o(.bss)
-    phase_cs_B                               0x2000178c   Data          16  cs_handles.o(.bss)
-    phase_cs_C                               0x2000179c   Data          16  cs_handles.o(.bss)
-    phase_cs_TCR_A                           0x200017ac   Data          16  cs_handles.o(.bss)
-    phase_cs_TCR_B                           0x200017bc   Data          16  cs_handles.o(.bss)
-    phase_cs_TCR_C                           0x200017cc   Data          16  cs_handles.o(.bss)
-    phase_cs_TCR_N                           0x200017dc   Data          16  cs_handles.o(.bss)
-    phase_cs_TCR_AB                          0x200017ec   Data          16  cs_handles.o(.bss)
-    phase_cs_TCR_BC                          0x200017fc   Data          16  cs_handles.o(.bss)
-    phase_cs_TCR_CA                          0x2000180c   Data          16  cs_handles.o(.bss)
-    phase_cs_A_out                           0x2000181c   Data          44  cs_handles.o(.bss)
-    phase_cs_B_out                           0x20001848   Data          44  cs_handles.o(.bss)
-    phase_cs_C_out                           0x20001874   Data          44  cs_handles.o(.bss)
-    phase_cs_TCR_A_out                       0x200018a0   Data          44  cs_handles.o(.bss)
-    phase_cs_TCR_B_out                       0x200018cc   Data          44  cs_handles.o(.bss)
-    phase_cs_TCR_C_out                       0x200018f8   Data          44  cs_handles.o(.bss)
-    sym                                      0x20001924   Data          24  cs_handles.o(.bss)
-    sym_hist                                 0x2000193c   Data          24  cs_handles.o(.bss)
-    mag_sym                                  0x20001954   Data          24  cs_handles.o(.bss)
-    sym_tcr                                  0x2000196c   Data          24  cs_handles.o(.bss)
-    sym_hist_tcr                             0x20001984   Data          24  cs_handles.o(.bss)
-    mag_sym_tcr                              0x2000199c   Data          24  cs_handles.o(.bss)
-    c_buffer                                 0x200019b4   Data        4000  cs_handles.o(.bss)
-    s_buffer                                 0x20002954   Data        4000  cs_handles.o(.bss)
-    P                                        0x200038f4   Data          28  cs_handles.o(.bss)
-    Q                                        0x20003910   Data          28  cs_handles.o(.bss)
-    P_TCR                                    0x2000392c   Data          28  cs_handles.o(.bss)
-    Q_TCR                                    0x20003948   Data          28  cs_handles.o(.bss)
-    fRMS                                     0x20003964   Data          76  cs_handles.o(.bss)
-    tRMS                                     0x200039b0   Data          76  truerms.o(.bss)
-    backRMS                                  0x200039fc   Data          76  truerms.o(.bss)
-    bufferRMS                                0x20003a48   Data        4000  truerms.o(.bss)
-    spect_Ia                                 0x200049e8   Data         368  spectra.o(.bss)
-    spect_Ib                                 0x20004b58   Data         368  spectra.o(.bss)
-    spect_Ic                                 0x20004cc8   Data         368  spectra.o(.bss)
-    thd                                      0x20004e38   Data          12  spectra.o(.bss)
-    rawAdc                                   0x20004e44   Data          76  conversion.o(.bss)
-    fAdc                                     0x20004e90   Data          76  conversion.o(.bss)
-    offset                                   0x20004edc   Data          76  conversion.o(.bss)
-    scale                                    0x20004f28   Data          76  conversion.o(.bss)
-    oc                                       0x20004f74   Data         180  conversion.o(.bss)
-    TR                                       0x20005028   Data          48  conversion.o(.bss)
-    Sys                                      0x20005058   Data          36  powersysdata.o(.bss)
-    comParams                                0x2000507c   Data        6020  spi_masterslave.o(.bss)
-    spiCRC                                   0x20006800   Data          12  spi_masterslave.o(.bss)
-    comParams_uart                           0x2000680c   Data        2996  uart_masterslave.o(.bss)
-    uartCRC                                  0x200073c0   Data          12  uart_masterslave.o(.bss)
-    __initial_sp                             0x200077d0   Data           0  startup_stm32f767xx.o(STACK)
+    fc37_obj1_L1_out_a                       0x200000d0   Data           8  fc37.o(.data)
+    fc37_obj1_L1_out_b                       0x200000d8   Data           8  fc37.o(.data)
+    fc37_obj1_L1_out_c                       0x200000e0   Data           8  fc37.o(.data)
+    UNBa_rms                                 0x200000ec   Data           4  fcunb.o(.data)
+    UNBb_rms                                 0x200000f0   Data           4  fcunb.o(.data)
+    fcUNBi_obj1_L1_in                        0x200000f8   Data           8  fcunb.o(.data)
+    fault_code                               0x20000100   Data           1  pickup_handles.o(.data)
+    sin_coeffs                               0x20000104   Data         200  cs_handles.o(.data)
+    cos_coeffs                               0x200001cc   Data         200  cs_handles.o(.data)
+    coeffs_real                              0x2000029c   Data         200  spectra.o(.data)
+    coeffs_imag                              0x20000364   Data         200  spectra.o(.data)
+    conversion_completed                     0x2000042c   Data           1  conversion.o(.data)
+    ch                                       0x2000042d   Data           1  conversion.o(.data)
+    cycle_count_1                            0x20000430   Data           4  conversion.o(.data)
+    cycle_count_2                            0x20000440   Data           4  conversion.o(.data)
+    DI                                       0x20000444   Data           4  boardio.o(.data)
+    DO                                       0x20000448   Data           4  boardio.o(.data)
+    typeCnv                                  0x2000044c   Data           4  dataparsermerger.o(.data)
+    mSelect                                  0x20000450   Data           4  configparams.o(.data)
+    pFlag                                    0x20000454   Data           4  configparams.o(.data)
+    pEN                                      0x20000458   Data           4  configparams.o(.data)
+    SystemCoreClock                          0x2000045c   Data           4  system_stm32f7xx.o(.data)
+    htim1                                    0x20000464   Data          64  tim.o(.bss)
+    htim6                                    0x200004a4   Data          64  tim.o(.bss)
+    hrtc                                     0x200004e4   Data          32  rtc.o(.bss)
+    hqspi                                    0x20000504   Data          76  quadspi.o(.bss)
+    hadc1                                    0x20000550   Data          72  adc.o(.bss)
+    hadc2                                    0x20000598   Data          72  adc.o(.bss)
+    hadc3                                    0x200005e0   Data          72  adc.o(.bss)
+    hdma_adc1                                0x20000628   Data          96  adc.o(.bss)
+    hdma_adc2                                0x20000688   Data          96  adc.o(.bss)
+    hdma_adc3                                0x200006e8   Data          96  adc.o(.bss)
+    adc_values                               0x20000748   Data          60  main.o(.bss)
+    huart2                                   0x20000784   Data         112  usart.o(.bss)
+    hspi2                                    0x200007f4   Data         100  spi.o(.bss)
+    EN                                       0x20000858   Data         116  init_protection.o(.bss)
+    fc50_obj1_L1_out_a                       0x200008cc   Data          12  fc50.o(.bss)
+    fc50_obj1_L1_out_b                       0x200008d8   Data          12  fc50.o(.bss)
+    fc50_obj1_L1_out_c                       0x200008e4   Data          12  fc50.o(.bss)
+    fc50_obj1_L2_out_a                       0x200008f0   Data          12  fc50.o(.bss)
+    fc50_obj1_L2_out_b                       0x200008fc   Data          12  fc50.o(.bss)
+    fc50_obj1_L2_out_c                       0x20000908   Data          12  fc50.o(.bss)
+    fc50_obj1_L3_out_a                       0x20000914   Data          12  fc50.o(.bss)
+    fc50_obj1_L3_out_b                       0x20000920   Data          12  fc50.o(.bss)
+    fc50_obj1_L3_out_c                       0x2000092c   Data          12  fc50.o(.bss)
+    fc50_obj1_L1_in                          0x20000938   Data          16  fc50.o(.bss)
+    fc50_obj1_L2_in                          0x20000948   Data          16  fc50.o(.bss)
+    fc50_obj1_L3_in                          0x20000958   Data          16  fc50.o(.bss)
+    fc50_obj2_L1_in                          0x20000968   Data          16  fc50.o(.bss)
+    fc50_obj2_L2_in                          0x20000978   Data          16  fc50.o(.bss)
+    fc50_obj2_L3_in                          0x20000988   Data          16  fc50.o(.bss)
+    fc50N_obj1_L1_out                        0x20000998   Data          12  fc50n.o(.bss)
+    fc50N_obj1_L2_out                        0x200009a4   Data          12  fc50n.o(.bss)
+    fc50N_obj1_L3_out                        0x200009b0   Data          12  fc50n.o(.bss)
+    fc50N_obj1_L1_in                         0x200009bc   Data          16  fc50n.o(.bss)
+    fc50N_obj1_L2_in                         0x200009cc   Data          16  fc50n.o(.bss)
+    fc50N_obj1_L3_in                         0x200009dc   Data          16  fc50n.o(.bss)
+    fc51_obj1_out_a                          0x200009ec   Data          12  fc51.o(.bss)
+    fc51_obj1_out_b                          0x200009f8   Data          12  fc51.o(.bss)
+    fc51_obj1_out_c                          0x20000a04   Data          12  fc51.o(.bss)
+    fc51_obj1_in                             0x20000a10   Data          20  fc51.o(.bss)
+    fc51_obj2_in                             0x20000a24   Data          20  fc51.o(.bss)
+    fc51N_obj1_out                           0x20000a38   Data          12  fc51n.o(.bss)
+    fc51N_obj1_in                            0x20000a44   Data          20  fc51n.o(.bss)
+    fc27_obj1_L1_in                          0x20000a58   Data          12  fc27.o(.bss)
+    fc27_obj1_L2_in                          0x20000a64   Data          12  fc27.o(.bss)
+    fc59_obj1_L1_out_a                       0x20000a70   Data          12  fc59.o(.bss)
+    fc59_obj1_L1_out_b                       0x20000a7c   Data          12  fc59.o(.bss)
+    fc59_obj1_L1_out_c                       0x20000a88   Data          12  fc59.o(.bss)
+    fc59_obj1_L2_out_a                       0x20000a94   Data          12  fc59.o(.bss)
+    fc59_obj1_L2_out_b                       0x20000aa0   Data          12  fc59.o(.bss)
+    fc59_obj1_L2_out_c                       0x20000aac   Data          12  fc59.o(.bss)
+    fc59_obj1_L1_in                          0x20000ab8   Data          12  fc59.o(.bss)
+    fc59_obj1_L2_in                          0x20000ac4   Data          12  fc59.o(.bss)
+    fc46d_obj1_L1_out                        0x20000ad0   Data          16  fc46.o(.bss)
+    fc46i_obj1_L1_out                        0x20000ae0   Data          16  fc46.o(.bss)
+    fc46d_obj1_L1_in                         0x20000af0   Data          16  fc46.o(.bss)
+    fc46i_obj1_L1_in                         0x20000b00   Data          20  fc46.o(.bss)
+    fc49_obj1_therm                          0x20000b14   Data          20  fc49.o(.bss)
+    fc49_obj2_therm                          0x20000b28   Data          20  fc49.o(.bss)
+    fcBF_out                                 0x20000b3c   Data          12  fcbf.o(.bss)
+    fcBF_in                                  0x20000b48   Data          24  fcbf.o(.bss)
+    fc37_obj1_L1_in                          0x20000b60   Data          12  fc37.o(.bss)
+    fc37_obj2_L1_in                          0x20000b6c   Data          12  fc37.o(.bss)
+    fcUNBd_obj1_L1_out_a                     0x20000b78   Data          16  fcunb.o(.bss)
+    fcUNBd_obj1_L1_out_b                     0x20000b88   Data          16  fcunb.o(.bss)
+    fcUNBi_obj1_L1_out_a                     0x20000b98   Data          12  fcunb.o(.bss)
+    fcUNBi_obj1_L1_out_b                     0x20000ba4   Data          12  fcunb.o(.bss)
+    fcUNBd_obj1_L1_in                        0x20000c78   Data          12  fcunb.o(.bss)
+    pvp_out                                  0x20000c84   Data          12  fcpvp.o(.bss)
+    pvp_out_back                             0x20000c90   Data          12  fcpvp.o(.bss)
+    fcPVPi_obj1_L1_out_a                     0x20000c9c   Data          12  fcpvp.o(.bss)
+    fcPVPi_obj1_L1_out_b                     0x20000ca8   Data          12  fcpvp.o(.bss)
+    fcPVPi_obj1_L1_out_c                     0x20000cb4   Data          12  fcpvp.o(.bss)
+    pvp_buf                                  0x20000cc0   Data        1212  fcpvp.o(.bss)
+    fcPVPd_obj1_L1_in                        0x2000162c   Data          12  fcpvp.o(.bss)
+    fcPVPi_obj1_L1_in                        0x20001638   Data          20  fcpvp.o(.bss)
+    pick                                     0x2000164c   Data          12  pickup_handles.o(.bss)
+    trip                                     0x20001658   Data          12  pickup_handles.o(.bss)
+    pick_words                               0x20001664   Data          12  pickup_handles.o(.bss)
+    trip_words                               0x20001670   Data          12  pickup_handles.o(.bss)
+    phase_cs_A                               0x20001774   Data          16  cs_handles.o(.bss)
+    phase_cs_B                               0x20001784   Data          16  cs_handles.o(.bss)
+    phase_cs_C                               0x20001794   Data          16  cs_handles.o(.bss)
+    phase_cs_TCR_A                           0x200017a4   Data          16  cs_handles.o(.bss)
+    phase_cs_TCR_B                           0x200017b4   Data          16  cs_handles.o(.bss)
+    phase_cs_TCR_C                           0x200017c4   Data          16  cs_handles.o(.bss)
+    phase_cs_TCR_N                           0x200017d4   Data          16  cs_handles.o(.bss)
+    phase_cs_TCR_AB                          0x200017e4   Data          16  cs_handles.o(.bss)
+    phase_cs_TCR_BC                          0x200017f4   Data          16  cs_handles.o(.bss)
+    phase_cs_TCR_CA                          0x20001804   Data          16  cs_handles.o(.bss)
+    phase_cs_A_out                           0x20001814   Data          44  cs_handles.o(.bss)
+    phase_cs_B_out                           0x20001840   Data          44  cs_handles.o(.bss)
+    phase_cs_C_out                           0x2000186c   Data          44  cs_handles.o(.bss)
+    phase_cs_TCR_A_out                       0x20001898   Data          44  cs_handles.o(.bss)
+    phase_cs_TCR_B_out                       0x200018c4   Data          44  cs_handles.o(.bss)
+    phase_cs_TCR_C_out                       0x200018f0   Data          44  cs_handles.o(.bss)
+    sym                                      0x2000191c   Data          24  cs_handles.o(.bss)
+    sym_hist                                 0x20001934   Data          24  cs_handles.o(.bss)
+    mag_sym                                  0x2000194c   Data          24  cs_handles.o(.bss)
+    sym_tcr                                  0x20001964   Data          24  cs_handles.o(.bss)
+    sym_hist_tcr                             0x2000197c   Data          24  cs_handles.o(.bss)
+    mag_sym_tcr                              0x20001994   Data          24  cs_handles.o(.bss)
+    c_buffer                                 0x200019ac   Data        4000  cs_handles.o(.bss)
+    s_buffer                                 0x2000294c   Data        4000  cs_handles.o(.bss)
+    P                                        0x200038ec   Data          28  cs_handles.o(.bss)
+    Q                                        0x20003908   Data          28  cs_handles.o(.bss)
+    P_TCR                                    0x20003924   Data          28  cs_handles.o(.bss)
+    Q_TCR                                    0x20003940   Data          28  cs_handles.o(.bss)
+    fRMS                                     0x2000395c   Data          76  cs_handles.o(.bss)
+    tRMS                                     0x200039a8   Data          76  truerms.o(.bss)
+    backRMS                                  0x200039f4   Data          76  truerms.o(.bss)
+    bufferRMS                                0x20003a40   Data        4000  truerms.o(.bss)
+    spect_Ia                                 0x200049e0   Data         368  spectra.o(.bss)
+    spect_Ib                                 0x20004b50   Data         368  spectra.o(.bss)
+    spect_Ic                                 0x20004cc0   Data         368  spectra.o(.bss)
+    thd                                      0x20004e30   Data          12  spectra.o(.bss)
+    rawAdc                                   0x20004e3c   Data          76  conversion.o(.bss)
+    fAdc                                     0x20004e88   Data          76  conversion.o(.bss)
+    offset                                   0x20004ed4   Data          76  conversion.o(.bss)
+    scale                                    0x20004f20   Data          76  conversion.o(.bss)
+    oc                                       0x20004f6c   Data         180  conversion.o(.bss)
+    TR                                       0x20005020   Data          48  conversion.o(.bss)
+    Sys                                      0x20005050   Data          36  powersysdata.o(.bss)
+    comParams                                0x20005074   Data        6020  spi_masterslave.o(.bss)
+    spiCRC                                   0x200067f8   Data          12  spi_masterslave.o(.bss)
+    comParams_uart                           0x20006804   Data        2996  uart_masterslave.o(.bss)
+    uartCRC                                  0x200073b8   Data          12  uart_masterslave.o(.bss)
+    __initial_sp                             0x200077c8   Data           0  startup_stm32f767xx.o(STACK)
 
 
 
@@ -3182,9 +3176,9 @@ Memory Map of the image
 
   Image Entry point : 0x080001f9
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00009184, Max: 0x00200000, ABSOLUTE, COMPRESSED[0x00008ea8])
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x000090fc, Max: 0x00200000, ABSOLUTE, COMPRESSED[0x00008e28])
 
-    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x00008d18, Max: 0x00200000, ABSOLUTE)
+    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x00008c98, Max: 0x00200000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -3390,88 +3384,88 @@ Memory Map of the image
     0x08005308   0x000000e0   Code   RO         5055    i.fc27_all          fc27.o
     0x080053e8   0x00000018   Code   RO         5056    i.fc27_init         fc27.o
     0x08005400   0x00000078   Code   RO          768    i.fc37              protection_functions.o
-    0x08005478   0x000000c0   Code   RO         5202    i.fc37_all          fc37.o
-    0x08005538   0x00000018   Code   RO         5203    i.fc37_init         fc37.o
-    0x08005550   0x00000054   Code   RO         5113    i.fc46_init         fc46.o
-    0x080055a4   0x0000004c   Code   RO          771    i.fc49              protection_functions.o
-    0x080055f0   0x0000011c   Code   RO         5136    i.fc49_all          fc49.o
-    0x0800570c   0x00000068   Code   RO         5137    i.fc49_init         fc49.o
-    0x08005774   0x000000ac   Code   RO          772    i.fc50              protection_functions.o
-    0x08005820   0x00000094   Code   RO         4974    i.fc50N_all         fc50n.o
-    0x080058b4   0x00000030   Code   RO         4975    i.fc50N_init        fc50n.o
-    0x080058e4   0x0000014c   Code   RO         4935    i.fc50_all          fc50.o
-    0x08005a30   0x00000024   Code   RO         4936    i.fc50_init         fc50.o
-    0x08005a54   0x000000f4   Code   RO          773    i.fc51              protection_functions.o
-    0x08005b48   0x00000040   Code   RO         5029    i.fc51N_all         fc51n.o
-    0x08005b88   0x00000044   Code   RO         5030    i.fc51N_init        fc51n.o
-    0x08005bcc   0x0000009c   Code   RO         5000    i.fc51_all          fc51.o
-    0x08005c68   0x00000058   Code   RO         5001    i.fc51_init         fc51.o
-    0x08005cc0   0x00000060   Code   RO          774    i.fc59              protection_functions.o
-    0x08005d20   0x00000098   Code   RO         5090    i.fc59_all          fc59.o
-    0x08005db8   0x00000018   Code   RO         5091    i.fc59_init         fc59.o
-    0x08005dd0   0x00000024   Code   RO         5165    i.fcBF_init         fcbf.o
-    0x08005df4   0x00000034   Code   RO         5274    i.fcPVP_init        fcpvp.o
-    0x08005e28   0x00000024   Code   RO         5238    i.fcUNB_init        fcunb.o
-    0x08005e4c   0x0000003a   Code   RO         5492    i.initFunctions     initfunctions.o
-    0x08005e86   0x00000002   PAD
-    0x08005e88   0x000000e0   Code   RO         5443    i.init_conversion   conversion.o
-    0x08005f68   0x000007ac   Code   RO         4911    i.init_protection   init_protection.o
-    0x08006714   0x0000014c   Code   RO          499    i.main              main.o
-    0x08006860   0x0000003a   Code   RO         5885    i.main_flow         main_flow.o
-    0x0800689a   0x0000001e   Code   RO          780    i.maxSelector_3p    protection_functions.o
-    0x080068b8   0x0000001e   Code   RO          781    i.minSelector_3p    protection_functions.o
-    0x080068d6   0x00000038   Code   RO          782    i.off_delay         protection_functions.o
-    0x0800690e   0x00000038   Code   RO          783    i.on_delay          protection_functions.o
-    0x08006946   0x00000026   Code   RO          784    i.on_off_delay      protection_functions.o
-    0x0800696c   0x00000012   Code   RO         5308    i.pick_trip_reset_handles  pickup_handles.o
-    0x0800697e   0x00000002   PAD
-    0x08006980   0x000004d8   Code   RO         5309    i.pick_up_handles   pickup_handles.o
-    0x08006e58   0x00000038   Code   RO          682    i.prefilter_oc      measurement_functions.o
-    0x08006e90   0x00000328   Code   RO         5858    i.pullDataFromMaster  configparams.o
-    0x080071b8   0x000007ec   Code   RO         5809    i.pushDataToMaster  commparams.o
-    0x080079a4   0x00000250   Code   RO         5310    i.reset_handles     pickup_handles.o
-    0x08007bf4   0x000000a4   Code   RO          685    i.signal_spectra    measurement_functions.o
-    0x08007c98   0x00000064   Code   RO          686    i.signal_thd        measurement_functions.o
-    0x08007cfc   0x000000d0   Code   RO         5422    i.spectral_analysis  spectra.o
-    0x08007dcc   0x00000044   Code   RO         5683    i.spi_crcCalculation  spi_masterslave.o
-    0x08007e10   0x00000002   Code   RO         5684    i.spi_initComApp    spi_masterslave.o
-    0x08007e12   0x00000002   PAD
-    0x08007e14   0x00000100   Code   RO         5685    i.spi_preparePushData  spi_masterslave.o
-    0x08007f14   0x000000f8   Code   RO         5686    i.spi_prepareReceiveData  spi_masterslave.o
-    0x0800800c   0x00000040   Code   RO         5687    i.spi_runComApp     spi_masterslave.o
-    0x0800804c   0x00000040   Code   RO         5688    i.spi_sysTickCallApp  spi_masterslave.o
-    0x0800808c   0x00000090   Code   RO          687    i.sym_comp          measurement_functions.o
-    0x0800811c   0x00000184   Code   RO          688    i.sym_mag           measurement_functions.o
-    0x080082a0   0x00000078   Code   RO          689    i.thermal_status    measurement_functions.o
-    0x08008318   0x0000035c   Code   RO         5311    i.trip_handles      pickup_handles.o
-    0x08008674   0x000001b4   Code   RO         5402    i.trueRMS           truerms.o
-    0x08008828   0x00000054   Code   RO          690    i.true_rms          measurement_functions.o
-    0x0800887c   0x00000014   Code   RO         5752    i.uart_initComApp   uart_masterslave.o
-    0x08008890   0x000000f0   Code   RO         5753    i.uart_prepareReceiveData  uart_masterslave.o
-    0x08008980   0x00000044   Code   RO         5754    i.uart_runComApp    uart_masterslave.o
-    0x080089c4   0x00000040   Code   RO         5755    i.uart_sysTickCallApp  uart_masterslave.o
-    0x08008a04   0x00000008   Data   RO         2585    .constdata          stm32f7xx_hal_dma.o
-    0x08008a0c   0x00000010   Data   RO         4947    .constdata          fc50.o
-    0x08008a1c   0x00000010   Data   RO         4977    .constdata          fc50n.o
-    0x08008a2c   0x00000014   Data   RO         5006    .constdata          fc51.o
-    0x08008a40   0x00000014   Data   RO         5032    .constdata          fc51n.o
-    0x08008a54   0x0000000c   Data   RO         5058    .constdata          fc27.o
-    0x08008a60   0x0000000c   Data   RO         5093    .constdata          fc59.o
-    0x08008a6c   0x00000024   Data   RO         5116    .constdata          fc46.o
-    0x08008a90   0x00000018   Data   RO         5139    .constdata          fc49.o
-    0x08008aa8   0x00000018   Data   RO         5167    .constdata          fcbf.o
-    0x08008ac0   0x0000000c   Data   RO         5205    .constdata          fc37.o
-    0x08008acc   0x00000014   Data   RO         5241    .constdata          fcunb.o
-    0x08008ae0   0x00000020   Data   RO         5278    .constdata          fcpvp.o
-    0x08008b00   0x00000010   Data   RO         5914    .constdata          system_stm32f7xx.o
-    0x08008b10   0x00000008   Data   RO         5915    .constdata          system_stm32f7xx.o
-    0x08008b18   0x00000140   Data   RO         5962    .constdata          m_wv.l(powf.o)
-    0x08008c58   0x00000098   Data   RO         6021    .constdata          m_wv.l(atan.o)
-    0x08008cf0   0x00000008   Data   RO         6071    .constdata          m_wv.l(qnan.o)
-    0x08008cf8   0x00000020   Data   RO         6117    Region$$Table       anon$$obj.o
+    0x08005478   0x00000074   Code   RO         5202    i.fc37_all          fc37.o
+    0x080054ec   0x00000018   Code   RO         5203    i.fc37_init         fc37.o
+    0x08005504   0x00000054   Code   RO         5113    i.fc46_init         fc46.o
+    0x08005558   0x0000004c   Code   RO          771    i.fc49              protection_functions.o
+    0x080055a4   0x0000011c   Code   RO         5136    i.fc49_all          fc49.o
+    0x080056c0   0x00000068   Code   RO         5137    i.fc49_init         fc49.o
+    0x08005728   0x000000ac   Code   RO          772    i.fc50              protection_functions.o
+    0x080057d4   0x00000094   Code   RO         4974    i.fc50N_all         fc50n.o
+    0x08005868   0x00000030   Code   RO         4975    i.fc50N_init        fc50n.o
+    0x08005898   0x0000014c   Code   RO         4935    i.fc50_all          fc50.o
+    0x080059e4   0x00000024   Code   RO         4936    i.fc50_init         fc50.o
+    0x08005a08   0x000000f4   Code   RO          773    i.fc51              protection_functions.o
+    0x08005afc   0x00000040   Code   RO         5029    i.fc51N_all         fc51n.o
+    0x08005b3c   0x00000044   Code   RO         5030    i.fc51N_init        fc51n.o
+    0x08005b80   0x0000009c   Code   RO         5000    i.fc51_all          fc51.o
+    0x08005c1c   0x00000058   Code   RO         5001    i.fc51_init         fc51.o
+    0x08005c74   0x00000060   Code   RO          774    i.fc59              protection_functions.o
+    0x08005cd4   0x00000098   Code   RO         5090    i.fc59_all          fc59.o
+    0x08005d6c   0x00000018   Code   RO         5091    i.fc59_init         fc59.o
+    0x08005d84   0x00000024   Code   RO         5165    i.fcBF_init         fcbf.o
+    0x08005da8   0x00000034   Code   RO         5274    i.fcPVP_init        fcpvp.o
+    0x08005ddc   0x00000024   Code   RO         5238    i.fcUNB_init        fcunb.o
+    0x08005e00   0x0000003a   Code   RO         5492    i.initFunctions     initfunctions.o
+    0x08005e3a   0x00000002   PAD
+    0x08005e3c   0x000000e0   Code   RO         5443    i.init_conversion   conversion.o
+    0x08005f1c   0x000007ac   Code   RO         4911    i.init_protection   init_protection.o
+    0x080066c8   0x0000014c   Code   RO          499    i.main              main.o
+    0x08006814   0x0000003a   Code   RO         5885    i.main_flow         main_flow.o
+    0x0800684e   0x0000001e   Code   RO          780    i.maxSelector_3p    protection_functions.o
+    0x0800686c   0x0000001e   Code   RO          781    i.minSelector_3p    protection_functions.o
+    0x0800688a   0x00000038   Code   RO          782    i.off_delay         protection_functions.o
+    0x080068c2   0x00000026   Code   RO          784    i.on_off_delay      protection_functions.o
+    0x080068e8   0x00000012   Code   RO         5308    i.pick_trip_reset_handles  pickup_handles.o
+    0x080068fa   0x00000002   PAD
+    0x080068fc   0x000004d8   Code   RO         5309    i.pick_up_handles   pickup_handles.o
+    0x08006dd4   0x00000038   Code   RO          682    i.prefilter_oc      measurement_functions.o
+    0x08006e0c   0x00000328   Code   RO         5858    i.pullDataFromMaster  configparams.o
+    0x08007134   0x000007ec   Code   RO         5809    i.pushDataToMaster  commparams.o
+    0x08007920   0x00000250   Code   RO         5310    i.reset_handles     pickup_handles.o
+    0x08007b70   0x000000a4   Code   RO          685    i.signal_spectra    measurement_functions.o
+    0x08007c14   0x00000064   Code   RO          686    i.signal_thd        measurement_functions.o
+    0x08007c78   0x000000d0   Code   RO         5422    i.spectral_analysis  spectra.o
+    0x08007d48   0x00000044   Code   RO         5683    i.spi_crcCalculation  spi_masterslave.o
+    0x08007d8c   0x00000002   Code   RO         5684    i.spi_initComApp    spi_masterslave.o
+    0x08007d8e   0x00000002   PAD
+    0x08007d90   0x00000100   Code   RO         5685    i.spi_preparePushData  spi_masterslave.o
+    0x08007e90   0x000000f8   Code   RO         5686    i.spi_prepareReceiveData  spi_masterslave.o
+    0x08007f88   0x00000040   Code   RO         5687    i.spi_runComApp     spi_masterslave.o
+    0x08007fc8   0x00000040   Code   RO         5688    i.spi_sysTickCallApp  spi_masterslave.o
+    0x08008008   0x00000090   Code   RO          687    i.sym_comp          measurement_functions.o
+    0x08008098   0x00000184   Code   RO          688    i.sym_mag           measurement_functions.o
+    0x0800821c   0x00000078   Code   RO          689    i.thermal_status    measurement_functions.o
+    0x08008294   0x0000035c   Code   RO         5311    i.trip_handles      pickup_handles.o
+    0x080085f0   0x000001b4   Code   RO         5402    i.trueRMS           truerms.o
+    0x080087a4   0x00000054   Code   RO          690    i.true_rms          measurement_functions.o
+    0x080087f8   0x00000014   Code   RO         5752    i.uart_initComApp   uart_masterslave.o
+    0x0800880c   0x000000f0   Code   RO         5753    i.uart_prepareReceiveData  uart_masterslave.o
+    0x080088fc   0x00000044   Code   RO         5754    i.uart_runComApp    uart_masterslave.o
+    0x08008940   0x00000040   Code   RO         5755    i.uart_sysTickCallApp  uart_masterslave.o
+    0x08008980   0x00000008   Data   RO         2585    .constdata          stm32f7xx_hal_dma.o
+    0x08008988   0x00000010   Data   RO         4947    .constdata          fc50.o
+    0x08008998   0x00000010   Data   RO         4977    .constdata          fc50n.o
+    0x080089a8   0x00000014   Data   RO         5006    .constdata          fc51.o
+    0x080089bc   0x00000014   Data   RO         5032    .constdata          fc51n.o
+    0x080089d0   0x0000000c   Data   RO         5058    .constdata          fc27.o
+    0x080089dc   0x0000000c   Data   RO         5093    .constdata          fc59.o
+    0x080089e8   0x00000024   Data   RO         5116    .constdata          fc46.o
+    0x08008a0c   0x00000018   Data   RO         5139    .constdata          fc49.o
+    0x08008a24   0x00000018   Data   RO         5167    .constdata          fcbf.o
+    0x08008a3c   0x0000000c   Data   RO         5205    .constdata          fc37.o
+    0x08008a48   0x00000014   Data   RO         5241    .constdata          fcunb.o
+    0x08008a5c   0x00000020   Data   RO         5278    .constdata          fcpvp.o
+    0x08008a7c   0x00000010   Data   RO         5914    .constdata          system_stm32f7xx.o
+    0x08008a8c   0x00000008   Data   RO         5915    .constdata          system_stm32f7xx.o
+    0x08008a94   0x00000140   Data   RO         5962    .constdata          m_wv.l(powf.o)
+    0x08008bd4   0x00000004   PAD
+    0x08008bd8   0x00000098   Data   RO         6021    .constdata          m_wv.l(atan.o)
+    0x08008c70   0x00000008   Data   RO         6071    .constdata          m_wv.l(qnan.o)
+    0x08008c78   0x00000020   Data   RO         6117    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x000077d0, Max: 0x0001ffff, ABSOLUTE, COMPRESSED[0x00000190])
+    Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x000077c8, Max: 0x0001ffff, ABSOLUTE, COMPRESSED[0x00000190])
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -3480,51 +3474,51 @@ Memory Map of the image
     0x20000014   0x0000006c   Data   RW         4913    .data               init_protection.o
     0x20000080   0x00000018   Data   RW         5059    .data               fc27.o
     0x20000098   0x00000038   Data   RW         5140    .data               fc49.o
-    0x200000d0   0x00000020   Data   RW         5206    .data               fc37.o
-    0x200000f0   0x00000018   Data   RW         5246    .data               fcunb.o
-    0x20000108   0x00000002   Data   RW         5313    .data               pickup_handles.o
-    0x2000010a   0x00000002   PAD
-    0x2000010c   0x00000190   Data   RW         5369    .data               cs_handles.o
-    0x2000029c   0x00000001   Data   RW         5404    .data               truerms.o
-    0x2000029d   0x00000003   PAD
-    0x200002a0   0x00000194   Data   RW         5424    .data               spectra.o
-    0x20000434   0x00000014   Data   RW         5445    .data               conversion.o
-    0x20000448   0x00000004   Data   RW         5446    .data               conversion.o
-    0x2000044c   0x00000008   Data   RW         5523    .data               boardio.o
-    0x20000454   0x00000004   Data   RW         5565    .data               dataparsermerger.o
-    0x20000458   0x0000000c   Data   RW         5859    .data               configparams.o
-    0x20000464   0x00000004   Data   RW         5916    .data               system_stm32f7xx.o
-    0x20000468   0x00000004   Data   RW         6104    .data               mc_w.l(errno.o)
-    0x2000046c   0x00000080   Zero   RW            8    .bss                tim.o
-    0x200004ec   0x00000020   Zero   RW          175    .bss                rtc.o
-    0x2000050c   0x0000004c   Zero   RW          217    .bss                quadspi.o
-    0x20000558   0x000001f8   Zero   RW          447    .bss                adc.o
-    0x20000750   0x0000003c   Zero   RW          500    .bss                main.o
-    0x2000078c   0x00000070   Zero   RW          601    .bss                usart.o
-    0x200007fc   0x00000064   Zero   RW          643    .bss                spi.o
-    0x20000860   0x00000074   Zero   RW         4912    .bss                init_protection.o
-    0x200008d4   0x000000cc   Zero   RW         4937    .bss                fc50.o
-    0x200009a0   0x00000054   Zero   RW         4976    .bss                fc50n.o
-    0x200009f4   0x0000004c   Zero   RW         5002    .bss                fc51.o
-    0x20000a40   0x00000020   Zero   RW         5031    .bss                fc51n.o
-    0x20000a60   0x00000018   Zero   RW         5057    .bss                fc27.o
-    0x20000a78   0x00000060   Zero   RW         5092    .bss                fc59.o
-    0x20000ad8   0x00000044   Zero   RW         5114    .bss                fc46.o
-    0x20000b1c   0x00000028   Zero   RW         5138    .bss                fc49.o
-    0x20000b44   0x00000024   Zero   RW         5166    .bss                fcbf.o
-    0x20000b68   0x00000018   Zero   RW         5204    .bss                fc37.o
-    0x20000b80   0x0000010c   Zero   RW         5240    .bss                fcunb.o
-    0x20000c8c   0x000009c8   Zero   RW         5277    .bss                fcpvp.o
-    0x20001654   0x00000128   Zero   RW         5312    .bss                pickup_handles.o
-    0x2000177c   0x00002234   Zero   RW         5364    .bss                cs_handles.o
-    0x200039b0   0x00001038   Zero   RW         5403    .bss                truerms.o
-    0x200049e8   0x0000045c   Zero   RW         5423    .bss                spectra.o
-    0x20004e44   0x00000214   Zero   RW         5444    .bss                conversion.o
-    0x20005058   0x00000024   Zero   RW         5507    .bss                powersysdata.o
-    0x2000507c   0x00001790   Zero   RW         5689    .bss                spi_masterslave.o
-    0x2000680c   0x00000bc0   Zero   RW         5756    .bss                uart_masterslave.o
-    0x200073cc   0x00000004   PAD
-    0x200073d0   0x00000400   Zero   RW          892    STACK               startup_stm32f767xx.o
+    0x200000d0   0x00000018   Data   RW         5206    .data               fc37.o
+    0x200000e8   0x00000018   Data   RW         5246    .data               fcunb.o
+    0x20000100   0x00000002   Data   RW         5313    .data               pickup_handles.o
+    0x20000102   0x00000002   PAD
+    0x20000104   0x00000190   Data   RW         5369    .data               cs_handles.o
+    0x20000294   0x00000001   Data   RW         5404    .data               truerms.o
+    0x20000295   0x00000003   PAD
+    0x20000298   0x00000194   Data   RW         5424    .data               spectra.o
+    0x2000042c   0x00000014   Data   RW         5445    .data               conversion.o
+    0x20000440   0x00000004   Data   RW         5446    .data               conversion.o
+    0x20000444   0x00000008   Data   RW         5523    .data               boardio.o
+    0x2000044c   0x00000004   Data   RW         5565    .data               dataparsermerger.o
+    0x20000450   0x0000000c   Data   RW         5859    .data               configparams.o
+    0x2000045c   0x00000004   Data   RW         5916    .data               system_stm32f7xx.o
+    0x20000460   0x00000004   Data   RW         6104    .data               mc_w.l(errno.o)
+    0x20000464   0x00000080   Zero   RW            8    .bss                tim.o
+    0x200004e4   0x00000020   Zero   RW          175    .bss                rtc.o
+    0x20000504   0x0000004c   Zero   RW          217    .bss                quadspi.o
+    0x20000550   0x000001f8   Zero   RW          447    .bss                adc.o
+    0x20000748   0x0000003c   Zero   RW          500    .bss                main.o
+    0x20000784   0x00000070   Zero   RW          601    .bss                usart.o
+    0x200007f4   0x00000064   Zero   RW          643    .bss                spi.o
+    0x20000858   0x00000074   Zero   RW         4912    .bss                init_protection.o
+    0x200008cc   0x000000cc   Zero   RW         4937    .bss                fc50.o
+    0x20000998   0x00000054   Zero   RW         4976    .bss                fc50n.o
+    0x200009ec   0x0000004c   Zero   RW         5002    .bss                fc51.o
+    0x20000a38   0x00000020   Zero   RW         5031    .bss                fc51n.o
+    0x20000a58   0x00000018   Zero   RW         5057    .bss                fc27.o
+    0x20000a70   0x00000060   Zero   RW         5092    .bss                fc59.o
+    0x20000ad0   0x00000044   Zero   RW         5114    .bss                fc46.o
+    0x20000b14   0x00000028   Zero   RW         5138    .bss                fc49.o
+    0x20000b3c   0x00000024   Zero   RW         5166    .bss                fcbf.o
+    0x20000b60   0x00000018   Zero   RW         5204    .bss                fc37.o
+    0x20000b78   0x0000010c   Zero   RW         5240    .bss                fcunb.o
+    0x20000c84   0x000009c8   Zero   RW         5277    .bss                fcpvp.o
+    0x2000164c   0x00000128   Zero   RW         5312    .bss                pickup_handles.o
+    0x20001774   0x00002234   Zero   RW         5364    .bss                cs_handles.o
+    0x200039a8   0x00001038   Zero   RW         5403    .bss                truerms.o
+    0x200049e0   0x0000045c   Zero   RW         5423    .bss                spectra.o
+    0x20004e3c   0x00000214   Zero   RW         5444    .bss                conversion.o
+    0x20005050   0x00000024   Zero   RW         5507    .bss                powersysdata.o
+    0x20005074   0x00001790   Zero   RW         5689    .bss                spi_masterslave.o
+    0x20006804   0x00000bc0   Zero   RW         5756    .bss                uart_masterslave.o
+    0x200073c4   0x00000004   PAD
+    0x200073c8   0x00000400   Zero   RW          892    STACK               startup_stm32f767xx.o
 
 
 ==============================================================================
@@ -3537,13 +3531,13 @@ Image component sizes
       1048        128          0          0        504       3525   adc.o
        516         30          0          8          0       2022   boardio.o
       2028        214          0          0          0       1771   commparams.o
-       808        110          0         12          0       6988   configparams.o
+       808        110          0         12          0       6996   configparams.o
        968         74          0         24        532       6042   conversion.o
       1520         44          0        400       8756       6986   cs_handles.o
        278         10          0          4          0       4110   dataparsermerger.o
         44          4          0          0          0        782   dma.o
        248         34         12         24         24       2501   fc27.o
-       216         36         12         32         24       1779   fc37.o
+       140         28         12         24         24       1715   fc37.o
         84         12         36          0         68       1388   fc46.o
        388         32         24         56         40       2177   fc49.o
        368         28         16          0        204       2703   fc50.o
@@ -3555,14 +3549,14 @@ Image component sizes
         52         10         32          0       2504       2602   fcpvp.o
         36         14         20         24        268       2289   fcunb.o
        552         38          0          0          0       1295   gpio.o
-      1964        128          0        108        116      10364   init_protection.o
+      1964        130          0        108        116      10360   init_protection.o
         58          0          0          0          0        540   initfunctions.o
        532         52          0          8         60      38460   main.o
         58          0          0          0          0        532   main_flow.o
       1478         84          0          0          0       9364   measurement_functions.o
-      2710        436          0          2        296      12531   pickup_handles.o
+      2710        436          0          2        296      12571   pickup_handles.o
          0          0          0          0         36        834   powersysdata.o
-      1042         44          0          0          0      12156   protection_functions.o
+       986         44          0          0          0      11376   protection_functions.o
        200         46          0          0         76       1729   quadspi.o
        100         32          0          0         32       1495   rtc.o
        208         24          0        404       1116       1357   spectra.o
@@ -3593,7 +3587,7 @@ Image component sizes
        172         38          0          0        112       1718   usart.o
 
     ----------------------------------------------------------------------
-     31328       2590        812       1128      29540    1191633   Object Totals
+     31196       2584        812       1120      29540    1190833   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         40          4          0          5          4          0   (incl. Padding)
 
@@ -3633,8 +3627,8 @@ Image component sizes
          4          0          0          0          0         68   fpstat.o
 
     ----------------------------------------------------------------------
-      3500        372        480          4          0       3112   Library Totals
-        12          0          0          0          0          0   (incl. Padding)
+      3500        372        484          4          0       3112   Library Totals
+        12          0          4          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -3645,7 +3639,7 @@ Image component sizes
          4          0          0          0          0         68   mf_w.l
 
     ----------------------------------------------------------------------
-      3500        372        480          4          0       3112   Library Totals
+      3500        372        484          4          0       3112   Library Totals
 
     ----------------------------------------------------------------------
 
@@ -3654,15 +3648,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     34828       2962       1292       1132      29540    1175073   Grand Totals
-     34828       2962       1292        400      29540    1175073   ELF Image Totals (compressed)
-     34828       2962       1292        400          0          0   ROM Totals
+     34696       2956       1296       1124      29540    1174373   Grand Totals
+     34696       2956       1296        400      29540    1174373   ELF Image Totals (compressed)
+     34696       2956       1296        400          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                36120 (  35.27kB)
-    Total RW  Size (RW Data + ZI Data)             30672 (  29.95kB)
-    Total ROM Size (Code + RO Data + RW Data)      36520 (  35.66kB)
+    Total RO  Size (Code + RO Data)                35992 (  35.15kB)
+    Total RW  Size (RW Data + ZI Data)             30664 (  29.95kB)
+    Total ROM Size (Code + RO Data + RW Data)      36392 (  35.54kB)
 
 ==============================================================================
 

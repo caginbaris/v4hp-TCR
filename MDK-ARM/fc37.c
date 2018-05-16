@@ -58,10 +58,12 @@ void fc37_all(){
 	
  /*************inhibit part-start**********/
 	
-	pick_current=maxSelector_3p(fRMS.Ia,fRMS.Ib,fRMS.Ic);
+	pick_current=maxSelector_3p(fRMS.ITCR_ab,fRMS.ITCR_bc,fRMS.ITCR_ca);
 	
 	cb_pos=DI.bit.Q1_cb_pos;  //cau counditionally compiled wrt card ID and corresponding CBs
  
+	
+	#if 0
 	current_checked	=	on_delay(	 (pick_current>(Sys.I_Nom_obj1*0.5f)),
 															 current_checked,
 															 fs*0.026f,
@@ -70,7 +72,8 @@ void fc37_all(){
 	if(current_checked){inhibit_enabled =1;}
 	if(DO.bits.inhibit){inhibit_enabled =0;}
 	
-	//DO.bits.inhibit=off_delay((inhibit_enabled==1 && current_checked==0),DO.bits.inhibit,fs*30,&inhibit_counter); 
+	
+	#endif
 	
 	/*************inhibit part-end**********/
 		

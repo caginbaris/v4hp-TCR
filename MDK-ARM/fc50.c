@@ -117,9 +117,9 @@ void fc50_all(){
 		
 	}else{
 		
-		fc50_rms_a=tRMS.Ia;
-		fc50_rms_b=tRMS.Ib;
-		fc50_rms_c=tRMS.Ic;
+		fc50_rms_a=tRMS.ITCR_ab;
+		fc50_rms_b=tRMS.ITCR_bc;
+		fc50_rms_c=tRMS.ITCR_ca;
 		
 	}
 	
@@ -139,9 +139,9 @@ void fc50_all(){
 		
 	}else{
 		
-		fc50_rms_a=tRMS.Ia;
-		fc50_rms_b=tRMS.Ib;
-		fc50_rms_c=tRMS.Ic;
+		fc50_rms_a=tRMS.ITCR_ab;
+		fc50_rms_b=tRMS.ITCR_bc;
+		fc50_rms_c=tRMS.ITCR_ca;
 		
 	}
 	

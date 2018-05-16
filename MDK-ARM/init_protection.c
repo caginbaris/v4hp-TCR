@@ -143,7 +143,7 @@ void init_protection(void){
 													;	
 												
 
-		EN.bits.fc49_obj2_L1=  	 pEN.bit.obj2_49 &
+		EN.bits.fc49_obj2_L1=  	 pEN.bit.obj1_49 &
 													(fc49_obj2_L1_in.alarm_level>eps) 
 													;	
 													

@@ -137,7 +137,7 @@ void pullDataFromMaster(){
 	fc49_obj2_therm.k=comParams_uart.recDataBufferF[45];
 	fc49_obj2_therm.tau=comParams_uart.recDataBufferF[46]*60;
 	fc49_obj2_L1_in.alarm_level=comParams_uart.recDataBufferF[47];
-	fc49_obj2_therm.Inom=comParams_uart.recDataBufferF[105];
+	fc49_obj2_therm.Inom=comParams_uart.recDataBufferF[104];
 	
 
 	
@@ -155,7 +155,7 @@ void pullDataFromMaster(){
 	Sys.Q_HF4=comParams_uart.recDataBufferF[103];
 
 	Sys.I_Nom_obj1=comParams_uart.recDataBufferF[104];
-	Sys.I_Nom_obj2=comParams_uart.recDataBufferF[105];
+	Sys.I_Nom_obj2=comParams_uart.recDataBufferF[104];
 	
 	Sys.I_BreakerClosed_MIN=comParams_uart.recDataBufferF[106];
 	

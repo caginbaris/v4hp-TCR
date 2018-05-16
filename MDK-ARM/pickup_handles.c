@@ -366,9 +366,16 @@ void trip_handles(){
 
 void pick_trip_reset_handles(){
 
-
+	static long unlatch_counter=0;
+	static uint8_t unlatch=0;
+	
 	pick_up_handles();
 	reset_handles();
 	trip_handles();
+	
+	//unlatch=on_off_delay(DO.bits.trip,unlatch,600,&unlatch_counter);
+	
+	//if(unlatch){DI.bit.reset=1;}
+	
 
 }
