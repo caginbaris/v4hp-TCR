@@ -172,7 +172,7 @@ int main(void)
 		//HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_SET);
 		
 		//main_flow();
-		incoming_data_flag=off_delay(0,incoming_data_flag,2500,&incoming_data_flag_counter);
+		incoming_data_flag=off_delay(0,incoming_data_flag,12500,&incoming_data_flag_counter);
 	
 		cycle_count_2++;
 		
