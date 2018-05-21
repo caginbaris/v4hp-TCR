@@ -282,6 +282,11 @@
           <WinNumber>1</WinNumber>
           <ItemText>trip_words.w_arr[2]</ItemText>
         </Ww>
+        <Ww>
+          <count>26</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>incoming_data_flag</ItemText>
+        </Ww>
       </WatchWindow1>
       <WatchWindow2>
         <Ww>
