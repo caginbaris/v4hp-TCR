@@ -1,8 +1,7 @@
-
 /**
   ******************************************************************************
-  * @file           : main.c
-  * @brief          : Main program body
+  * File Name          : main.c
+  * Description        : Main program body
   ******************************************************************************
   ** This notice applies to any and all portions of this file
   * that are not between comment pairs USER CODE BEGIN and
@@ -36,6 +35,7 @@
   *
   ******************************************************************************
   */
+
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32f7xx_hal.h"
@@ -53,6 +53,8 @@
 #include "SPI_MasterSlave.h"
 #include "CommConfig.h"
 #include "plib_definitions.h"
+#include "alarms.h"
+#include "flash_api.h"
 
 /* USER CODE END Includes */
 
@@ -65,7 +67,9 @@ extern uint32_t cycle_count_2;
 uint32_t adc_values[15]={0};
 uint8_t incoming_data_flag=0;
 long incoming_data_flag_counter=0;
-uint8_t write_enable=0;
+uint8_t writeEnable=0;
+long write_counter=0;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -91,13 +95,9 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 
 /* USER CODE END 0 */
 
-/**
-  * @brief  The application entry point.
-  *
-  * @retval None
-  */
 int main(void)
 {
+
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
@@ -139,6 +139,7 @@ int main(void)
 
   /* Initialize interrupts */
   MX_NVIC_Init();
+
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -146,6 +147,7 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 	
+	flashDataCheckStartup();
 	initFunctions();
 	
 	HAL_TIM_Base_Start_IT(&htim1);
@@ -163,36 +165,28 @@ int main(void)
 
   /* USER CODE BEGIN 3 */
 		
-	uart_runComApp(); 
-	spi_runComApp();
+	//uart_runComApp(); 
+	//spi_runComApp();
+		
+	flashDataWriteChecking();	
 
 		
 	if(conversion_completed){
 	
-		//HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_SET);
-		
-		//main_flow();
-		incoming_data_flag=off_delay(0,incoming_data_flag,250,&incoming_data_flag_counter);
-	
-		cycle_count_2++;
-		
-		//HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_RESET);		
-		
+
 		conversion_completed=0;
-	
-	}else{
 		
-
-
-}
+		writeEnable=on_delay(incoming_data_flag,writeEnable,12500,&write_counter);
+		if(writeEnable){incoming_data_flag=0;}
+	
+	}
 	
 
-	if(incoming_data_flag){
-
+	if(writeEnable){
+		
 		pullDataFromMaster();
-		
-		
-		//incoming_data_flag=0;	
+		alarm.bit.configDataReception=1;
+		writeEnable=0;
 	  
 		
 	}else{
@@ -211,10 +205,8 @@ int main(void)
 
 }
 
-/**
-  * @brief System Clock Configuration
-  * @retval None
-  */
+/** System Clock Configuration
+*/
 void SystemClock_Config(void)
 {
 
@@ -285,10 +277,8 @@ void SystemClock_Config(void)
   HAL_NVIC_SetPriority(SysTick_IRQn, 0, 0);
 }
 
-/**
-  * @brief NVIC Configuration.
-  * @retval None
-  */
+/** NVIC Configuration
+*/
 static void MX_NVIC_Init(void)
 {
   /* DMA2_Stream0_IRQn interrupt configuration */
@@ -305,43 +295,45 @@ static void MX_NVIC_Init(void)
 
 /**
   * @brief  This function is executed in case of error occurrence.
-  * @param  file: The file name as string.
-  * @param  line: The line in file as a number.
+  * @param  None
   * @retval None
   */
-void _Error_Handler(char *file, int line)
+void _Error_Handler(char * file, int line)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
   /* User can add his own implementation to report the HAL error return state */
   while(1) 
   {
   }
-  /* USER CODE END Error_Handler_Debug */
+  /* USER CODE END Error_Handler_Debug */ 
 }
 
-#ifdef  USE_FULL_ASSERT
+#ifdef USE_FULL_ASSERT
+
 /**
-  * @brief  Reports the name of the source file and the source line number
-  *         where the assert_param error has occurred.
-  * @param  file: pointer to the source file name
-  * @param  line: assert_param error line source number
-  * @retval None
-  */
+   * @brief Reports the name of the source file and the source line number
+   * where the assert_param error has occurred.
+   * @param file: pointer to the source file name
+   * @param line: assert_param error line source number
+   * @retval None
+   */
 void assert_failed(uint8_t* file, uint32_t line)
-{ 
+{
   /* USER CODE BEGIN 6 */
   /* User can add his own implementation to report the file name and line number,
     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
   /* USER CODE END 6 */
+
 }
-#endif /* USE_FULL_ASSERT */
+
+#endif
 
 /**
   * @}
-  */
+  */ 
 
 /**
   * @}
-  */
+*/ 
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

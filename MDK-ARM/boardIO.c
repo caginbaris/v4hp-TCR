@@ -17,14 +17,14 @@ void boardIO(){
 	/*Input stage*/
 	
 	DI.bit.start_stop=HAL_GPIO_ReadPin(START_STOP_DI_1_GPIO_Port,START_STOP_DI_1_Pin);
-	//DI.bit.Q1_cb_pos=HAL_GPIO_ReadPin (Q1_CB_POS_DI_2_GPIO_Port ,Q1_CB_POS_DI_2_Pin);
-	//DI.bit.Q2_cb_pos=HAL_GPIO_ReadPin (Q2_CB_POS_DI_3_GPIO_Port ,Q2_CB_POS_DI_3_Pin);
-	//DI.bit.Q3_cb_pos=HAL_GPIO_ReadPin (Q3_CB_POS_DI_4_GPIO_Port ,Q3_CB_POS_DI_4_Pin);
+	DI.bit.Q1_cb_pos=HAL_GPIO_ReadPin (Q1_CB_POS_DI_2_GPIO_Port ,Q1_CB_POS_DI_2_Pin);
+	DI.bit.Q2_cb_pos=HAL_GPIO_ReadPin (Q2_CB_POS_DI_3_GPIO_Port ,Q2_CB_POS_DI_3_Pin);
+	DI.bit.Q3_cb_pos=HAL_GPIO_ReadPin (Q3_CB_POS_DI_4_GPIO_Port ,Q3_CB_POS_DI_4_Pin);
 	
-	//DI.bit.SVC_trip=HAL_GPIO_ReadPin  (SVC_TRIP_DI_10_GPIO_Port ,SVC_TRIP_DI_10_Pin);
+	DI.bit.SVC_trip=HAL_GPIO_ReadPin  (SVC_TRIP_DI_10_GPIO_Port ,SVC_TRIP_DI_10_Pin);
 	
 	
-	//DI.bit.Q1_open=HAL_GPIO_ReadPin (Q1_CB_OPEN_DI_12_GPIO_Port ,Q1_CB_OPEN_DI_12_Pin);
+	DI.bit.Q1_open=HAL_GPIO_ReadPin (Q1_CB_OPEN_DI_12_GPIO_Port ,Q1_CB_OPEN_DI_12_Pin);
 	DI.bit.Q2_open=HAL_GPIO_ReadPin (Q2_CB_OPEN_DI_14_GPIO_Port ,Q2_CB_OPEN_DI_14_Pin);
 	DI.bit.Q3_open=HAL_GPIO_ReadPin (Q3_CB_OPEN_DI_16_GPIO_Port ,Q3_CB_OPEN_DI_16_Pin);
 	

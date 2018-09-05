@@ -60,11 +60,11 @@ void init_conversion(){
 	
 	// Scale
 	
-	scale.Ia=0.055470985603544f;//0.055411955626188f;
-	scale.Ib=0.055493895671476f;//0.055411955626188f;
-	scale.Ic=0.055470985603544f;//0.055411955626188f;
+	scale.Ia=0.00545000006f;//0.055411955626188f;
+	scale.Ib=0.00545000006f;//0.055411955626188f;
+	scale.Ic=0.00545000006f;//0.055411955626188f;
 	
-	scale.Va_synch=0.005482456140351f;
+	scale.Va_synch=0.10699f;
 
 
 	
@@ -75,8 +75,8 @@ void init_conversion(){
 	scale.Vbn=0.10699f;
 	scale.Vcn=0.10699f;
 	
-	scale.Vb_synch=0.005502f; 
-	scale.Vc_synch=0.005502f; 
+	scale.Vb_synch=0.10699f; 
+	scale.Vc_synch=0.10699f; 
 	scale.ITCR_ab=0.055470985603544f; 
 	
 	

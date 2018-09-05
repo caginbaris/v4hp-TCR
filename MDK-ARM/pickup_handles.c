@@ -4,6 +4,7 @@
 #include "boardIO.h"
 #include "externalData.h"
 #include "bit_expansion.h"
+#include "alarms.h"
 
 #define totalPick 62
 #define pickHold 1000
@@ -17,6 +18,10 @@ union ToWord trip_words={0};
 static long pick_buffer[totalPick]={0};
 
 enum fault_codes fault_code=no_fault;
+
+
+extern uint8_t eraseError;
+extern uint8_t writeError;
 
 
 
@@ -270,8 +275,9 @@ void trip_handles(){
 			
 	
 	trip_words.w_str=trip;
+	alarm.bit.flashError=(writeError|eraseError);
 	
-	if(trip_words.w_arr[0]!=0 || trip_words.w_arr[1]!=0 || trip_words.w_arr[2]!=0){
+	if(trip_words.w_arr[0]!=0 || trip_words.w_arr[1]!=0 || trip_words.w_arr[2]!=0 || trip_words.w_arr[1]!=0 || trip_words.w_arr[2]!=0  || (alarm.bit.configDataReception==0 || alarm.bit.flashError==1)){
 		
 		DO.bits.trip=0;
 		DO.bits.LD_TRIP=1;

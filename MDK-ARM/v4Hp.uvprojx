@@ -15,7 +15,7 @@
         <TargetCommonOption>
           <Device>STM32F767ZITx</Device>
           <Vendor>STMicroelectronics</Vendor>
-          <PackID>Keil.STM32F7xx_DFP.2.8.0</PackID>
+          <PackID>Keil.STM32F7xx_DFP.2.7.0</PackID>
           <PackURL>http://www.keil.com/pack</PackURL>
           <Cpu>IRAM(0x20000000-0x2007FFFF) IROM(0x8000000-0x81FFFFF) CLOCK(12000000) FPU3(DFPU) CPUTYPE("Cortex-M7") ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
@@ -310,8 +310,8 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>3</Optim>
-            <oTime>0</oTime>
+            <Optim>4</Optim>
+            <oTime>1</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
             <Strict>0</Strict>
@@ -1053,6 +1053,11 @@
                 </FileArmAds>
               </FileOption>
             </File>
+            <File>
+              <FileName>alarms.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\alarms.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1640,6 +1645,16 @@
               <FileName>system_stm32f7xx.c</FileName>
               <FileType>1</FileType>
               <FilePath>..//Src/system_stm32f7xx.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>fDataHandling</GroupName>
+          <Files>
+            <File>
+              <FileName>fDataHandling.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\fDataHandling.c</FilePath>
             </File>
           </Files>
         </Group>

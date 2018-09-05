@@ -29,6 +29,9 @@ float UNBa_rms=0;
 float UNBb_rms=0;
 
 
+float nucArray[4]={0};
+
+
 void fcUNB_initial_dt(){
 	
 	static long time_out_counter=0;

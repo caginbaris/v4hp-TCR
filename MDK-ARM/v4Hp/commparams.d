@@ -54,4 +54,5 @@ v4hp\commparams.o: ../Inc/pDataConfigs.h
 v4hp\commparams.o: ../Inc/powerSysData.h
 v4hp\commparams.o: ../Inc/bit_expansion.h
 v4hp\commparams.o: ../Inc/test_commParams.h
+v4hp\commparams.o: ../Inc/alarms.h
 v4hp\commparams.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h

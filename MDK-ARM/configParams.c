@@ -38,7 +38,7 @@ void pullDataFromMaster(){
 	
 	Sys.phaseRotation=pFlag.bit.phaseRotation;
 	Sys.fc27_currentSupervision= pFlag.bit.fc27_currentSupervision;
-	//Sys.fcBF_CBSupervision=pFlag.bit.fcBF_cbSupervision;
+	Sys.fcBF_CBSupervision=pFlag.bit.fcBF_cbSupervision;
 	
 	//spare
 	

@@ -16,6 +16,7 @@ void fcBF_init(void);
 void fc37_init(void);
 void fcUNB_init(void);
 void fcPVP_init(void);
+void pullDataFromMaster(void);
 
 
 

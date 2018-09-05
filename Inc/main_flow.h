@@ -22,7 +22,7 @@ void fcPVP_all(void);
 
 void pick_trip_reset_handles(void);
 void boardIO(void);
-
+void alarms(void);
 
 
 

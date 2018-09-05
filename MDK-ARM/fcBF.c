@@ -44,7 +44,7 @@ void fcBF_all(){
 	fcBF_in.CB_pos_check=Sys.fcBF_CBSupervision; 
 	
 	fcBF_in.CB_pos		=DI.bit.Q1_cb_pos;												/*Breaker Input*/
-	fcBF_in.trip_input=DI.bit.SVC_trip | DI.bit.Q1_open ;	       /*Trip Input*/
+	fcBF_in.trip_input=!(DI.bit.Q1_trip) ;	       /*Trip Input*/
 	// cau related cb position should conditionally compiled
 	
 	fcBF(fcBF_in,&fcBF_out,EN.bits.fcBF_obj1);

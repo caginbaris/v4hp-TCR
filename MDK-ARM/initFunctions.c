@@ -21,6 +21,7 @@ fcBF_init();
 fc37_init();
 fcUNB_init();
 fcPVP_init();
+pullDataFromMaster();	
 
 
 }

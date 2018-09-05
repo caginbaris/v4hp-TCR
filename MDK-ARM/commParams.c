@@ -11,6 +11,7 @@
 #include "powerSysData.h"
 #include "bit_expansion.h"
 #include "test_commParams.h"
+#include "alarms.h"
 #include <math.h>
 
 //****test Parameters For Register Read****//
@@ -66,7 +67,7 @@ void pushDataToMaster(void){
 	
 	/*14*/comParams.pushDataBufferDW[6]=fault_code;//tripping hist enerterd 1 or more seq
 	
-	/*16*/comParams.pushDataBufferDW[7]=0; 				// Board Status
+	/*16*/comParams.pushDataBufferDW[7]=alarm.all; 				// Board Status
 	
 	/*18*/comParams.pushDataBufferDW[8]=DI.all; 	// Input Status
 	/*20*/comParams.pushDataBufferDW[9]=DO.all; 	// Output Status
@@ -200,9 +201,9 @@ void pushDataToMaster(void){
 	/*208*/comParams.pushDataBufferF[88]=therm_b_obj1;
 	/*210*/comParams.pushDataBufferF[89]=therm_c_obj1;
 	
-	/*212*/comParams.pushDataBufferF[90]=therm_a_obj1;
-	/*214*/comParams.pushDataBufferF[91]=therm_b_obj1;
-	/*216*/comParams.pushDataBufferF[92]=therm_c_obj1;
+	/*212*/comParams.pushDataBufferF[90]=therm_a_obj2;
+	/*214*/comParams.pushDataBufferF[91]=therm_b_obj2;
+	/*216*/comParams.pushDataBufferF[92]=therm_c_obj2;
 	
 	/*218*/comParams.pushDataBufferF[93]=tRMS.ITCR_a;
 	/*220*/comParams.pushDataBufferF[94]=tRMS.ITCR_b;
